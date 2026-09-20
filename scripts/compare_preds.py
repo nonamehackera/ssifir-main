@@ -1,0 +1,25 @@
+import requests, json
+
+r = requests.get('http://localhost:5011/api/predictions')
+d = r.json()
+
+for p in d[:13]:
+    rid = p.get("id", "?")
+    hn = p.get("home_name", "?")
+    an = p.get("away_name", "?")
+    res = p.get("result", {})
+    hw = res.get("home_win", "?")
+    dr = res.get("draw", "?")
+    aw = res.get("away_win", "?")
+    tg = p.get("total_goals", {})
+    btts_y = p.get("btts_yes", "?")
+    btts_n = p.get("btts_no", "?")
+    dc = p.get("double_chance", {})
+    cr = p.get("corners", {})
+    print(f"{rid}: {hn} vs {an}")
+    print(f"  1X2: {hw}/{dr}/{aw}")
+    print(f"  Goals: O2.5={tg.get('over25','?')} U2.5={tg.get('under25','?')} O3.5={tg.get('over35','?')} U3.5={tg.get('under35','?')}")
+    print(f"  BTTS: {btts_y}/{btts_n}")
+    print(f"  DC: 1X={dc.get('1X','?')} X2={dc.get('X2','?')} 12={dc.get('12','?')}")
+    print(f"  Corners: avg={cr.get('predicted_total','?')} O7.5={cr.get('over75','?')} U7.5={cr.get('under75','?')}")
+    print()

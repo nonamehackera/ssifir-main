@@ -1,0 +1,34 @@
+SQLAlchemy>=2.0
+psycopg2-binary>=2.9
+pandas>=2.0
+requests>=2.31
+python-dotenv>=1.0
+PyYAML>=6.0
+pyarrow>=12.0
+
+# ML
+scikit-learn>=1.3
+scipy>=1.10
+numpy>=1.24
+catboost>=1.2
+lightgbm>=4.0
+
+# Data sources (uzcretsiz, API key gerektirmez)
+datasets>=2.0  # Hugging Face soccer dataset (673K+ mac)
+
+# Calibration
+# (scikit-learn isotonic zaten yukarida)
+
+# API (Phase 6+)
+fastapi>=0.100
+uvicorn>=0.20
+httpx>=0.25
+
+# Flask UI
+flask>=3.0
+
+# Web scraping (kupon kontrol için)
+beautifulsoup4
+
+# Walk-forward / evaluation
+# (pandas, numpy, scipy yeterli)
