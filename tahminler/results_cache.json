@@ -1,0 +1,865 @@
+{
+  "2026-08-31": {
+    "fetched_at": "2026-09-08T00:06:11.567412",
+    "results": [
+      {
+        "home_team": "Defensa y Justicia",
+        "away_team": "Platense",
+        "home_goals": 1,
+        "away_goals": 0,
+        "date": "2026-08-31",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Estudiantes de La Plata",
+        "away_team": "Newell's Old Boys",
+        "home_goals": 0,
+        "away_goals": 0,
+        "date": "2026-08-31",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Independiente Rivadavia",
+        "away_team": "Racing Club",
+        "home_goals": 3,
+        "away_goals": 1,
+        "date": "2026-08-31",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-01": {
+    "fetched_at": "2026-09-08T00:06:11.567412",
+    "results": [
+      {
+        "home_team": "Instituto",
+        "away_team": "San Lorenzo",
+        "home_goals": 1,
+        "away_goals": 0,
+        "date": "2026-09-01",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Tigre",
+        "away_team": "Barracas Central",
+        "home_goals": 0,
+        "away_goals": 0,
+        "date": "2026-09-01",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Gimnasia y Esgrima de Jujuy",
+        "away_team": "Agropecuario",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-09-01",
+        "league": "Argentinian Primera B Nacional",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-04": {
+    "fetched_at": "2026-09-08T00:06:11.567412",
+    "results": [
+      {
+        "home_team": "Loudoun United",
+        "away_team": "Colorado Springs Switchbacks",
+        "home_goals": 4,
+        "away_goals": 5,
+        "date": "2026-09-04",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Belgrano",
+        "away_team": "Huracán",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-09-04",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Estudiantes de Río Cuarto",
+        "away_team": "Sarmiento",
+        "home_goals": 0,
+        "away_goals": 2,
+        "date": "2026-09-04",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-08-23": {
+    "fetched_at": "2026-09-05T23:58:13.277200",
+    "results": [
+      {
+        "home_team": "Birmingham Legion",
+        "away_team": "Sporting JAX",
+        "home_goals": 2,
+        "away_goals": 3,
+        "date": "2026-08-23",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Colorado Springs Switchbacks",
+        "away_team": "El Paso Locomotive",
+        "home_goals": 0,
+        "away_goals": 1,
+        "date": "2026-08-23",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Orange County SC",
+        "away_team": "FC Tulsa",
+        "home_goals": 1,
+        "away_goals": 5,
+        "date": "2026-08-23",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-03": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "Forward Madison",
+        "away_team": "One Knoxville",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-09-03",
+        "league": "American USL League One",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Mjällby",
+        "away_team": "Djurgården",
+        "home_goals": 0,
+        "away_goals": 2,
+        "date": "2026-09-03",
+        "league": "Swedish Allsvenskan",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Deportes Limache",
+        "away_team": "Ñublense",
+        "home_goals": 2,
+        "away_goals": 0,
+        "date": "2026-09-03",
+        "league": "Chile Primera Division",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-08-25": {
+    "fetched_at": "2026-09-07T19:25:50.826798",
+    "results": [
+      {
+        "home_team": "Lanús",
+        "away_team": "Argentinos Juniors",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-08-25",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Talleres de Córdoba",
+        "away_team": "Rosario Central",
+        "home_goals": 2,
+        "away_goals": 2,
+        "date": "2026-08-25",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Deportivo Madryn",
+        "away_team": "Godoy Cruz",
+        "home_goals": 2,
+        "away_goals": 0,
+        "date": "2026-08-25",
+        "league": "Argentinian Primera B Nacional",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-08-27": {
+    "fetched_at": "2026-09-08T00:06:11.567412",
+    "results": [
+      {
+        "home_team": "El Paso Locomotive",
+        "away_team": "Pittsburgh Riverhounds",
+        "home_goals": 2,
+        "away_goals": 1,
+        "date": "2026-08-27",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "New Mexico United",
+        "away_team": "Lexington SC",
+        "home_goals": 2,
+        "away_goals": 1,
+        "date": "2026-08-27",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Central Norte",
+        "away_team": "Deportivo Morón",
+        "home_goals": 0,
+        "away_goals": 0,
+        "date": "2026-08-27",
+        "league": "Argentinian Primera B Nacional",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-08-29": {
+    "fetched_at": "2026-09-08T00:06:11.567412",
+    "results": [
+      {
+        "home_team": "Brooklyn FC",
+        "away_team": "Sporting JAX",
+        "home_goals": 4,
+        "away_goals": 1,
+        "date": "2026-08-29",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Hartford Athletic",
+        "away_team": "Birmingham Legion",
+        "home_goals": 3,
+        "away_goals": 2,
+        "date": "2026-08-29",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Lexington SC",
+        "away_team": "Colorado Springs Switchbacks",
+        "home_goals": 0,
+        "away_goals": 1,
+        "date": "2026-08-29",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-02": {
+    "fetched_at": "2026-09-08T00:06:11.567412",
+    "results": [
+      {
+        "home_team": "Charleston Battery",
+        "away_team": "Hartford Athletic",
+        "home_goals": 1,
+        "away_goals": 2,
+        "date": "2026-09-02",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Charlotte Independence",
+        "away_team": "Portland Hearts of Pine",
+        "home_goals": 3,
+        "away_goals": 2,
+        "date": "2026-09-02",
+        "league": "American USL League One",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-08-30": {
+    "fetched_at": "2026-09-08T00:06:11.567412",
+    "results": [
+      {
+        "home_team": "El Paso Locomotive",
+        "away_team": "Loudoun United",
+        "home_goals": 4,
+        "away_goals": 1,
+        "date": "2026-08-30",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "FC Tulsa",
+        "away_team": "Rhode Island FC",
+        "home_goals": 1,
+        "away_goals": 0,
+        "date": "2026-08-30",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Las Vegas Lights",
+        "away_team": "Charleston Battery",
+        "home_goals": 0,
+        "away_goals": 2,
+        "date": "2026-08-30",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-08-28": {
+    "fetched_at": "2026-09-08T00:06:11.567412",
+    "results": [
+      {
+        "home_team": "Charlotte Independence",
+        "away_team": "AV Alta FC",
+        "home_goals": 5,
+        "away_goals": 0,
+        "date": "2026-08-28",
+        "league": "American USL League One",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Unión",
+        "away_team": "Sarmiento",
+        "home_goals": 4,
+        "away_goals": 1,
+        "date": "2026-08-28",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Bohemians",
+        "away_team": "Sligo Rovers",
+        "home_goals": 3,
+        "away_goals": 0,
+        "date": "2026-08-28",
+        "league": "Irish Premier Division",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-08-24": {
+    "fetched_at": "2026-09-06T22:16:43.870795",
+    "results": [
+      {
+        "home_team": "Charleston Battery",
+        "away_team": "Miami FC",
+        "home_goals": 5,
+        "away_goals": 0,
+        "date": "2026-08-24",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Racing Club",
+        "away_team": "Boca Juniors",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-08-24",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Tigre",
+        "away_team": "Central Córdoba de Santiago del Estero",
+        "home_goals": 2,
+        "away_goals": 1,
+        "date": "2026-08-24",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-08-26": {
+    "fetched_at": "2026-09-08T00:06:11.567412",
+    "results": [
+      {
+        "home_team": "FC Naples",
+        "away_team": "Union Omaha",
+        "home_goals": 2,
+        "away_goals": 0,
+        "date": "2026-08-26",
+        "league": "American USL League One",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "San Martín de San Juan",
+        "away_team": "Nueva Chicago",
+        "home_goals": 1,
+        "away_goals": 0,
+        "date": "2026-08-26",
+        "league": "Argentinian Primera B Nacional",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Acassuso",
+        "away_team": "San Telmo",
+        "home_goals": 1,
+        "away_goals": 2,
+        "date": "2026-08-26",
+        "league": "Argentinian Primera B Nacional",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-05": {
+    "fetched_at": "2026-09-08T00:06:11.567412",
+    "results": [
+      {
+        "home_team": "Detroit City FC",
+        "away_team": "Hartford Athletic",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-09-05",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Indy Eleven",
+        "away_team": "Birmingham Legion",
+        "home_goals": 2,
+        "away_goals": 2,
+        "date": "2026-09-05",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Rhode Island FC",
+        "away_team": "Louisville City",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-09-05",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-06": {
+    "fetched_at": "2026-09-19T23:56:22.195103",
+    "results": [
+      {
+        "home_team": "Las Vegas Lights",
+        "away_team": "New Mexico United",
+        "home_goals": 1,
+        "away_goals": 2,
+        "date": "2026-09-06",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Miami FC",
+        "away_team": "Pittsburgh Riverhounds",
+        "home_goals": 2,
+        "away_goals": 2,
+        "date": "2026-09-06",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Monterey Bay FC",
+        "away_team": "Phoenix Rising",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-09-06",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-07": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "Barracas Central",
+        "away_team": "Argentinos Juniors",
+        "home_goals": 0,
+        "away_goals": 0,
+        "date": "2026-09-07",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Racing Club",
+        "away_team": "Atlético Tucumán",
+        "home_goals": 1,
+        "away_goals": 2,
+        "date": "2026-09-07",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Vitória",
+        "away_team": "Grêmio",
+        "home_goals": 1,
+        "away_goals": 0,
+        "date": "2026-09-07",
+        "league": "Brazilian Serie A",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-08": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "Unión",
+        "away_team": "Instituto",
+        "home_goals": 3,
+        "away_goals": 2,
+        "date": "2026-09-08",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Claypole",
+        "away_team": "Central Ballester",
+        "home_goals": 0,
+        "away_goals": 1,
+        "date": "2026-09-08",
+        "league": "Argentinian Primera C",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Incheon United",
+        "away_team": "Bucheon FC 1995",
+        "home_goals": 2,
+        "away_goals": 1,
+        "date": "2026-09-08",
+        "league": "South Korean K League 1",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-14": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "Banfield",
+        "away_team": "Barracas Central",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-09-14",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Deportivo Riestra",
+        "away_team": "Lanús",
+        "home_goals": 0,
+        "away_goals": 3,
+        "date": "2026-09-14",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Huracán",
+        "away_team": "Racing Club",
+        "home_goals": 2,
+        "away_goals": 1,
+        "date": "2026-09-14",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-11": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "One Knoxville",
+        "away_team": "FC Naples",
+        "home_goals": 0,
+        "away_goals": 0,
+        "date": "2026-09-11",
+        "league": "American USL League One",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Defensa y Justicia",
+        "away_team": "Gimnasia y Esgrima de Mendoza",
+        "home_goals": 2,
+        "away_goals": 0,
+        "date": "2026-09-11",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Newell's Old Boys",
+        "away_team": "Vélez Sarsfield",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-09-11",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-13": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "Oakland Roots",
+        "away_team": "Lexington SC",
+        "home_goals": 1,
+        "away_goals": 4,
+        "date": "2026-09-13",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Orange County SC",
+        "away_team": "Las Vegas Lights",
+        "home_goals": 0,
+        "away_goals": 2,
+        "date": "2026-09-13",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Phoenix Rising",
+        "away_team": "FC Tulsa",
+        "home_goals": 2,
+        "away_goals": 1,
+        "date": "2026-09-13",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-17": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "Birmingham Legion",
+        "away_team": "New Mexico United",
+        "home_goals": 4,
+        "away_goals": 4,
+        "date": "2026-09-17",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "AC Boise",
+        "away_team": "Charlotte Independence",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-09-17",
+        "league": "American USL League One",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Eskilsminne",
+        "away_team": "Tvååker",
+        "home_goals": 4,
+        "away_goals": 2,
+        "date": "2026-09-17",
+        "league": "Swedish Division 1 South",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-12": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "Colorado Springs Switchbacks",
+        "away_team": "San Antonio",
+        "home_goals": 2,
+        "away_goals": 1,
+        "date": "2026-09-12",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Brooklyn FC",
+        "away_team": "Miami FC",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-09-12",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Hartford Athletic",
+        "away_team": "Tampa Bay Rowdies",
+        "home_goals": 3,
+        "away_goals": 1,
+        "date": "2026-09-12",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-16": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "Hartford Athletic",
+        "away_team": "Sporting JAX",
+        "home_goals": 2,
+        "away_goals": 0,
+        "date": "2026-09-16",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Chattanooga Red Wolves",
+        "away_team": "Forward Madison",
+        "home_goals": 1,
+        "away_goals": 0,
+        "date": "2026-09-16",
+        "league": "American USL League One",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Fort Wayne FC",
+        "away_team": "One Knoxville",
+        "home_goals": 2,
+        "away_goals": 3,
+        "date": "2026-09-16",
+        "league": "American USL League One",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-15": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "Indy Eleven",
+        "away_team": "Brooklyn FC",
+        "home_goals": 4,
+        "away_goals": 0,
+        "date": "2026-09-15",
+        "league": "American USL Championship",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Instituto",
+        "away_team": "Estudiantes de Río Cuarto",
+        "home_goals": 2,
+        "away_goals": 1,
+        "date": "2026-09-15",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Claypole",
+        "away_team": "Sacachispas",
+        "home_goals": 2,
+        "away_goals": 0,
+        "date": "2026-09-15",
+        "league": "Argentinian Primera C",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-18": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "Central Córdoba de Santiago del Estero",
+        "away_team": "Defensa y Justicia",
+        "home_goals": 2,
+        "away_goals": 2,
+        "date": "2026-09-18",
+        "league": "Argentinian Primera Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Bohemians",
+        "away_team": "Drogheda United",
+        "home_goals": 2,
+        "away_goals": 1,
+        "date": "2026-09-18",
+        "league": "Irish Premier Division",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Derry City",
+        "away_team": "Galway United",
+        "home_goals": 1,
+        "away_goals": 0,
+        "date": "2026-09-18",
+        "league": "Irish Premier Division",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-09": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "Defensores de Belgrano",
+        "away_team": "Los Andes",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-09-09",
+        "league": "Argentinian Primera B Nacional",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Philadelphia Union",
+        "away_team": "FC Cincinnati",
+        "home_goals": 5,
+        "away_goals": 0,
+        "date": "2026-09-09",
+        "league": "American Major League Soccer",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Atlanta United",
+        "away_team": "Orlando City",
+        "home_goals": 2,
+        "away_goals": 3,
+        "date": "2026-09-09",
+        "league": "American Major League Soccer",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-19": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": []
+  },
+  "2026-09-10": {
+    "fetched_at": "2026-09-20T00:27:06.790264",
+    "results": [
+      {
+        "home_team": "New York City FC",
+        "away_team": "New England Revolution",
+        "home_goals": 1,
+        "away_goals": 2,
+        "date": "2026-09-10",
+        "league": "American Major League Soccer",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Chicago Fire",
+        "away_team": "Inter Miami",
+        "home_goals": 1,
+        "away_goals": 1,
+        "date": "2026-09-10",
+        "league": "American Major League Soccer",
+        "source": "thesportsdb"
+      },
+      {
+        "home_team": "Minnesota United",
+        "away_team": "FC Dallas",
+        "home_goals": 1,
+        "away_goals": 2,
+        "date": "2026-09-10",
+        "league": "American Major League Soccer",
+        "source": "thesportsdb"
+      }
+    ]
+  },
+  "2026-09-20": {
+    "fetched_at": "2026-09-20T00:30:47.466818",
+    "results": []
+  }
+}

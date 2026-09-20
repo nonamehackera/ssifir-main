@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard · Futbol Tahmin Sistemi{% endblock %}
+{% block page_title %}Dashboard{% endblock %}
+{% block page_sub %}Sistem geneli istatistikler ve lig özeti{% endblock %}
+
+{% block body %}
+<div class="grid grid-4" id="kpi-row" style="margin-bottom:24px">
+  <div class="stat-card"><div class="v green" id="k-matches">…</div><div class="l">Toplam Maç</div></div>
+  <div class="stat-card"><div class="v blue" id="k-teams">…</div><div class="l">Takım</div></div>
+  <div class="stat-card"><div class="v yellow" id="k-leagues">…</div><div class="l">Lig</div></div>
+  <div class="stat-card"><div class="v purple" id="k-avg">…</div><div class="l">Ort. Gol / Maç</div></div>
+</div>
+
+<div class="two-col" style="margin-bottom:24px">
+  <div class="card">
+    <div class="section-title"><span class="bar"></span> Genel Dağılım</div>
+    <div class="kpi-list">
+      <div class="kpi"><span class="k-l">Ev Sahibi Galibiyet %</span><span class="k-v green" id="d-hw">–</span></div>
+      <div class="kpi"><span class="k-l">Beraberlik %</span><span class="k-v yellow" id="d-dr">–</span></div>
+      <div class="kpi"><span class="k-l">Deplasman Galibiyet %</span><span class="k-v red" id="d-aw">–</span></div>
+      <div class="kpi"><span class="k-l">BTTS (İki Takım da Gol) %</span><span class="k-v" id="d-btts">–</span></div>
+      <div class="kpi"><span class="k-l">Over 2.5 %</span><span class="k-v" id="d-o25">–</span></div>
+      <div class="kpi"><span class="k-l">Veri Aralığı</span><span class="k-v" id="d-range">–</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="section-title"><span class="bar"></span> Veri Kapsamı</div>
+    <div style="font-size:13px;color:var(--muted);line-height:1.7">
+      <div>Model: <b id="d-model" style="color:var(--text)">–</b></div>
+      <div>Yüklenme: <b id="d-loaded" style="color:var(--text)">–</b></div>
+      <div style="margin-top:12px">Bu panel, <b style="color:var(--text)">516.995</b> geçmiş maçtan hesaplanmış
+      gerçek istatistikleri gösterir. Takım veya lig seçerek derin analizlere inebilirsin.</div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <a class="btn sm" href="/">🎯 Tahmin Yap</a>
+        <a class="btn ghost sm" href="/results">📋 Sonuçlar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:24px">
+  <div class="section-title"><span class="bar"></span> Ligler — Özet</div>
+  <div class="league-grid" id="league-grid">
+    <div class="loading-box"><div class="spinner"></div></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="section-title"><span class="bar"></span> En Son Maçlar</div>
+  <div class="result-list" id="recent-list">
+    <div class="loading-box"><div class="spinner"></div></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function buildMatchRow(m) {
+  const res = m.result;
+  const tagColor = res === 'H' ? 'green' : res === 'D' ? 'yellow' : 'red';
+  const resTxt = res === 'H' ? 'E' : res === 'D' ? 'B' : 'D';
+  return `<div class="match-row" onclick="location.href='/team/${m.home_id}'">
+    <div class="mr-date">${m.date}</div>
+    <div class="mr-teams">
+      <div class="mr-team home">${m.home}</div>
+      <div class="mr-score">${m.home_goals}-${m.away_goals}</div>
+      <div class="mr-team away">${m.away}</div>
+    </div>
+    <div class="mr-league">${m.league}</div>
+    <div class="mr-tags"><span class="tag ${tagColor}">${resTxt}</span></div>
+  </div>`;
+}
+
+async function load() {
+  try {
+    const s = await API.get('/api/stats');
+    el('k-matches').textContent = (s.total_matches || 0).toLocaleString('tr-TR');
+    el('k-teams').textContent = (s.total_teams || 0).toLocaleString('tr-TR');
+    el('k-leagues').textContent = s.total_leagues || 0;
+    el('k-avg').textContent = s.avg_goals || 0;
+    el('d-hw').textContent = fmtPct((s.home_win_rate || 0) * 100);
+    el('d-dr').textContent = fmtPct((s.draw_rate || 0) * 100);
+    el('d-aw').textContent = fmtPct((1 - (s.home_win_rate || 0) - (s.draw_rate || 0)) * 100);
+    el('d-btts').textContent = fmtPct((s.btts_rate || 0) * 100);
+    el('d-o25').textContent = fmtPct((s.over25_rate || 0) * 100);
+    el('d-range').textContent = s.date_range || '–';
+    el('d-model').textContent = s.model_version || '–';
+    el('d-loaded').textContent = s.loaded_at || '–';
+    el('recent-list').innerHTML = (s.recent_matches || []).map(buildMatchRow).join('')
+      || '<div class="empty"><div class="e-ico">📭</div>Veri yok</div>';
+  } catch (e) {
+    toast('İstatistik yüklenemedi: ' + e.message, true);
+  }
+
+  try {
+    const leagues = await API.get('/api/league/summary');
+    const grid = el('league-grid');
+    if (!leagues.length) { grid.innerHTML = '<div class="empty">Lig bulunamadı</div>'; return; }
+    grid.innerHTML = leagues.map(l => `
+      <div class="league-card" onclick="location.href='/league/' + encodeURIComponent('${l.name.replace(/'/g, "")}')">
+        <div class="lc-name">${l.name}</div>
+        <div class="lc-meta">${l.teams} takım · ${l.matches.toLocaleString('tr-TR')} maç</div>
+        <div class="lc-meta" style="margin-top:6px">
+          Ort. gol <b style="color:var(--green)">${(l.avg_goals||0).toFixed(2)}</b> ·
+          BTTS <b>${(l.btts_rate||0)}%</b> · Üst2.5 <b>${(l.over25_rate||0)}%</b>
+        </div>
+      </div>`).join('');
+  } catch (e) {
+    el('league-grid').innerHTML = '<div class="empty">Lig özeti yüklenemedi</div>';
+  }
+}
+load();
+initChrome('dashboard');
+</script>
+{% endblock %}

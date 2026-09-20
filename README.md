@@ -1,101 +1,120 @@
-# Futbol Maç Tahmin Sistemi — Üretim Sürümü
+# ssifir-main
 
-Geçmiş maçlardan öğrenen, maç öncesi tahmin üreten, canlı veriyle güncel
-tahmin yapan ve kendini ölçerek geliştiren futbol tahmin platformu.
+Futbol mac tahmin sistemi - LightGBM + XGB ensemble model, feedback loop ve market validator ile.
 
-## Durum: ÇALIŞIYOR (end-to-end doğrulandı)
+## Ozellikler
 
-Tüm pipeline ücretsiz **Football-Data.co.uk** verisiyle çalışır (API anahtarı
-gerekmez). 17,612 maç, 12 lig, 2021/22–2024/25 sezonları.
+- **138 feature** ile mac sonucu tahmini (1X2, gol, korner, BTTS, over/under)
+- **3x LightGBM + 3x XGB** ensemble (seed=42,123,789)
+- **Isotonic Regression** kalibrasyonu
+- **Market Validator**: Takim/lig istatistikleriyle tum pazarlari dogruluyor
+- **Error Memory**: Yanlis tahminleri ogrenen hafiza sistemi
+- **Web arayuzu**: Flask ile gercek zamanli tahmin + feedback API
 
-## Doğrulanmış Gerçek Sonuçlar
-
-Walk-forward (4 fold, kronolojik, out-of-sample):
-```
-model          log_loss  brier  accuracy   ece   btts_auc  over25_auc
-catboost_odds    0.9697  0.576    0.517    0.032   0.549     0.603
-catboost         0.9875  0.589    0.497    0.034   0.543     0.582
-ensemble         0.9891  0.590    0.488    0.041   0.541     0.584
-elo              1.0128  0.601    0.432    0.047    NaN       NaN
-dixon_coles      1.0671  0.641    0.460    0.062   0.535     0.564
-lightgbm         1.1060  0.644    0.484    0.111   0.511     0.547
-```
-Naive baseline log-loss = 1.0986. Tüm modeller baseline'ı geçiyor.
-
-Veri gerçekliği (sızıntı yok): BTTS %53.1, Over2.5 %52.4, ort. gol 1.53/1.23.
-
-## Mimari (ROADMAP'a uygun)
-
-```
-Football-Data.co.uk (free) -> canonical.py -> gold/matches.parquet
-                                      |
-                              feature_engine (point-in-time, 85 feature)
-                                      |
-        +-----------+-----------+-----------+-----------+
-        ELO       DIXON-COLES   CATBOOST   LIGHTGBM    ENSEMBLE
-                                      |
-        +-----------+-----------+-----------+-----------+
-   calibration/   registry/   prediction/   odds/(CLV)   live/   monitoring/
-        |
-   PostgreSQL (fixtures, odds_snapshots, live_snapshots, model_versions)
-        |
-   api/service.py (FastAPI /predict)
-```
-
-## Çalıştırma
+## Kurulum
 
 ```bash
-# 1. Veri + feature (ücretsiz, anahtarsız)
-.venv/bin/python -c "from ingestion.football_data.canonical import build_matches;
-from feature_engine.engine import build_features;
-build_features(build_matches())"
-
-# 2. Walk-forward karşılaştırma
-.venv/bin/python -m jobs._eval_wf --folds 4 --quick
-
-# 3. Tüm doğrulama testleri
-.venv/bin/python tests/run_all.py
-
-# 4. API başlat (model belleğe yüklenir)
-.venv/bin/python -m api.service
-#   GET  /health
-#   POST /predict  {"fixture_id": 123, "features": {...}}
+pip install -r requirements.txt
 ```
 
-## Modüller
+## Kullanim
 
-| Modül | Dosya | Durum |
-|-------|-------|-------|
-| Veri toplama (free) | `ingestion/football_data/canonical.py` | ✅ 17.6k maç |
-| Feature engine | `feature_engine/engine.py` | ✅ 85 leakage-free feature |
-| Elo | `models/elo/model.py` | ✅ log-loss 1.013 |
-| Dixon-Coles | `models/poisson/model.py` | ✅ λ kalibre (1.55/1.24) |
-| CatBoost | `models/catboost/model.py` | ✅ en iyi (0.97) |
-| LightGBM | `models/lightgbm/model.py` | ✅ early-stop (1.00) |
-| Ensemble | `models/ensemble/ensemble.py` | ✅ ağırlık opt. |
-| Kalibrasyon | `calibration/calibrators.py` | ✅ akıllı seçim |
-| Registry | `registry/registry.py` | ✅ cand→staging→prod |
-| Odds/CLV | `odds/archive.py` | ✅ 17.5k maç CLV |
-| Prediction | `prediction/pipeline.py` | ✅ ROADMAP 52 JSON |
-| API | `api/service.py` | ✅ FastAPI /predict |
-| Canlı model | `live/model.py` | ✅ geleceğe bakmaz |
-| Drift | `monitoring/drift.py` | ✅ threshold alarm |
+### Tahmin
+```bash
+python predict.py
+```
 
-## Önemli Prensipler (ROADMAP)
+Ornek:
+```
+Galatasaray - Fenerbahce
+```
 
-1. **Point-in-time feature reconstruction** — hiçbir model gelecek bilgisi
-   kullanmaz (feature engine kronolojik sıralı, sadece geçmiş state).
-2. **Walk-forward validation** — random split YOK, kronolojik fold'lar.
-3. **Dürüst metrikler** — accuracy tek başına yetmez; log-loss, Brier, ECE,
-   CLV, AUC.
-4. **Kalibrasyon her zaman iyileştirmez** — zaten kalibre modelde (CatBoost)
-   esnek kalibrator overfit olup zarar verir; modül akıllı seçim yapar.
-5. **Canlı model geleceğe bakmaz** (ROADMAP 23) — t anı tahmini sadece 0-t.
+### Web Sunucusu
+```bash
+python run_web.py
+```
 
-## Sonraki Adımlar (ROADMAP Phase 6+)
+### Toplu Tahmin
+```bash
+python predict.py
+> toplu tahminler/matches.json
+```
 
-- [ ] API-Football / Sportmonks entegrasyonu (lineups, injuries, xG) — ücretli
-- [ ] Canlı odds polling (15-30sn) + canlı snapshot arşivi
-- [ ] Player strength / expected XI modeli
-- [ ] MLflow tracking (şu an registry manuel)
-- [ ] Redis canlı state cache
+## Feedback Loop
+
+Her mac sonucunu kaydederek sistem kendini gelistirir:
+
+```python
+from predict import tahmin, sonuc_kaydet
+
+# Tahmin yap
+result, err = tahmin(home_id, away_id)
+
+# Mac bittiginde sonucu kaydet
+sonuc_kaydet(home_id, away_id, league,
+             result["home_win"], result["draw"], result["away_win"],
+             actual_result="H")  # H=Ev sahibi, D=Beraberlik, A=Deplasman
+```
+
+### Market Validator
+Her tahmini takim istatistikleriyle karsilastirarak duzeltiyor:
+- **1X2**: Gol oranlarina gore ev/deplansman gucu
+- **BTTS**: Takimlarin gol yeme/atlama oranlari
+- **Over/Under**: Gol beklentisi
+- **Korner**: Takim korner ortalamalari
+
+### Error Memory
+Yanlis tahminleri ogrenen hafiza:
+- Her takimin hata orani takip ediliyor
+- Cok hata yapan takimlara "dikkat" uyarisi
+- Bir dahaki sefere daha temkinli tahmin
+
+## Proje Yapisi
+
+```
+ssifir-main/
+├── predict.py              # Ana tahmin arayuzu
+├── run_web.py              # Web sunucusu baslatma
+├── feedback/               # Feedback loop sistemi
+│   ├── market_validator.py # Pazar dogrulama
+│   ├── error_memory.py     # Hata ogrenme hafizasi
+│   ├── feedback_predictor.py
+│   ├── error_tracker.py
+│   ├── pattern_detector.py
+│   └── self_correction.py
+├── web/                    # Web arayuzu
+│   └── app.py
+├── models/                 # Model modulleri
+│   ├── lightgbm/
+│   ├── xgboost/
+│   ├── poisson/
+│   ├── elo/
+│   └── ensemble/
+├── scripts/                # Yardimci scriptler
+├── tests/                  # Test dosyalari
+├── data/                   # Veri dosyalari
+├── configs/                # Ayarlar
+└── tahminler/              # Kupon ve sonuc verileri
+```
+
+## Veri
+
+- `data/gold/features_enhanced_v5.parquet`: 528K satir, 192 feature, 2015-2026
+- `data/gold/team_id_to_name.json`: Takim ID -> isim eslesmesi
+
+## Test
+
+```bash
+python test_feedback_comprehensive.py
+```
+
+11 kapsamli test - hepsi basarili.
+
+## Teknolojiler
+
+- Python 3.14
+- LightGBM, XGBoost
+- scikit-learn (IsotonicRegression)
+- Flask (web)
+- pandas, numpy
+- pyarrow (parquet)

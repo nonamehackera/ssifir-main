@@ -1,0 +1,6 @@
+[
+  {"home": "Galatasaray", "away": "Fenerbahce", "home_odds": 2.10, "draw_odds": 3.40, "away_odds": 3.20},
+  {"home": "Man City", "away": "Liverpool", "home_odds": 1.85, "draw_odds": 3.60, "away_odds": 3.80},
+  {"home": "Arsenal", "away": "Chelsea", "home_odds": 1.75, "draw_odds": 3.50, "away_odds": 4.20},
+  {"home": "Barcelona", "away": "Real Madrid", "home_odds": 2.00, "draw_odds": 3.30, "away_odds": 3.50}
+]

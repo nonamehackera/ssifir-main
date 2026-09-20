@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "improvement": 0.02131627349060376,
+  "actions_count": 1,
+  "actions": [
+    {
+      "type": "sonuc_kalibrasyon",
+      "description": "'D' sonucu için kalibrasyon düzeltmesi",
+      "expected_improvement": 0.07993602558976409
+    }
+  ],
+  "metrics_before": {
+    "accuracy": 0.512,
+    "log_loss": 0.9888667142218798,
+    "brier": 0.5908472533518629
+  },
+  "metrics_after": {
+    "accuracy": 0.5519680127948821,
+    "log_loss": 0.972879509103927,
+    "brier": 0.5828536507928865
+  }
+}

@@ -1,0 +1,4330 @@
+[
+  {
+    "id": "746-1000787-1788462892",
+    "timestamp": "2026-09-08T00:09:59.618872",
+    "home_id": 746,
+    "away_id": 1000787,
+    "home_name": "Çaykur Rizespor",
+    "away_name": "Alanyaspor",
+    "home_elo": 1473,
+    "away_elo": 1481,
+    "result": {
+      "home_win": 61.4,
+      "draw": 22.5,
+      "away_win": 16.1,
+      "winner": "Ev Sahibi",
+      "winner_prob": 61.4
+    },
+    "goals": {
+      "home_lambda": 1.904,
+      "away_lambda": 0.993,
+      "expected_total": 2.896
+    },
+    "total_goals": {
+      "over15": 78.9,
+      "under15": 21.1,
+      "over25": 56.8,
+      "under25": 43.2,
+      "over35": 32.2,
+      "under35": 67.8
+    },
+    "double_chance": {
+      "1X": 75.3,
+      "12": 77.7,
+      "X2": 47.0
+    },
+    "corners": {
+      "predicted_total": 7.0,
+      "over75": 40.1,
+      "under75": 59.9,
+      "over85": 27.1,
+      "under85": 72.9,
+      "over95": 17.0,
+      "under95": 83.0,
+      "over105": 9.9,
+      "under105": 90.1
+    },
+    "btts_yes": 54.8,
+    "btts_no": 45.2,
+    "top_scores": [
+      {
+        "score": "1-0",
+        "probability": 0.1051
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1044
+      },
+      {
+        "score": "2-0",
+        "probability": 0.1001
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0993
+      },
+      {
+        "score": "3-0",
+        "probability": 0.0635
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 85.9,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 85.9,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 85.3,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 80.7,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 78.9,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 77.7,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 75.3,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Korner 8.5 Alt",
+          "pick": "A8.5",
+          "confidence": 72.9,
+          "reason": "Ort. 7.0 korner bekleniyor"
+        },
+        {
+          "market": "IY Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 71.9,
+          "reason": "Ilk yari gol olur"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 40.2,
+      "iy_ms_dh": 17.1,
+      "iy_ms_da": 7.7,
+      "iy_over05": 71.9,
+      "two_y_over05": 80.7,
+      "two_y_over15": 38.2,
+      "two_y_more": 43.7,
+      "first_goal_home": 85.9,
+      "hk1_home": 26.7,
+      "hk1_away": 38.9,
+      "corner_most_home": 53.3,
+      "corner_even": 50.2,
+      "corner_over95": 49.4
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%61.4)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "1001093-726-1788462299",
+    "timestamp": "2026-09-08T00:10:00.046711",
+    "home_id": 1001093,
+    "away_id": 726,
+    "home_name": "Göztepe",
+    "away_name": "Gaziantepspor",
+    "home_elo": 1529,
+    "away_elo": 1500,
+    "result": {
+      "home_win": 77.1,
+      "draw": 17.5,
+      "away_win": 5.4,
+      "winner": "Ev Sahibi",
+      "winner_prob": 77.1
+    },
+    "goals": {
+      "home_lambda": 2.185,
+      "away_lambda": 0.636,
+      "expected_total": 2.821
+    },
+    "total_goals": {
+      "over15": 79.3,
+      "under15": 20.7,
+      "over25": 62.1,
+      "under25": 37.9,
+      "over35": 39.9,
+      "under35": 60.1
+    },
+    "double_chance": {
+      "1X": 87.1,
+      "12": 83.1,
+      "X2": 29.8
+    },
+    "corners": {
+      "predicted_total": 7.0,
+      "over75": 40.1,
+      "under75": 59.9,
+      "over85": 27.1,
+      "under85": 72.9,
+      "over95": 17.0,
+      "under95": 83.0,
+      "over105": 9.9,
+      "under105": 90.1
+    },
+    "btts_yes": 51.7,
+    "btts_no": 48.3,
+    "top_scores": [
+      {
+        "score": "2-0",
+        "probability": 0.1421
+      },
+      {
+        "score": "1-0",
+        "probability": 0.1301
+      },
+      {
+        "score": "3-0",
+        "probability": 0.1036
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0904
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0827
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 90.6,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 90.6,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 89.3,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 87.1,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 83.1,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 81.4,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 79.3,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Ev Sahibi Galibiyet",
+          "pick": "1",
+          "confidence": 77.1,
+          "reason": "Ev sahibi favori (77%)"
+        },
+        {
+          "market": "En Cok Korner Ev",
+          "pick": "1",
+          "confidence": 74.1,
+          "reason": "Ev sahibi daha cok korner kullanir"
+        },
+        {
+          "market": "Korner 8.5 Alt",
+          "pick": "A8.5",
+          "confidence": 72.9,
+          "reason": "Ort. 7.0 korner bekleniyor"
+        },
+        {
+          "market": "IY Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 71.6,
+          "reason": "Ilk yari gol olur"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 39.8,
+      "iy_ms_dh": 22.4,
+      "iy_ms_da": 3.4,
+      "iy_over05": 71.6,
+      "two_y_over05": 81.4,
+      "two_y_over15": 47.4,
+      "two_y_more": 47.0,
+      "first_goal_home": 90.6,
+      "hk1_home": 53.7,
+      "hk1_away": 18.9,
+      "corner_most_home": 74.1,
+      "corner_even": 52.4,
+      "corner_over95": 61.9
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%77.1)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "422-432-1788462285",
+    "timestamp": "2026-09-08T00:10:00.402254",
+    "home_id": 422,
+    "away_id": 432,
+    "home_name": "Hamburg",
+    "away_name": "Mainz",
+    "home_elo": 1500,
+    "away_elo": 1434,
+    "result": {
+      "home_win": 63.0,
+      "draw": 21.6,
+      "away_win": 15.4,
+      "winner": "Ev Sahibi",
+      "winner_prob": 63.0
+    },
+    "goals": {
+      "home_lambda": 2.186,
+      "away_lambda": 2.285,
+      "expected_total": 4.472
+    },
+    "total_goals": {
+      "over15": 86.3,
+      "under15": 13.7,
+      "over25": 67.1,
+      "under25": 32.9,
+      "over35": 51.3,
+      "under35": 48.7
+    },
+    "double_chance": {
+      "1X": 75.0,
+      "12": 78.7,
+      "X2": 46.3
+    },
+    "corners": {
+      "predicted_total": 7.3,
+      "over75": 45.3,
+      "under75": 54.7,
+      "over85": 31.7,
+      "under85": 68.3,
+      "over95": 20.6,
+      "under95": 79.4,
+      "over105": 12.5,
+      "under105": 87.5
+    },
+    "btts_yes": 68.1,
+    "btts_no": 31.9,
+    "top_scores": [
+      {
+        "score": "2-2",
+        "probability": 0.0713
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0652
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0624
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0571
+      },
+      {
+        "score": "2-3",
+        "probability": 0.0543
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 87.9,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 87.9,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 86.3,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 85.8,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 80.9,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.7,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 75.0,
+          "reason": "Ev sahibi yenilmez"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 41.6,
+      "iy_ms_dh": 16.8,
+      "iy_ms_da": 9.1,
+      "iy_over05": 69.0,
+      "two_y_over05": 80.9,
+      "two_y_over15": 41.0,
+      "two_y_more": 43.0,
+      "first_goal_home": 87.9,
+      "hk1_home": 31.2,
+      "hk1_away": 39.2,
+      "corner_most_home": 52.4,
+      "corner_even": 55.9,
+      "corner_over95": 57.1
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%63.0)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "8000075-434-1788462267",
+    "timestamp": "2026-09-08T00:10:00.702729",
+    "home_id": 8000075,
+    "away_id": 434,
+    "home_name": "Eintracht Frankfurt",
+    "away_name": "Augsburg",
+    "home_elo": 1481,
+    "away_elo": 1577,
+    "result": {
+      "home_win": 59.5,
+      "draw": 22.1,
+      "away_win": 18.4,
+      "winner": "Ev Sahibi",
+      "winner_prob": 59.5
+    },
+    "goals": {
+      "home_lambda": 1.339,
+      "away_lambda": 1.435,
+      "expected_total": 2.774
+    },
+    "total_goals": {
+      "over15": 77.6,
+      "under15": 22.4,
+      "over25": 57.3,
+      "under25": 42.7,
+      "over35": 38.1,
+      "under35": 61.9
+    },
+    "double_chance": {
+      "1X": 71.7,
+      "12": 78.2,
+      "X2": 50.2
+    },
+    "corners": {
+      "predicted_total": 7.8,
+      "over75": 51.9,
+      "under75": 48.1,
+      "over85": 38.0,
+      "under85": 62.0,
+      "over95": 25.9,
+      "under95": 74.1,
+      "over105": 16.5,
+      "under105": 83.5
+    },
+    "btts_yes": 56.0,
+    "btts_no": 44.0,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1199
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0896
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0861
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0836
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0803
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ev Sahibi Gol Atar",
+        "pick": "Var",
+        "confidence": 86.3,
+        "reason": "Ev sahibi en az 1 gol atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 86.3,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 84.3,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 81.6,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.2,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 77.6,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 71.7,
+          "reason": "Ev sahibi yenilmez"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 46.0,
+      "iy_ms_dh": 20.1,
+      "iy_ms_da": 12.2,
+      "iy_over05": 64.3,
+      "two_y_over05": 81.6,
+      "two_y_over15": 50.3,
+      "two_y_more": 47.6,
+      "first_goal_home": 84.3,
+      "hk1_home": 31.7,
+      "hk1_away": 31.9,
+      "corner_most_home": 63.6,
+      "corner_even": 57.7,
+      "corner_over95": 13.0
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%59.5)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "731-725-1788462241",
+    "timestamp": "2026-09-08T00:10:01.013297",
+    "home_id": 731,
+    "away_id": 725,
+    "home_name": "Trabzonspor",
+    "away_name": "GençlerbirliÄŸi",
+    "home_elo": 1538,
+    "away_elo": 1527,
+    "result": {
+      "home_win": 69.3,
+      "draw": 20.5,
+      "away_win": 10.1,
+      "winner": "Ev Sahibi",
+      "winner_prob": 69.3
+    },
+    "goals": {
+      "home_lambda": 2.059,
+      "away_lambda": 1.471,
+      "expected_total": 3.53
+    },
+    "total_goals": {
+      "over15": 82.4,
+      "under15": 17.6,
+      "over25": 60.5,
+      "under25": 39.5,
+      "over35": 38.3,
+      "under35": 61.7
+    },
+    "double_chance": {
+      "1X": 81.7,
+      "12": 79.9,
+      "X2": 38.4
+    },
+    "corners": {
+      "predicted_total": 7.0,
+      "over75": 40.1,
+      "under75": 59.9,
+      "over85": 27.1,
+      "under85": 72.9,
+      "over95": 17.0,
+      "under95": 83.0,
+      "over105": 9.9,
+      "under105": 90.1
+    },
+    "btts_yes": 58.9,
+    "btts_no": 41.1,
+    "top_scores": [
+      {
+        "score": "2-1",
+        "probability": 0.0914
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0888
+      },
+      {
+        "score": "2-2",
+        "probability": 0.0672
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0653
+      },
+      {
+        "score": "3-1",
+        "probability": 0.0627
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ev Sahibi Gol Atar",
+        "pick": "Var",
+        "confidence": 89.6,
+        "reason": "Ev sahibi en az 1 gol atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 89.6,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 88.7,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 82.4,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 81.7,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 80.5,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 79.9,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Korner 8.5 Alt",
+          "pick": "A8.5",
+          "confidence": 72.9,
+          "reason": "Ort. 7.0 korner bekleniyor"
+        },
+        {
+          "market": "IY Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 72.2,
+          "reason": "Ilk yari gol olur"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 40.2,
+      "iy_ms_dh": 15.3,
+      "iy_ms_da": 7.3,
+      "iy_over05": 72.2,
+      "two_y_over05": 80.5,
+      "two_y_over15": 41.8,
+      "two_y_more": 44.9,
+      "first_goal_home": 88.7,
+      "hk1_home": 27.7,
+      "hk1_away": 33.5,
+      "corner_most_home": 61.3,
+      "corner_even": 50.1,
+      "corner_over95": 46.2
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%69.3)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "1002713-1001358-1788462227",
+    "timestamp": "2026-09-08T00:10:01.276955",
+    "home_id": 1002713,
+    "away_id": 1001358,
+    "home_name": "Kocaelispor",
+    "away_name": "Samsunspor",
+    "home_elo": 1520,
+    "away_elo": 1529,
+    "result": {
+      "home_win": 60.4,
+      "draw": 27.3,
+      "away_win": 12.3,
+      "winner": "Ev Sahibi",
+      "winner_prob": 60.4
+    },
+    "goals": {
+      "home_lambda": 1.154,
+      "away_lambda": 1.34,
+      "expected_total": 2.494
+    },
+    "total_goals": {
+      "over15": 74.9,
+      "under15": 25.1,
+      "over25": 51.7,
+      "under25": 48.3,
+      "over35": 28.6,
+      "under35": 71.4
+    },
+    "double_chance": {
+      "1X": 79.6,
+      "12": 72.4,
+      "X2": 47.9
+    },
+    "corners": {
+      "predicted_total": 7.0,
+      "over75": 40.1,
+      "under75": 59.9,
+      "over85": 27.1,
+      "under85": 72.9,
+      "over95": 17.0,
+      "under95": 83.0,
+      "over105": 9.9,
+      "under105": 90.1
+    },
+    "btts_yes": 56.0,
+    "btts_no": 44.0,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1277
+      },
+      {
+        "score": "0-1",
+        "probability": 0.1107
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0953
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0856
+      },
+      {
+        "score": "0-0",
+        "probability": 0.0826
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ev Sahibi Gol Atar",
+        "pick": "Var",
+        "confidence": 81.0,
+        "reason": "Ev sahibi en az 1 gol atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 81.0,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 79.8,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 79.6,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 79.1,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 74.9,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Korner 8.5 Alt",
+          "pick": "A8.5",
+          "confidence": 72.9,
+          "reason": "Ort. 7.0 korner bekleniyor"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 72.4,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Gol 3.5 Alt",
+          "pick": "A3.5",
+          "confidence": 71.4,
+          "reason": "Dusuk gol beklentisi (2.5)"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 40.3,
+      "iy_ms_dh": 16.2,
+      "iy_ms_da": 11.0,
+      "iy_over05": 69.9,
+      "two_y_over05": 79.1,
+      "two_y_over15": 41.0,
+      "two_y_more": 43.8,
+      "first_goal_home": 79.8,
+      "hk1_home": 25.4,
+      "hk1_away": 39.5,
+      "corner_most_home": 53.1,
+      "corner_even": 45.0,
+      "corner_over95": 50.8
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%60.4)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "18-7-1788462217",
+    "timestamp": "2026-09-08T00:10:01.594842",
+    "home_id": 18,
+    "away_id": 7,
+    "home_name": "Arsenal",
+    "away_name": "Chelsea",
+    "home_elo": 1579,
+    "away_elo": 1583,
+    "result": {
+      "home_win": 69.1,
+      "draw": 20.4,
+      "away_win": 10.5,
+      "winner": "Ev Sahibi",
+      "winner_prob": 69.1
+    },
+    "goals": {
+      "home_lambda": 2.431,
+      "away_lambda": 0.988,
+      "expected_total": 3.418
+    },
+    "total_goals": {
+      "over15": 82.4,
+      "under15": 17.6,
+      "over25": 59.3,
+      "under25": 40.7,
+      "over35": 38.4,
+      "under35": 61.6
+    },
+    "double_chance": {
+      "1X": 81.7,
+      "12": 79.9,
+      "X2": 38.4
+    },
+    "corners": {
+      "predicted_total": 10.9,
+      "over75": 84.9,
+      "under75": 15.1,
+      "over85": 75.7,
+      "under85": 24.3,
+      "over95": 64.7,
+      "under95": 35.3,
+      "over105": 52.6,
+      "under105": 47.4
+    },
+    "btts_yes": 54.3,
+    "btts_no": 45.7,
+    "top_scores": [
+      {
+        "score": "2-0",
+        "probability": 0.0968
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0956
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0796
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0787
+      },
+      {
+        "score": "3-0",
+        "probability": 0.0784
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 88.5,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 88.5,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 85.5,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Korner 7.5 Ust",
+          "pick": "U7.5",
+          "confidence": 84.9,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 82.4,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 81.7,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 80.3,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 79.9,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Korner 8.5 Ust",
+          "pick": "U8.5",
+          "confidence": 75.7,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "En Cok Korner Ev",
+          "pick": "1",
+          "confidence": 75.5,
+          "reason": "Ev sahibi daha cok korner kullanir"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 41.5,
+      "iy_ms_dh": 16.8,
+      "iy_ms_da": 5.2,
+      "iy_over05": 68.6,
+      "two_y_over05": 80.3,
+      "two_y_over15": 38.0,
+      "two_y_more": 44.9,
+      "first_goal_home": 88.5,
+      "hk1_home": 34.5,
+      "hk1_away": 23.5,
+      "corner_most_home": 75.5,
+      "corner_even": 51.0,
+      "corner_over95": 58.3
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%69.1)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "727-1003074-1788462205",
+    "timestamp": "2026-09-08T00:10:01.837395",
+    "home_id": 727,
+    "away_id": 1003074,
+    "home_name": "KasımpaÅŸa",
+    "away_name": "Amed",
+    "home_elo": 1527,
+    "away_elo": 1315,
+    "result": {
+      "home_win": 59.2,
+      "draw": 21.8,
+      "away_win": 19.0,
+      "winner": "Ev Sahibi",
+      "winner_prob": 59.2
+    },
+    "goals": {
+      "home_lambda": 1.645,
+      "away_lambda": 1.82,
+      "expected_total": 3.465
+    },
+    "total_goals": {
+      "over15": 84.0,
+      "under15": 16.0,
+      "over25": 62.6,
+      "under25": 37.4,
+      "over35": 42.5,
+      "under35": 57.5
+    },
+    "double_chance": {
+      "1X": 72.1,
+      "12": 78.5,
+      "X2": 49.3
+    },
+    "corners": {
+      "predicted_total": 7.0,
+      "over75": 40.1,
+      "under75": 59.9,
+      "over85": 27.1,
+      "under85": 72.9,
+      "over95": 17.0,
+      "under95": 83.0,
+      "over105": 9.9,
+      "under105": 90.1
+    },
+    "btts_yes": 64.0,
+    "btts_no": 36.0,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.0936
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0852
+      },
+      {
+        "score": "2-1",
+        "probability": 0.077
+      },
+      {
+        "score": "2-2",
+        "probability": 0.0701
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0569
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ev Sahibi Gol Atar",
+        "pick": "Var",
+        "confidence": 86.4,
+        "reason": "Ev sahibi en az 1 gol atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 86.4,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 84.0,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 83.3,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 80.9,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.5,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "IY Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 77.7,
+          "reason": "Ilk yari gol olur"
+        },
+        {
+          "market": "Korner 8.5 Alt",
+          "pick": "A8.5",
+          "confidence": 72.9,
+          "reason": "Ort. 7.0 korner bekleniyor"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 72.1,
+          "reason": "Ev sahibi yenilmez"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 35.2,
+      "iy_ms_dh": 12.9,
+      "iy_ms_da": 7.6,
+      "iy_over05": 77.7,
+      "two_y_over05": 80.9,
+      "two_y_over15": 46.7,
+      "two_y_more": 43.6,
+      "first_goal_home": 83.3,
+      "hk1_home": 27.9,
+      "hk1_away": 47.2,
+      "corner_most_home": 42.5,
+      "corner_even": 51.4,
+      "corner_over95": 51.7
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%59.2)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "1003076-1002708-1788462191",
+    "timestamp": "2026-09-08T00:10:02.076988",
+    "home_id": 1003076,
+    "away_id": 1002708,
+    "home_name": "Çorum FK",
+    "away_name": "Eyüpspor",
+    "home_elo": 1570,
+    "away_elo": 1558,
+    "result": {
+      "home_win": 71.0,
+      "draw": 21.1,
+      "away_win": 7.9,
+      "winner": "Ev Sahibi",
+      "winner_prob": 71.0
+    },
+    "goals": {
+      "home_lambda": 1.736,
+      "away_lambda": 0.89,
+      "expected_total": 2.626
+    },
+    "total_goals": {
+      "over15": 75.8,
+      "under15": 24.2,
+      "over25": 53.9,
+      "under25": 46.1,
+      "over35": 30.0,
+      "under35": 70.0
+    },
+    "double_chance": {
+      "1X": 85.0,
+      "12": 79.2,
+      "X2": 35.7
+    },
+    "corners": {
+      "predicted_total": 8.2,
+      "over75": 57.7,
+      "under75": 42.3,
+      "over85": 43.7,
+      "under85": 56.3,
+      "over95": 31.0,
+      "under95": 69.0,
+      "over105": 20.6,
+      "under105": 79.4
+    },
+    "btts_yes": 50.5,
+    "btts_no": 49.5,
+    "top_scores": [
+      {
+        "score": "1-0",
+        "probability": 0.1256
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1118
+      },
+      {
+        "score": "2-0",
+        "probability": 0.109
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0971
+      },
+      {
+        "score": "0-0",
+        "probability": 0.0723
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 87.8,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 87.8,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 87.6,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 85.0,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "En Cok Korner Ev",
+          "pick": "1",
+          "confidence": 79.5,
+          "reason": "Ev sahibi daha cok korner kullanir"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 79.2,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 78.9,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 75.8,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "IY Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 71.9,
+          "reason": "Ilk yari gol olur"
+        },
+        {
+          "market": "Ev Sahibi Galibiyet",
+          "pick": "1",
+          "confidence": 71.0,
+          "reason": "Ev sahibi favori (71%)"
+        },
+        {
+          "market": "Gol 3.5 Alt",
+          "pick": "A3.5",
+          "confidence": 70.0,
+          "reason": "Dusuk gol beklentisi (2.6)"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 39.6,
+      "iy_ms_dh": 19.1,
+      "iy_ms_da": 8.2,
+      "iy_over05": 71.9,
+      "two_y_over05": 78.9,
+      "two_y_over15": 45.7,
+      "two_y_more": 42.9,
+      "first_goal_home": 87.8,
+      "hk1_home": 27.7,
+      "hk1_away": 33.8,
+      "corner_most_home": 79.5,
+      "corner_even": 42.4,
+      "corner_over95": 68.8
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%71.0)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "4-19-1788462178",
+    "timestamp": "2026-09-08T00:10:02.327091",
+    "home_id": 4,
+    "away_id": 19,
+    "home_name": "Everton",
+    "away_name": "Man United",
+    "home_elo": 1535,
+    "away_elo": 1538,
+    "result": {
+      "home_win": 56.6,
+      "draw": 23.3,
+      "away_win": 20.1,
+      "winner": "Ev Sahibi",
+      "winner_prob": 56.6
+    },
+    "goals": {
+      "home_lambda": 1.662,
+      "away_lambda": 2.094,
+      "expected_total": 3.756
+    },
+    "total_goals": {
+      "over15": 85.5,
+      "under15": 14.5,
+      "over25": 66.6,
+      "under25": 33.4,
+      "over35": 45.4,
+      "under35": 54.6
+    },
+    "double_chance": {
+      "1X": 71.3,
+      "12": 76.7,
+      "X2": 51.9
+    },
+    "corners": {
+      "predicted_total": 9.1,
+      "over75": 69.2,
+      "under75": 30.8,
+      "over85": 56.3,
+      "under85": 43.7,
+      "over95": 43.1,
+      "under95": 56.9,
+      "over105": 31.1,
+      "under105": 68.9
+    },
+    "btts_yes": 64.7,
+    "btts_no": 35.3,
+    "top_scores": [
+      {
+        "score": "1-2",
+        "probability": 0.0852
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0814
+      },
+      {
+        "score": "2-2",
+        "probability": 0.0708
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0676
+      },
+      {
+        "score": "1-3",
+        "probability": 0.0595
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ev Sahibi Gol Atar",
+        "pick": "Var",
+        "confidence": 88.7,
+        "reason": "Ev sahibi en az 1 gol atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 88.7,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 86.7,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 85.5,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 80.5,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 76.7,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 71.3,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "IY Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 70.9,
+          "reason": "Ilk yari gol olur"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 40.5,
+      "iy_ms_dh": 15.0,
+      "iy_ms_da": 7.8,
+      "iy_over05": 70.9,
+      "two_y_over05": 80.5,
+      "two_y_over15": 45.2,
+      "two_y_more": 43.7,
+      "first_goal_home": 86.7,
+      "hk1_home": 26.6,
+      "hk1_away": 39.4,
+      "corner_most_home": 44.2,
+      "corner_even": 52.3,
+      "corner_over95": 54.5
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%56.6)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "732-723-1788462161",
+    "timestamp": "2026-09-08T00:10:02.580405",
+    "home_id": 732,
+    "away_id": 723,
+    "home_name": "Fenerbahçe",
+    "away_name": "Beşiktaş",
+    "home_elo": 1602,
+    "away_elo": 1659,
+    "result": {
+      "home_win": 61.8,
+      "draw": 22.0,
+      "away_win": 16.2,
+      "winner": "Ev Sahibi",
+      "winner_prob": 61.8
+    },
+    "goals": {
+      "home_lambda": 3.082,
+      "away_lambda": 2.404,
+      "expected_total": 5.486
+    },
+    "total_goals": {
+      "over15": 90.6,
+      "under15": 9.4,
+      "over25": 73.7,
+      "under25": 26.3,
+      "over35": 55.9,
+      "under35": 44.1
+    },
+    "double_chance": {
+      "1X": 75.1,
+      "12": 78.3,
+      "X2": 46.6
+    },
+    "corners": {
+      "predicted_total": 7.0,
+      "over75": 40.1,
+      "under75": 59.9,
+      "over85": 27.1,
+      "under85": 72.9,
+      "over95": 17.0,
+      "under95": 83.0,
+      "over105": 9.9,
+      "under105": 90.1
+    },
+    "btts_yes": 71.5,
+    "btts_no": 28.5,
+    "top_scores": [
+      {
+        "score": "3-2",
+        "probability": 0.0584
+      },
+      {
+        "score": "2-2",
+        "probability": 0.0569
+      },
+      {
+        "score": "3-1",
+        "probability": 0.0486
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0473
+      },
+      {
+        "score": "3-3",
+        "probability": 0.0468
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 1.5 Ust",
+        "pick": "U1.5",
+        "confidence": 90.6,
+        "reason": "En az 2 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 90.6,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 87.4,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 85.9,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 80.5,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.3,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "IY Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 77.1,
+          "reason": "Ilk yari gol olur"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 75.1,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Gol 2.5 Ust",
+          "pick": "U2.5",
+          "confidence": 73.7,
+          "reason": "Ort. 5.5 gol bekleniyor"
+        },
+        {
+          "market": "Korner 8.5 Alt",
+          "pick": "A8.5",
+          "confidence": 72.9,
+          "reason": "Ort. 7.0 korner bekleniyor"
+        },
+        {
+          "market": "BTTS Evet",
+          "pick": "Var",
+          "confidence": 71.5,
+          "reason": "Her iki takim da gol atar"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 38.1,
+      "iy_ms_dh": 12.1,
+      "iy_ms_da": 4.5,
+      "iy_over05": 77.1,
+      "two_y_over05": 80.5,
+      "two_y_over15": 47.1,
+      "two_y_more": 43.0,
+      "first_goal_home": 87.4,
+      "hk1_home": 29.0,
+      "hk1_away": 36.5,
+      "corner_most_home": 54.0,
+      "corner_even": 49.3,
+      "corner_over95": 57.5
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%61.8)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "8000072-416-1788462142",
+    "timestamp": "2026-09-08T00:10:02.833410",
+    "home_id": 8000072,
+    "away_id": 416,
+    "home_name": "Schalke 04",
+    "away_name": "Bayern Munich",
+    "home_elo": 1511,
+    "away_elo": 1557,
+    "result": {
+      "home_win": 49.2,
+      "draw": 24.1,
+      "away_win": 26.8,
+      "winner": "Ev Sahibi",
+      "winner_prob": 49.2
+    },
+    "goals": {
+      "home_lambda": 1.496,
+      "away_lambda": 2.993,
+      "expected_total": 4.489
+    },
+    "total_goals": {
+      "over15": 89.4,
+      "under15": 10.6,
+      "over25": 73.8,
+      "under25": 26.2,
+      "over35": 53.7,
+      "under35": 46.3
+    },
+    "double_chance": {
+      "1X": 62.7,
+      "12": 76.0,
+      "X2": 61.3
+    },
+    "corners": {
+      "predicted_total": 9.2,
+      "over75": 70.0,
+      "under75": 30.0,
+      "over85": 57.2,
+      "under85": 42.8,
+      "over95": 44.0,
+      "under95": 56.0,
+      "over105": 31.9,
+      "under105": 68.1
+    },
+    "btts_yes": 68.0,
+    "btts_no": 32.0,
+    "top_scores": [
+      {
+        "score": "1-2",
+        "probability": 0.0753
+      },
+      {
+        "score": "1-3",
+        "probability": 0.0751
+      },
+      {
+        "score": "2-2",
+        "probability": 0.0563
+      },
+      {
+        "score": "1-4",
+        "probability": 0.0562
+      },
+      {
+        "score": "2-3",
+        "probability": 0.0562
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 1.5 Ust",
+        "pick": "U1.5",
+        "confidence": 89.4,
+        "reason": "En az 2 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 89.4,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 80.9,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 79.7,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 79.7,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 76.0,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "IY Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 75.3,
+          "reason": "Ilk yari gol olur"
+        },
+        {
+          "market": "Gol 2.5 Ust",
+          "pick": "U2.5",
+          "confidence": 73.8,
+          "reason": "Ort. 4.5 gol bekleniyor"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 38.1,
+      "iy_ms_dh": 12.5,
+      "iy_ms_da": 10.7,
+      "iy_over05": 75.3,
+      "two_y_over05": 79.7,
+      "two_y_over15": 45.6,
+      "two_y_more": 43.3,
+      "first_goal_home": 79.7,
+      "hk1_home": 22.3,
+      "hk1_away": 42.9,
+      "corner_most_home": 54.1,
+      "corner_even": 46.5,
+      "corner_over95": 44.5
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%49.2)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "3000026-8000007-1788462121",
+    "timestamp": "2026-09-08T00:10:03.183929",
+    "home_id": 3000026,
+    "away_id": 8000007,
+    "home_name": "Hull City AFC",
+    "away_name": "Aston Villa",
+    "home_elo": 1379,
+    "away_elo": 1469,
+    "result": {
+      "home_win": 60.9,
+      "draw": 22.0,
+      "away_win": 17.1,
+      "winner": "Ev Sahibi",
+      "winner_prob": 60.9
+    },
+    "goals": {
+      "home_lambda": 1.063,
+      "away_lambda": 1.586,
+      "expected_total": 2.649
+    },
+    "total_goals": {
+      "over15": 75.4,
+      "under15": 24.6,
+      "over25": 51.4,
+      "under25": 48.6,
+      "over35": 29.0,
+      "under35": 71.0
+    },
+    "double_chance": {
+      "1X": 75.3,
+      "12": 78.3,
+      "X2": 46.4
+    },
+    "corners": {
+      "predicted_total": 8.3,
+      "over75": 59.3,
+      "under75": 40.7,
+      "over85": 45.5,
+      "under85": 54.5,
+      "over95": 32.6,
+      "under95": 67.4,
+      "over105": 21.9,
+      "under105": 78.1
+    },
+    "btts_yes": 53.1,
+    "btts_no": 46.9,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1192
+      },
+      {
+        "score": "0-1",
+        "probability": 0.1122
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0946
+      },
+      {
+        "score": "0-2",
+        "probability": 0.0889
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0752
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 86.8,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 86.8,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 85.4,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 81.3,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.3,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 75.4,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 75.3,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Gol 3.5 Alt",
+          "pick": "A3.5",
+          "confidence": 71.0,
+          "reason": "Dusuk gol beklentisi (2.6)"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 45.2,
+      "iy_ms_dh": 18.5,
+      "iy_ms_da": 10.4,
+      "iy_over05": 64.3,
+      "two_y_over05": 81.3,
+      "two_y_over15": 46.4,
+      "two_y_more": 45.4,
+      "first_goal_home": 86.8,
+      "hk1_home": 23.7,
+      "hk1_away": 34.7,
+      "corner_most_home": 34.7,
+      "corner_even": 61.9,
+      "corner_over95": 2.0
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%60.9)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "456-480-1788462102",
+    "timestamp": "2026-09-08T00:10:03.454205",
+    "home_id": 456,
+    "away_id": 480,
+    "home_name": "Paderborn",
+    "away_name": "Freiburg",
+    "home_elo": 1485,
+    "away_elo": 1445,
+    "result": {
+      "home_win": 64.7,
+      "draw": 22.7,
+      "away_win": 12.6,
+      "winner": "Ev Sahibi",
+      "winner_prob": 64.7
+    },
+    "goals": {
+      "home_lambda": 1.994,
+      "away_lambda": 1.718,
+      "expected_total": 3.712
+    },
+    "total_goals": {
+      "over15": 85.3,
+      "under15": 14.7,
+      "over25": 65.7,
+      "under25": 34.3,
+      "over35": 45.2,
+      "under35": 54.8
+    },
+    "double_chance": {
+      "1X": 79.0,
+      "12": 77.7,
+      "X2": 43.3
+    },
+    "corners": {
+      "predicted_total": 7.0,
+      "over75": 40.1,
+      "under75": 59.9,
+      "over85": 27.1,
+      "under85": 72.9,
+      "over95": 17.0,
+      "under95": 83.0,
+      "over105": 9.9,
+      "under105": 90.1
+    },
+    "btts_yes": 66.4,
+    "btts_no": 33.6,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.0837
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0834
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0719
+      },
+      {
+        "score": "2-2",
+        "probability": 0.0717
+      },
+      {
+        "score": "3-1",
+        "probability": 0.0555
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 87.8,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 87.8,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 87.2,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 85.3,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 80.9,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 79.0,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 77.7,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "IY Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 75.1,
+          "reason": "Ilk yari gol olur"
+        },
+        {
+          "market": "Korner Cift",
+          "pick": "Cift",
+          "confidence": 74.8,
+          "reason": "Toplam korner cift sayi"
+        },
+        {
+          "market": "Korner 8.5 Alt",
+          "pick": "A8.5",
+          "confidence": 72.9,
+          "reason": "Ort. 7.0 korner bekleniyor"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 36.7,
+      "iy_ms_dh": 17.9,
+      "iy_ms_da": 5.7,
+      "iy_over05": 75.1,
+      "two_y_over05": 80.9,
+      "two_y_over15": 44.0,
+      "two_y_more": 43.0,
+      "first_goal_home": 87.8,
+      "hk1_home": 29.8,
+      "hk1_away": 42.2,
+      "corner_most_home": 40.4,
+      "corner_even": 74.8,
+      "corner_over95": 50.3
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%64.7)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "428-1001511-1788462090",
+    "timestamp": "2026-09-08T00:10:03.684548",
+    "home_id": 428,
+    "away_id": 1001511,
+    "home_name": "M'gladbach",
+    "away_name": "Elversberg",
+    "home_elo": 1433,
+    "away_elo": 1278,
+    "result": {
+      "home_win": 66.7,
+      "draw": 21.2,
+      "away_win": 12.1,
+      "winner": "Ev Sahibi",
+      "winner_prob": 66.7
+    },
+    "goals": {
+      "home_lambda": 1.937,
+      "away_lambda": 1.272,
+      "expected_total": 3.209
+    },
+    "total_goals": {
+      "over15": 82.0,
+      "under15": 18.0,
+      "over25": 62.5,
+      "under25": 37.5,
+      "over35": 43.4,
+      "under35": 56.6
+    },
+    "double_chance": {
+      "1X": 78.6,
+      "12": 79.1,
+      "X2": 42.3
+    },
+    "corners": {
+      "predicted_total": 7.0,
+      "over75": 40.1,
+      "under75": 59.9,
+      "over85": 27.1,
+      "under85": 72.9,
+      "over95": 17.0,
+      "under95": 83.0,
+      "over105": 9.9,
+      "under105": 90.1
+    },
+    "btts_yes": 61.5,
+    "btts_no": 38.5,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.0995
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0964
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0782
+      },
+      {
+        "score": "2-0",
+        "probability": 0.0758
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0633
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ev Sahibi Gol Atar",
+        "pick": "Var",
+        "confidence": 83.6,
+        "reason": "Ev sahibi en az 1 gol atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 83.6,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 82.0,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 82.0,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 82.0,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 79.1,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 78.6,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Korner 8.5 Alt",
+          "pick": "A8.5",
+          "confidence": 72.9,
+          "reason": "Ort. 7.0 korner bekleniyor"
+        },
+        {
+          "market": "IY Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 70.9,
+          "reason": "Ilk yari gol olur"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 39.8,
+      "iy_ms_dh": 16.6,
+      "iy_ms_da": 5.7,
+      "iy_over05": 70.9,
+      "two_y_over05": 82.0,
+      "two_y_over15": 49.6,
+      "two_y_more": 45.2,
+      "first_goal_home": 82.0,
+      "hk1_home": 28.4,
+      "hk1_away": 41.2,
+      "corner_most_home": 56.8,
+      "corner_even": 52.7,
+      "corner_over95": 52.3
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%66.7)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "427-476-1788462078",
+    "timestamp": "2026-09-08T00:10:03.925618",
+    "home_id": 427,
+    "away_id": 476,
+    "home_name": "Werder Bremen",
+    "away_name": "RB Leipzig",
+    "home_elo": 1468,
+    "away_elo": 1556,
+    "result": {
+      "home_win": 60.4,
+      "draw": 22.1,
+      "away_win": 17.4,
+      "winner": "Ev Sahibi",
+      "winner_prob": 60.4
+    },
+    "goals": {
+      "home_lambda": 1.514,
+      "away_lambda": 1.383,
+      "expected_total": 2.897
+    },
+    "total_goals": {
+      "over15": 79.6,
+      "under15": 20.4,
+      "over25": 58.8,
+      "under25": 41.2,
+      "over35": 38.5,
+      "under35": 61.5
+    },
+    "double_chance": {
+      "1X": 72.8,
+      "12": 78.1,
+      "X2": 49.1
+    },
+    "corners": {
+      "predicted_total": 7.0,
+      "over75": 40.1,
+      "under75": 59.9,
+      "over85": 27.1,
+      "under85": 72.9,
+      "over95": 17.0,
+      "under95": 83.0,
+      "over105": 9.9,
+      "under105": 90.1
+    },
+    "btts_yes": 59.5,
+    "btts_no": 40.5,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1155
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0875
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0835
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0799
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0763
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ev Sahibi Gol Atar",
+        "pick": "Var",
+        "confidence": 86.4,
+        "reason": "Ev sahibi en az 1 gol atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 86.4,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 84.3,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 81.5,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 79.6,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.1,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Korner 8.5 Alt",
+          "pick": "A8.5",
+          "confidence": 72.9,
+          "reason": "Ort. 7.0 korner bekleniyor"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 72.8,
+          "reason": "Ev sahibi yenilmez"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 46.0,
+      "iy_ms_dh": 17.2,
+      "iy_ms_da": 11.5,
+      "iy_over05": 64.3,
+      "two_y_over05": 81.5,
+      "two_y_over15": 49.9,
+      "two_y_more": 45.2,
+      "first_goal_home": 84.3,
+      "hk1_home": 22.9,
+      "hk1_away": 42.1,
+      "corner_most_home": 35.4,
+      "corner_even": 60.9,
+      "corner_over95": 49.0
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%60.4)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "426-430-1788462058",
+    "timestamp": "2026-09-08T00:10:04.186653",
+    "home_id": 426,
+    "away_id": 430,
+    "home_name": "Hoffenheim",
+    "away_name": "Dortmund",
+    "home_elo": 1520,
+    "away_elo": 1569,
+    "result": {
+      "home_win": 63.6,
+      "draw": 21.9,
+      "away_win": 14.5,
+      "winner": "Ev Sahibi",
+      "winner_prob": 63.6
+    },
+    "goals": {
+      "home_lambda": 1.893,
+      "away_lambda": 2.444,
+      "expected_total": 4.337
+    },
+    "total_goals": {
+      "over15": 87.5,
+      "under15": 12.5,
+      "over25": 70.0,
+      "under25": 30.0,
+      "over35": 52.2,
+      "under35": 47.8
+    },
+    "double_chance": {
+      "1X": 76.0,
+      "12": 78.3,
+      "X2": 45.7
+    },
+    "corners": {
+      "predicted_total": 7.9,
+      "over75": 53.8,
+      "under75": 46.2,
+      "over85": 39.8,
+      "under85": 60.2,
+      "over95": 27.5,
+      "under95": 72.5,
+      "over105": 17.8,
+      "under105": 82.2
+    },
+    "btts_yes": 69.6,
+    "btts_no": 30.4,
+    "top_scores": [
+      {
+        "score": "1-2",
+        "probability": 0.0739
+      },
+      {
+        "score": "2-2",
+        "probability": 0.07
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0605
+      },
+      {
+        "score": "1-3",
+        "probability": 0.0602
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0573
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 88.6,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 88.6,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 87.5,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 87.5,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Korner 9.5 Ust",
+          "pick": "U9.5",
+          "confidence": 81.9,
+          "reason": "10+ korner bekleniyor"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 80.0,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.3,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 76.0,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "IY Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 72.6,
+          "reason": "Ilk yari gol olur"
+        },
+        {
+          "market": "Gol 2.5 Ust",
+          "pick": "U2.5",
+          "confidence": 70.0,
+          "reason": "Ort. 4.3 gol bekleniyor"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 41.8,
+      "iy_ms_dh": 17.4,
+      "iy_ms_da": 8.2,
+      "iy_over05": 72.6,
+      "two_y_over05": 80.0,
+      "two_y_over15": 51.1,
+      "two_y_more": 43.9,
+      "first_goal_home": 88.6,
+      "hk1_home": 36.4,
+      "hk1_away": 29.1,
+      "corner_most_home": 59.2,
+      "corner_even": 55.0,
+      "corner_over95": 81.9
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%63.6)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "431-3000112-1788462039",
+    "timestamp": "2026-09-08T00:10:04.426273",
+    "home_id": 431,
+    "away_id": 3000112,
+    "home_name": "Leverkusen",
+    "away_name": "1. FC Union Berlin",
+    "home_elo": 1501,
+    "away_elo": 1405,
+    "result": {
+      "home_win": 75.1,
+      "draw": 21.0,
+      "away_win": 3.9,
+      "winner": "Ev Sahibi",
+      "winner_prob": 75.1
+    },
+    "goals": {
+      "home_lambda": 2.31,
+      "away_lambda": 1.209,
+      "expected_total": 3.519
+    },
+    "total_goals": {
+      "over15": 85.8,
+      "under15": 14.2,
+      "over25": 68.1,
+      "under25": 31.9,
+      "over35": 48.6,
+      "under35": 51.4
+    },
+    "double_chance": {
+      "1X": 87.5,
+      "12": 79.3,
+      "X2": 33.2
+    },
+    "corners": {
+      "predicted_total": 8.5,
+      "over75": 61.6,
+      "under75": 38.4,
+      "over85": 47.9,
+      "under85": 52.1,
+      "over95": 34.9,
+      "under95": 65.1,
+      "over105": 23.8,
+      "under105": 76.2
+    },
+    "btts_yes": 60.9,
+    "btts_no": 39.1,
+    "top_scores": [
+      {
+        "score": "2-1",
+        "probability": 0.0956
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0828
+      },
+      {
+        "score": "2-0",
+        "probability": 0.079
+      },
+      {
+        "score": "3-1",
+        "probability": 0.0736
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0684
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 94.7,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 94.7,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 93.2,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "En Cok Korner Ev",
+          "pick": "1",
+          "confidence": 89.2,
+          "reason": "Ev sahibi daha cok korner kullanir"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 87.5,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 86.5,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 85.8,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 79.3,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Ev Sahibi Galibiyet",
+          "pick": "1",
+          "confidence": 75.1,
+          "reason": "Ev sahibi favori (75%)"
+        },
+        {
+          "market": "Korner 9.5 Ust",
+          "pick": "U9.5",
+          "confidence": 73.9,
+          "reason": "10+ korner bekleniyor"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 46.0,
+      "iy_ms_dh": 23.3,
+      "iy_ms_da": 4.4,
+      "iy_over05": 64.3,
+      "two_y_over05": 86.5,
+      "two_y_over15": 51.7,
+      "two_y_more": 48.8,
+      "first_goal_home": 94.7,
+      "hk1_home": 51.5,
+      "hk1_away": 25.3,
+      "corner_most_home": 89.2,
+      "corner_even": 50.6,
+      "corner_over95": 73.9
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%75.1)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "67-3000028-1788462006",
+    "timestamp": "2026-09-08T00:10:04.656656",
+    "home_id": 67,
+    "away_id": 3000028,
+    "home_name": "Brighton",
+    "away_name": "Leeds United FC",
+    "home_elo": 1493,
+    "away_elo": 1341,
+    "result": {
+      "home_win": 71.4,
+      "draw": 22.1,
+      "away_win": 6.5,
+      "winner": "Ev Sahibi",
+      "winner_prob": 71.4
+    },
+    "goals": {
+      "home_lambda": 1.988,
+      "away_lambda": 1.64,
+      "expected_total": 3.627
+    },
+    "total_goals": {
+      "over15": 82.7,
+      "under15": 17.3,
+      "over25": 61.7,
+      "under25": 38.3,
+      "over35": 40.0,
+      "under35": 60.0
+    },
+    "double_chance": {
+      "1X": 86.9,
+      "12": 78.3,
+      "X2": 34.9
+    },
+    "corners": {
+      "predicted_total": 8.6,
+      "over75": 63.3,
+      "under75": 36.7,
+      "over85": 49.7,
+      "under85": 50.3,
+      "over95": 36.6,
+      "under95": 63.4,
+      "over105": 25.3,
+      "under105": 74.7
+    },
+    "btts_yes": 62.8,
+    "btts_no": 37.2,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.0866
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0861
+      },
+      {
+        "score": "1-2",
+        "probability": 0.071
+      },
+      {
+        "score": "2-2",
+        "probability": 0.0706
+      },
+      {
+        "score": "3-1",
+        "probability": 0.0571
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 90.0,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 90.0,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 88.8,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 86.9,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 82.7,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 81.3,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.3,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "En Cok Korner Ev",
+          "pick": "1",
+          "confidence": 77.4,
+          "reason": "Ev sahibi daha cok korner kullanir"
+        },
+        {
+          "market": "Ev Sahibi Galibiyet",
+          "pick": "1",
+          "confidence": 71.4,
+          "reason": "Ev sahibi favori (71%)"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 40.4,
+      "iy_ms_dh": 22.3,
+      "iy_ms_da": 5.2,
+      "iy_over05": 68.6,
+      "two_y_over05": 81.3,
+      "two_y_over15": 48.2,
+      "two_y_more": 43.1,
+      "first_goal_home": 90.0,
+      "hk1_home": 35.4,
+      "hk1_away": 35.0,
+      "corner_most_home": 77.4,
+      "corner_even": 49.7,
+      "corner_over95": 51.9
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%71.4)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "6001228-9-1788461991",
+    "timestamp": "2026-09-08T00:10:04.890471",
+    "home_id": 6001228,
+    "away_id": 9,
+    "home_name": "Brentford",
+    "away_name": "Sunderland",
+    "home_elo": 1555,
+    "away_elo": 1528,
+    "result": {
+      "home_win": 65.3,
+      "draw": 23.4,
+      "away_win": 11.4,
+      "winner": "Ev Sahibi",
+      "winner_prob": 65.3
+    },
+    "goals": {
+      "home_lambda": 1.831,
+      "away_lambda": 1.226,
+      "expected_total": 3.057
+    },
+    "total_goals": {
+      "over15": 79.1,
+      "under15": 20.9,
+      "over25": 53.6,
+      "under25": 46.4,
+      "over35": 27.8,
+      "under35": 72.2
+    },
+    "double_chance": {
+      "1X": 81.8,
+      "12": 76.8,
+      "X2": 41.3
+    },
+    "corners": {
+      "predicted_total": 9.1,
+      "over75": 68.8,
+      "under75": 31.2,
+      "over85": 55.7,
+      "under85": 44.3,
+      "over95": 42.6,
+      "under95": 57.4,
+      "over105": 30.6,
+      "under105": 69.4
+    },
+    "btts_yes": 55.8,
+    "btts_no": 44.2,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1056
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0966
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0861
+      },
+      {
+        "score": "2-0",
+        "probability": 0.0788
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0647
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 89.0,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 89.0,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 87.2,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 81.8,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 79.1,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 78.4,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 76.8,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Gol 3.5 Alt",
+          "pick": "A3.5",
+          "confidence": 72.2,
+          "reason": "Dusuk gol beklentisi (3.1)"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 43.3,
+      "iy_ms_dh": 17.8,
+      "iy_ms_da": 10.3,
+      "iy_over05": 66.7,
+      "two_y_over05": 78.4,
+      "two_y_over15": 42.7,
+      "two_y_more": 43.6,
+      "first_goal_home": 89.0,
+      "hk1_home": 30.8,
+      "hk1_away": 32.1,
+      "corner_most_home": 69.9,
+      "corner_even": 55.3,
+      "corner_over95": 59.6
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%65.3)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "83-28-1788461977",
+    "timestamp": "2026-09-08T00:10:05.126328",
+    "home_id": 83,
+    "away_id": 28,
+    "home_name": "Fulham",
+    "away_name": "Crystal Palace",
+    "home_elo": 1543,
+    "away_elo": 1608,
+    "result": {
+      "home_win": 66.5,
+      "draw": 21.8,
+      "away_win": 11.7,
+      "winner": "Ev Sahibi",
+      "winner_prob": 66.5
+    },
+    "goals": {
+      "home_lambda": 2.034,
+      "away_lambda": 1.636,
+      "expected_total": 3.67
+    },
+    "total_goals": {
+      "over15": 83.9,
+      "under15": 16.1,
+      "over25": 61.3,
+      "under25": 38.7,
+      "over35": 38.2,
+      "under35": 61.8
+    },
+    "double_chance": {
+      "1X": 81.4,
+      "12": 78.7,
+      "X2": 40.0
+    },
+    "corners": {
+      "predicted_total": 8.5,
+      "over75": 61.6,
+      "under75": 38.4,
+      "over85": 47.9,
+      "under85": 52.1,
+      "over95": 34.9,
+      "under95": 65.1,
+      "over105": 23.8,
+      "under105": 76.2
+    },
+    "btts_yes": 59.7,
+    "btts_no": 40.3,
+    "top_scores": [
+      {
+        "score": "2-1",
+        "probability": 0.0862
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0848
+      },
+      {
+        "score": "2-2",
+        "probability": 0.0705
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0694
+      },
+      {
+        "score": "3-1",
+        "probability": 0.0584
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ev Sahibi Gol Atar",
+        "pick": "Var",
+        "confidence": 89.4,
+        "reason": "Ev sahibi en az 1 gol atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 89.4,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 89.2,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 83.9,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 81.4,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 78.8,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.7,
+          "reason": "Beraberlik disi"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 42.3,
+      "iy_ms_dh": 19.5,
+      "iy_ms_da": 7.5,
+      "iy_over05": 69.2,
+      "two_y_over05": 78.8,
+      "two_y_over15": 42.4,
+      "two_y_more": 44.1,
+      "first_goal_home": 89.2,
+      "hk1_home": 35.4,
+      "hk1_away": 27.9,
+      "corner_most_home": 65.0,
+      "corner_even": 57.1,
+      "corner_over95": 52.5
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%66.5)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "8000032-11-1788461964",
+    "timestamp": "2026-09-08T00:10:05.395116",
+    "home_id": 8000032,
+    "away_id": 11,
+    "home_name": "Nottingham Forest",
+    "away_name": "Tottenham",
+    "home_elo": 1475,
+    "away_elo": 1594,
+    "result": {
+      "home_win": 61.7,
+      "draw": 21.3,
+      "away_win": 17.1,
+      "winner": "Ev Sahibi",
+      "winner_prob": 61.7
+    },
+    "goals": {
+      "home_lambda": 1.894,
+      "away_lambda": 1.301,
+      "expected_total": 3.195
+    },
+    "total_goals": {
+      "over15": 82.3,
+      "under15": 17.7,
+      "over25": 59.5,
+      "under25": 40.5,
+      "over35": 38.1,
+      "under35": 61.9
+    },
+    "double_chance": {
+      "1X": 74.5,
+      "12": 78.8,
+      "X2": 46.7
+    },
+    "corners": {
+      "predicted_total": 9.3,
+      "over75": 71.0,
+      "under75": 29.0,
+      "over85": 58.3,
+      "under85": 41.7,
+      "over95": 45.2,
+      "under95": 54.8,
+      "over105": 33.0,
+      "under105": 67.0
+    },
+    "btts_yes": 58.3,
+    "btts_no": 41.7,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.101
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0956
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0776
+      },
+      {
+        "score": "2-0",
+        "probability": 0.0735
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0657
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ev Sahibi Gol Atar",
+        "pick": "Var",
+        "confidence": 87.0,
+        "reason": "Ev sahibi en az 1 gol atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 87.0,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 86.9,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 83.4,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 82.3,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "En Cok Korner Ev",
+          "pick": "1",
+          "confidence": 81.4,
+          "reason": "Ev sahibi daha cok korner kullanir"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.8,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 74.5,
+          "reason": "Ev sahibi yenilmez"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 46.0,
+      "iy_ms_dh": 19.1,
+      "iy_ms_da": 14.8,
+      "iy_over05": 64.3,
+      "two_y_over05": 83.4,
+      "two_y_over15": 47.2,
+      "two_y_more": 49.7,
+      "first_goal_home": 86.9,
+      "hk1_home": 30.7,
+      "hk1_away": 34.5,
+      "corner_most_home": 81.4,
+      "corner_even": 48.8,
+      "corner_over95": 7.1
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%61.7)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "8000017-132-1788461945",
+    "timestamp": "2026-09-08T00:10:05.702287",
+    "home_id": 8000017,
+    "away_id": 132,
+    "home_name": "Manchester City",
+    "away_name": "Coventry",
+    "home_elo": 1559,
+    "away_elo": 1500,
+    "result": {
+      "home_win": 65.8,
+      "draw": 21.1,
+      "away_win": 13.1,
+      "winner": "Ev Sahibi",
+      "winner_prob": 65.8
+    },
+    "goals": {
+      "home_lambda": 1.708,
+      "away_lambda": 1.186,
+      "expected_total": 2.893
+    },
+    "total_goals": {
+      "over15": 78.6,
+      "under15": 21.4,
+      "over25": 54.6,
+      "under25": 45.4,
+      "over35": 33.8,
+      "under35": 66.2
+    },
+    "double_chance": {
+      "1X": 78.9,
+      "12": 79.0,
+      "X2": 42.1
+    },
+    "corners": {
+      "predicted_total": 10.4,
+      "over75": 81.2,
+      "under75": 18.8,
+      "over85": 70.8,
+      "under85": 29.2,
+      "over95": 58.9,
+      "under95": 41.1,
+      "over105": 46.4,
+      "under105": 53.6
+    },
+    "btts_yes": 55.4,
+    "btts_no": 44.6,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1122
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0958
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0946
+      },
+      {
+        "score": "2-0",
+        "probability": 0.0808
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0665
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "En Cok Korner Ev",
+        "pick": "1",
+        "confidence": 94.0,
+        "reason": "Ev sahibi daha cok korner kullanir"
+      },
+      "all_tips": [
+        {
+          "market": "En Cok Korner Ev",
+          "pick": "1",
+          "confidence": 94.0,
+          "reason": "Ev sahibi daha cok korner kullanir"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 90.9,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 89.6,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 79.0,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 78.9,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 78.6,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 74.3,
+          "reason": "2. yarida gol olur"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 46.0,
+      "iy_ms_dh": 24.8,
+      "iy_ms_da": 6.7,
+      "iy_over05": 64.3,
+      "two_y_over05": 74.3,
+      "two_y_over15": 49.4,
+      "two_y_more": 49.2,
+      "first_goal_home": 90.9,
+      "hk1_home": 35.4,
+      "hk1_away": 32.5,
+      "corner_most_home": 94.0,
+      "corner_even": 52.8,
+      "corner_over95": 43.6
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%65.8)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "1000803-737-1788461931",
+    "timestamp": "2026-09-08T00:10:05.963879",
+    "home_id": 1000803,
+    "away_id": 737,
+    "home_name": "Erzurum BB",
+    "away_name": "Konyaspor",
+    "home_elo": 1457,
+    "away_elo": 1495,
+    "result": {
+      "home_win": 67.0,
+      "draw": 21.7,
+      "away_win": 11.2,
+      "winner": "Ev Sahibi",
+      "winner_prob": 67.0
+    },
+    "goals": {
+      "home_lambda": 2.104,
+      "away_lambda": 1.524,
+      "expected_total": 3.627
+    },
+    "total_goals": {
+      "over15": 82.2,
+      "under15": 17.8,
+      "over25": 60.9,
+      "under25": 39.1,
+      "over35": 35.3,
+      "under35": 64.7
+    },
+    "double_chance": {
+      "1X": 81.4,
+      "12": 78.6,
+      "X2": 40.0
+    },
+    "corners": {
+      "predicted_total": 7.0,
+      "over75": 40.1,
+      "under75": 59.9,
+      "over85": 27.1,
+      "under85": 72.9,
+      "over95": 17.0,
+      "under95": 83.0,
+      "over105": 9.9,
+      "under105": 90.1
+    },
+    "btts_yes": 58.9,
+    "btts_no": 41.1,
+    "top_scores": [
+      {
+        "score": "2-1",
+        "probability": 0.0896
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0852
+      },
+      {
+        "score": "2-2",
+        "probability": 0.0683
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0649
+      },
+      {
+        "score": "3-1",
+        "probability": 0.0629
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ev Sahibi Gol Atar",
+        "pick": "Var",
+        "confidence": 86.7,
+        "reason": "Ev sahibi en az 1 gol atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 86.7,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 85.8,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 82.2,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 81.4,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.6,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 76.6,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Korner 8.5 Alt",
+          "pick": "A8.5",
+          "confidence": 72.9,
+          "reason": "Ort. 7.0 korner bekleniyor"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 40.2,
+      "iy_ms_dh": 18.7,
+      "iy_ms_da": 5.7,
+      "iy_over05": 69.7,
+      "two_y_over05": 76.6,
+      "two_y_over15": 40.9,
+      "two_y_more": 44.6,
+      "first_goal_home": 85.8,
+      "hk1_home": 31.0,
+      "hk1_away": 31.1,
+      "corner_most_home": 62.8,
+      "corner_even": 49.4,
+      "corner_over95": 16.8
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%67.0)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "8000016-31-1788461914",
+    "timestamp": "2026-09-08T00:10:06.206735",
+    "home_id": 8000016,
+    "away_id": 31,
+    "home_name": "Newcastle United",
+    "away_name": "Bournemouth",
+    "home_elo": 1535,
+    "away_elo": 1548,
+    "result": {
+      "home_win": 59.2,
+      "draw": 22.1,
+      "away_win": 18.8,
+      "winner": "Ev Sahibi",
+      "winner_prob": 59.2
+    },
+    "goals": {
+      "home_lambda": 1.17,
+      "away_lambda": 1.755,
+      "expected_total": 2.924
+    },
+    "total_goals": {
+      "over15": 79.1,
+      "under15": 20.9,
+      "over25": 55.3,
+      "under25": 44.7,
+      "over35": 33.7,
+      "under35": 66.3
+    },
+    "double_chance": {
+      "1X": 72.7,
+      "12": 78.0,
+      "X2": 49.3
+    },
+    "corners": {
+      "predicted_total": 8.2,
+      "over75": 56.9,
+      "under75": 43.1,
+      "over85": 43.0,
+      "under85": 57.0,
+      "over95": 30.3,
+      "under95": 69.7,
+      "over105": 20.0,
+      "under105": 80.0
+    },
+    "btts_yes": 57.7,
+    "btts_no": 42.3,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1102
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0967
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0942
+      },
+      {
+        "score": "0-2",
+        "probability": 0.0827
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0644
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ev Sahibi Gol Atar",
+        "pick": "Var",
+        "confidence": 87.8,
+        "reason": "Ev sahibi en az 1 gol atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 87.8,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 86.8,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 79.1,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 78.8,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.0,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 72.7,
+          "reason": "Ev sahibi yenilmez"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 44.7,
+      "iy_ms_dh": 15.7,
+      "iy_ms_da": 10.1,
+      "iy_over05": 65.7,
+      "two_y_over05": 78.8,
+      "two_y_over15": 45.3,
+      "two_y_more": 44.9,
+      "first_goal_home": 86.8,
+      "hk1_home": 28.8,
+      "hk1_away": 42.1,
+      "corner_most_home": 43.1,
+      "corner_even": 50.7,
+      "corner_over95": 22.4
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%59.2)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "433-3000137-1788461893",
+    "timestamp": "2026-09-08T00:10:06.446456",
+    "home_id": 433,
+    "away_id": 3000137,
+    "home_name": "Stuttgart",
+    "away_name": "1. FC Köln",
+    "home_elo": 1518,
+    "away_elo": 1501,
+    "result": {
+      "home_win": 75.3,
+      "draw": 20.7,
+      "away_win": 4.0,
+      "winner": "Ev Sahibi",
+      "winner_prob": 75.3
+    },
+    "goals": {
+      "home_lambda": 2.672,
+      "away_lambda": 1.085,
+      "expected_total": 3.757
+    },
+    "total_goals": {
+      "over15": 85.4,
+      "under15": 14.6,
+      "over25": 69.1,
+      "under25": 30.9,
+      "over35": 48.1,
+      "under35": 51.9
+    },
+    "double_chance": {
+      "1X": 87.4,
+      "12": 79.7,
+      "X2": 32.9
+    },
+    "corners": {
+      "predicted_total": 7.4,
+      "over75": 46.6,
+      "under75": 53.4,
+      "over85": 32.9,
+      "under85": 67.1,
+      "over95": 21.6,
+      "under95": 78.4,
+      "over105": 13.2,
+      "under105": 86.8
+    },
+    "btts_yes": 57.7,
+    "btts_no": 42.3,
+    "top_scores": [
+      {
+        "score": "2-1",
+        "probability": 0.0904
+      },
+      {
+        "score": "2-0",
+        "probability": 0.0834
+      },
+      {
+        "score": "3-1",
+        "probability": 0.0806
+      },
+      {
+        "score": "3-0",
+        "probability": 0.0743
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0677
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 90.6,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 90.6,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 87.4,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 86.6,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "En Cok Korner Ev",
+          "pick": "1",
+          "confidence": 85.8,
+          "reason": "Ev sahibi daha cok korner kullanir"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 85.4,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 85.3,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Korner 9.5 Ust",
+          "pick": "U9.5",
+          "confidence": 82.6,
+          "reason": "10+ korner bekleniyor"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 79.7,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Ev Sahibi Galibiyet",
+          "pick": "1",
+          "confidence": 75.3,
+          "reason": "Ev sahibi favori (75%)"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 46.0,
+      "iy_ms_dh": 26.0,
+      "iy_ms_da": 5.3,
+      "iy_over05": 64.3,
+      "two_y_over05": 85.3,
+      "two_y_over15": 50.4,
+      "two_y_more": 50.4,
+      "first_goal_home": 90.6,
+      "hk1_home": 44.9,
+      "hk1_away": 23.6,
+      "corner_most_home": 85.8,
+      "corner_even": 49.2,
+      "corner_over95": 82.6
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%75.3)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "3000100-17-1788461879",
+    "timestamp": "2026-09-08T00:10:06.686808",
+    "home_id": 3000100,
+    "away_id": 17,
+    "home_name": "Ipswich Town FC",
+    "away_name": "Liverpool",
+    "home_elo": 1572,
+    "away_elo": 1586,
+    "result": {
+      "home_win": 63.4,
+      "draw": 21.0,
+      "away_win": 15.6,
+      "winner": "Ev Sahibi",
+      "winner_prob": 63.4
+    },
+    "goals": {
+      "home_lambda": 1.961,
+      "away_lambda": 1.978,
+      "expected_total": 3.939
+    },
+    "total_goals": {
+      "over15": 85.8,
+      "under15": 14.2,
+      "over25": 65.1,
+      "under25": 34.9,
+      "over35": 44.7,
+      "under35": 55.3
+    },
+    "double_chance": {
+      "1X": 76.8,
+      "12": 79.2,
+      "X2": 43.9
+    },
+    "corners": {
+      "predicted_total": 11.5,
+      "over75": 88.4,
+      "under75": 11.6,
+      "over85": 80.6,
+      "under85": 19.4,
+      "over95": 70.7,
+      "under95": 29.3,
+      "over105": 59.4,
+      "under105": 40.6
+    },
+    "btts_yes": 65.8,
+    "btts_no": 34.2,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.0755
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0747
+      },
+      {
+        "score": "2-1",
+        "probability": 0.074
+      },
+      {
+        "score": "2-2",
+        "probability": 0.0732
+      },
+      {
+        "score": "1-3",
+        "probability": 0.0492
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Ilk Gol Ev Atar",
+        "pick": "1",
+        "confidence": 89.8,
+        "reason": "Ev sahibi ilk golu atar"
+      },
+      "all_tips": [
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 89.8,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 89.7,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Korner 7.5 Ust",
+          "pick": "U7.5",
+          "confidence": 88.4,
+          "reason": "Ort. 11.5 korner bekleniyor"
+        },
+        {
+          "market": "En Cok Korner Ev",
+          "pick": "1",
+          "confidence": 88.2,
+          "reason": "Ev sahibi daha cok korner kullanir"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 85.8,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 82.8,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Korner 8.5 Ust",
+          "pick": "U8.5",
+          "confidence": 80.6,
+          "reason": "Ort. 11.5 korner bekleniyor"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 79.2,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 76.8,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Korner 9.5 Ust",
+          "pick": "U9.5",
+          "confidence": 75.8,
+          "reason": "10+ korner bekleniyor"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 44.2,
+      "iy_ms_dh": 30.3,
+      "iy_ms_da": 7.7,
+      "iy_over05": 69.1,
+      "two_y_over05": 82.8,
+      "two_y_over15": 46.5,
+      "two_y_more": 45.8,
+      "first_goal_home": 89.8,
+      "hk1_home": 34.1,
+      "hk1_away": 26.3,
+      "corner_most_home": 88.2,
+      "corner_even": 29.7,
+      "corner_over95": 75.8
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%63.4)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  },
+  {
+    "id": "3000286-729-1788461831",
+    "timestamp": "2026-09-08T00:10:06.928081",
+    "home_id": 3000286,
+    "away_id": 729,
+    "home_name": "İstanbul BaÅŸakÅŸehir",
+    "away_name": "Galatasaray",
+    "home_elo": 1593,
+    "away_elo": 1535,
+    "result": {
+      "home_win": 62.7,
+      "draw": 21.7,
+      "away_win": 15.6,
+      "winner": "Ev Sahibi",
+      "winner_prob": 62.7
+    },
+    "goals": {
+      "home_lambda": 1.895,
+      "away_lambda": 2.001,
+      "expected_total": 3.897
+    },
+    "total_goals": {
+      "over15": 86.4,
+      "under15": 13.6,
+      "over25": 66.0,
+      "under25": 34.0,
+      "over35": 47.8,
+      "under35": 52.2
+    },
+    "double_chance": {
+      "1X": 75.1,
+      "12": 78.4,
+      "X2": 46.5
+    },
+    "corners": {
+      "predicted_total": 7.0,
+      "over75": 40.9,
+      "under75": 59.1,
+      "over85": 27.7,
+      "under85": 72.3,
+      "over95": 17.5,
+      "under95": 82.5,
+      "over105": 10.2,
+      "under105": 89.8
+    },
+    "btts_yes": 66.9,
+    "btts_no": 33.1,
+    "top_scores": [
+      {
+        "score": "1-2",
+        "probability": 0.0771
+      },
+      {
+        "score": "1-1",
+        "probability": 0.077
+      },
+      {
+        "score": "2-2",
+        "probability": 0.0731
+      },
+      {
+        "score": "2-1",
+        "probability": 0.073
+      },
+      {
+        "score": "1-3",
+        "probability": 0.0514
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "En Cok Korner Ev",
+        "pick": "1",
+        "confidence": 96.7,
+        "reason": "Ev sahibi daha cok korner kullanir"
+      },
+      "all_tips": [
+        {
+          "market": "En Cok Korner Ev",
+          "pick": "1",
+          "confidence": 96.7,
+          "reason": "Ev sahibi daha cok korner kullanir"
+        },
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 86.4,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Ev Sahibi Gol Atar",
+          "pick": "Var",
+          "confidence": 82.1,
+          "reason": "Ev sahibi en az 1 gol atar"
+        },
+        {
+          "market": "Ilk Gol Ev Atar",
+          "pick": "1",
+          "confidence": 81.8,
+          "reason": "Ev sahibi ilk golu atar"
+        },
+        {
+          "market": "2Y Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 80.1,
+          "reason": "2. yarida gol olur"
+        },
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 78.4,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 75.1,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "IY Ust 0.5",
+          "pick": "U0.5",
+          "confidence": 72.9,
+          "reason": "Ilk yari gol olur"
+        },
+        {
+          "market": "Korner 8.5 Alt",
+          "pick": "A8.5",
+          "confidence": 72.3,
+          "reason": "Ort. 7.0 korner bekleniyor"
+        }
+      ]
+    },
+    "v15_markets": {
+      "iy_draw": 40.2,
+      "iy_ms_dh": 11.1,
+      "iy_ms_da": 8.1,
+      "iy_over05": 72.9,
+      "two_y_over05": 80.1,
+      "two_y_over15": 46.1,
+      "two_y_more": 43.3,
+      "first_goal_home": 81.8,
+      "hk1_home": 36.8,
+      "hk1_away": 35.8,
+      "corner_most_home": 96.7,
+      "corner_even": 30.4,
+      "corner_over95": 23.1
+    },
+    "prediction_summary": {
+      "kazanan": "Ev Sahibi (%62.7)",
+      "toplam_gol_15": "Alt 1.5 (%100)",
+      "toplam_gol_25": "Alt 2.5 (%100)",
+      "toplam_gol_35": "Alt 3.5 (%100)",
+      "toplam_korner_75": "Alt 7.5 (%100)",
+      "toplam_korner_85": "Alt 8.5 (%100)",
+      "toplam_korner_95": "Alt 9.5 (%100)",
+      "btts": "Var (%0)",
+      "cift_sans": "12 (%0)"
+    },
+    "match_date": "2026-09-03"
+  }
+]

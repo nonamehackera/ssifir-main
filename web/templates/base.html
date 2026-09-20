@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}FTMS — Futbol Tahmin Motoru{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=20260906d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+{% block head %}{% endblock %}
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-brand">
+    <div class="brand-mark">FT</div>
+    <div class="brand-text">
+      <span class="brand-name">FTMS</span>
+      <span class="brand-sub">Tahmin Motoru</span>
+    </div>
+  </div>
+
+  <nav class="nav-links">
+    <a href="/" class="nav-link" data-page="tahmin">Tahmin</a>
+    <a href="/predictions" class="nav-link" data-page="predictions">Tahminlerim</a>
+    <a href="/coupons" class="nav-link" data-page="coupons">Kuponlar</a>
+    <a href="/live" class="nav-link" data-page="live"><span class="dot-live"></span>Canlı</a>
+    <a href="/dashboard" class="nav-link" data-page="dashboard">Dashboard</a>
+    <a href="/performance" class="nav-link" data-page="performance">Performans</a>
+  </nav>
+
+  <div class="nav-status" style="display:none">
+    <span class="dot ok" id="nav-dot"></span>
+    <span id="nav-status-txt">Model hazır</span>
+    <span class="model-line" id="nav-model">catboost_odds_v1</span>
+    <span class="model-line" id="nav-data" style="margin-left:8px;color:var(--muted)"></span>
+  </div>
+</header>
+
+<!-- VERI GUNCELLEME ILERLEME CUBUGU -->
+<div id="sync-bar" class="sync-bar" style="display:none">
+  <div class="sync-info">
+    <span id="sync-icon" class="sync-spin"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></span>
+    <span id="sync-text">Veri güncelleniyor...</span>
+  </div>
+  <div class="sync-progress-track">
+    <div id="sync-progress-fill" class="sync-progress-fill"></div>
+  </div>
+  <span id="sync-percent" class="sync-percent">0%</span>
+</div>
+
+<main class="content">
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">{% block page_title %}Futbol Tahmin Sistemi{% endblock %}</h1>
+      <p class="page-sub">{% block page_sub %}Yapay zeka destekli maç analizi{% endblock %}</p>
+    </div>
+    <div class="topbar-actions">
+      {% block topbar_actions %}{% endblock %}
+    </div>
+  </div>
+
+  <div class="page-body">
+    {% block body %}{% endblock %}
+  </div>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<div class="search-modal-bg" id="search-bg">
+  <div class="search-modal">
+    <div class="search-modal-head">
+      <input class="search-input" id="search-input-modal" placeholder="Takım ara (örn: Barcelona, Galatasaray, Celtic)…" autocomplete="off">
+    </div>
+    <div class="search-results" id="search-results-modal"></div>
+    <div class="search-modal-foot">
+      <button class="btn ghost sm" id="search-close">Kapat</button>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='common.js') }}?v={{ (range(1, 999999) | random) }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}?v={{ (range(1, 999999) | random) }}"></script>
+<script src="{{ url_for('static', filename='js/reload.js') }}?v={{ (range(1, 999999) | random) }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

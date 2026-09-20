@@ -1,0 +1,53 @@
+{
+  "label": "PRODUCTION_ENSEMBLE",
+  "accuracy": 0.5089811515811626,
+  "brier": 0.19792778374231915,
+  "log_loss": 0.992924848106247,
+  "draw_recall": 0.033990895295902886,
+  "n_test": 54169,
+  "roi": 38.77760500582278,
+  "n_bets": 4406,
+  "n_features": 160,
+  "top_features": [
+    [
+      "xg_diff_real",
+      1327
+    ],
+    [
+      "lg_away_goal_avg",
+      918
+    ],
+    [
+      "away_xg_real",
+      853
+    ],
+    [
+      "away_defence_elo",
+      845
+    ],
+    [
+      "home_team_id",
+      827
+    ],
+    [
+      "home_rest_days",
+      820
+    ],
+    [
+      "away_rest_days",
+      801
+    ],
+    [
+      "away_team_id",
+      794
+    ],
+    [
+      "home_defence_elo",
+      768
+    ],
+    [
+      "defence_elo_diff",
+      739
+    ]
+  ]
+}

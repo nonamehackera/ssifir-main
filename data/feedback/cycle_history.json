@@ -1,0 +1,37 @@
+[
+  {
+    "cycle_id": 1,
+    "start_time": "2026-09-20T01:50:03.229048",
+    "end_time": "2026-09-20T01:50:03.606098",
+    "duration_seconds": 0.37705,
+    "predictions_recorded": 0,
+    "total_predictions": 500,
+    "patterns_detected": 1,
+    "top_patterns": [
+      {
+        "type": "sonuc",
+        "description": "'D' sonuçlarını tahmin etmede sistemli hata: %97.6",
+        "severity": 0.9992003198720512,
+        "confidence": 1.0
+      }
+    ],
+    "correction_applied": true,
+    "correction_result": {
+      "success": true,
+      "improvement": 0.02131627349060376,
+      "actions_count": 1
+    },
+    "features_generated": 0,
+    "metrics_before": {
+      "accuracy": 0.512,
+      "log_loss": 0.9888667142218798,
+      "brier": 0.5908472533518629
+    },
+    "metrics_after": {
+      "accuracy": 0.512,
+      "log_loss": 0.9888667142218798,
+      "brier": 0.5908472533518629
+    },
+    "improvement": 0.0
+  }
+]

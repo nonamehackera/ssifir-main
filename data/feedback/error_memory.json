@@ -1,0 +1,307 @@
+{
+  "predictions": [
+    {
+      "home_id": 422,
+      "away_id": 432,
+      "league": "D1",
+      "pred_home": 0.241,
+      "pred_draw": 0.241,
+      "pred_away": 0.518,
+      "predicted": "A",
+      "actual": "A",
+      "correct": true
+    },
+    {
+      "home_id": 731,
+      "away_id": 725,
+      "league": "T1",
+      "pred_home": 0.46,
+      "pred_draw": 0.232,
+      "pred_away": 0.309,
+      "predicted": "H",
+      "actual": "H",
+      "correct": true
+    },
+    {
+      "home_id": 18,
+      "away_id": 7,
+      "league": "E0",
+      "pred_home": 0.461,
+      "pred_draw": 0.222,
+      "pred_away": 0.317,
+      "predicted": "H",
+      "actual": "H",
+      "correct": true
+    },
+    {
+      "home_id": 4,
+      "away_id": 19,
+      "league": "E0",
+      "pred_home": 0.401,
+      "pred_draw": 0.265,
+      "pred_away": 0.334,
+      "predicted": "H",
+      "actual": "D",
+      "correct": false
+    },
+    {
+      "home_id": 732,
+      "away_id": 723,
+      "league": "T1",
+      "pred_home": 0.641,
+      "pred_draw": 0.185,
+      "pred_away": 0.173,
+      "predicted": "H",
+      "actual": "A",
+      "correct": false
+    },
+    {
+      "home_id": 456,
+      "away_id": 480,
+      "league": "D2",
+      "pred_home": 0.616,
+      "pred_draw": 0.241,
+      "pred_away": 0.143,
+      "predicted": "H",
+      "actual": "A",
+      "correct": false
+    },
+    {
+      "home_id": 427,
+      "away_id": 476,
+      "league": "D1",
+      "pred_home": 0.446,
+      "pred_draw": 0.238,
+      "pred_away": 0.315,
+      "predicted": "H",
+      "actual": "H",
+      "correct": true
+    },
+    {
+      "home_id": 426,
+      "away_id": 430,
+      "league": "D1",
+      "pred_home": 0.53,
+      "pred_draw": 0.24,
+      "pred_away": 0.231,
+      "predicted": "H",
+      "actual": "A",
+      "correct": false
+    },
+    {
+      "home_id": 83,
+      "away_id": 28,
+      "league": "E1",
+      "pred_home": 0.658,
+      "pred_draw": 0.164,
+      "pred_away": 0.178,
+      "predicted": "H",
+      "actual": "A",
+      "correct": false
+    }
+  ],
+  "team_errors": {
+    "422": {
+      "errors": 0,
+      "total": 1,
+      "wrong_predictions": []
+    },
+    "432": {
+      "errors": 0,
+      "total": 1,
+      "wrong_predictions": []
+    },
+    "731": {
+      "errors": 0,
+      "total": 1,
+      "wrong_predictions": []
+    },
+    "725": {
+      "errors": 0,
+      "total": 1,
+      "wrong_predictions": []
+    },
+    "18": {
+      "errors": 0,
+      "total": 1,
+      "wrong_predictions": []
+    },
+    "7": {
+      "errors": 0,
+      "total": 1,
+      "wrong_predictions": []
+    },
+    "4": {
+      "errors": 1,
+      "total": 1,
+      "wrong_predictions": [
+        {
+          "predicted": "H",
+          "actual": "D",
+          "league": "E0",
+          "pred_home": 0.401,
+          "pred_draw": 0.265,
+          "pred_away": 0.334
+        }
+      ]
+    },
+    "19": {
+      "errors": 1,
+      "total": 1,
+      "wrong_predictions": [
+        {
+          "predicted": "H",
+          "actual": "D",
+          "league": "E0",
+          "pred_home": 0.401,
+          "pred_draw": 0.265,
+          "pred_away": 0.334
+        }
+      ]
+    },
+    "732": {
+      "errors": 1,
+      "total": 1,
+      "wrong_predictions": [
+        {
+          "predicted": "H",
+          "actual": "A",
+          "league": "T1",
+          "pred_home": 0.641,
+          "pred_draw": 0.185,
+          "pred_away": 0.173
+        }
+      ]
+    },
+    "723": {
+      "errors": 1,
+      "total": 1,
+      "wrong_predictions": [
+        {
+          "predicted": "H",
+          "actual": "A",
+          "league": "T1",
+          "pred_home": 0.641,
+          "pred_draw": 0.185,
+          "pred_away": 0.173
+        }
+      ]
+    },
+    "456": {
+      "errors": 1,
+      "total": 1,
+      "wrong_predictions": [
+        {
+          "predicted": "H",
+          "actual": "A",
+          "league": "D2",
+          "pred_home": 0.616,
+          "pred_draw": 0.241,
+          "pred_away": 0.143
+        }
+      ]
+    },
+    "480": {
+      "errors": 1,
+      "total": 1,
+      "wrong_predictions": [
+        {
+          "predicted": "H",
+          "actual": "A",
+          "league": "D2",
+          "pred_home": 0.616,
+          "pred_draw": 0.241,
+          "pred_away": 0.143
+        }
+      ]
+    },
+    "427": {
+      "errors": 0,
+      "total": 1,
+      "wrong_predictions": []
+    },
+    "476": {
+      "errors": 0,
+      "total": 1,
+      "wrong_predictions": []
+    },
+    "426": {
+      "errors": 1,
+      "total": 1,
+      "wrong_predictions": [
+        {
+          "predicted": "H",
+          "actual": "A",
+          "league": "D1",
+          "pred_home": 0.53,
+          "pred_draw": 0.24,
+          "pred_away": 0.231
+        }
+      ]
+    },
+    "430": {
+      "errors": 1,
+      "total": 1,
+      "wrong_predictions": [
+        {
+          "predicted": "H",
+          "actual": "A",
+          "league": "D1",
+          "pred_home": 0.53,
+          "pred_draw": 0.24,
+          "pred_away": 0.231
+        }
+      ]
+    },
+    "83": {
+      "errors": 1,
+      "total": 1,
+      "wrong_predictions": [
+        {
+          "predicted": "H",
+          "actual": "A",
+          "league": "E1",
+          "pred_home": 0.658,
+          "pred_draw": 0.164,
+          "pred_away": 0.178
+        }
+      ]
+    },
+    "28": {
+      "errors": 1,
+      "total": 1,
+      "wrong_predictions": [
+        {
+          "predicted": "H",
+          "actual": "A",
+          "league": "E1",
+          "pred_home": 0.658,
+          "pred_draw": 0.164,
+          "pred_away": 0.178
+        }
+      ]
+    }
+  },
+  "league_errors": {
+    "D1": {
+      "errors": 1,
+      "total": 3
+    },
+    "T1": {
+      "errors": 1,
+      "total": 2
+    },
+    "E0": {
+      "errors": 1,
+      "total": 2
+    },
+    "D2": {
+      "errors": 1,
+      "total": 1
+    },
+    "E1": {
+      "errors": 1,
+      "total": 1
+    }
+  }
+}

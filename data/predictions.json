@@ -1,0 +1,3172 @@
+[
+  {
+    "id": "60-3000024-1788273143",
+    "timestamp": "2026-09-01T17:32:23.286379",
+    "home_id": 60,
+    "away_id": 3000024,
+    "home_name": "QPR",
+    "away_name": "Cardiff City FC",
+    "home_elo": 1507,
+    "away_elo": 1287,
+    "result": {
+      "home_win": 36.6,
+      "draw": 26.8,
+      "away_win": 36.6,
+      "winner": "Ev Sahibi",
+      "winner_prob": 36.6
+    },
+    "goals": {
+      "home_lambda": 2.235,
+      "away_lambda": 2.2,
+      "expected_total": 4.435
+    },
+    "total_goals": {
+      "over15": 75.2,
+      "under15": 24.8,
+      "over25": 61.1,
+      "under25": 61.3,
+      "over35": 46.2,
+      "under35": 53.8
+    },
+    "double_chance": {
+      "1X": 3.0,
+      "12": 57.5,
+      "X2": 34.6
+    },
+    "corners": {
+      "predicted_total": 7.2,
+      "over75": 42.9,
+      "under75": 57.1,
+      "over85": 29.6,
+      "under85": 70.4,
+      "over95": 18.9,
+      "under95": 81.1,
+      "over105": 11.2,
+      "under105": 88.8
+    },
+    "btts_yes": 21.0,
+    "btts_no": 79.0,
+    "top_scores": [
+      {
+        "score": "2-2",
+        "probability": 0.0717
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0651
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0641
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0583
+      },
+      {
+        "score": "3-2",
+        "probability": 0.0534
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 1.5 Ust",
+        "pick": "U1.5",
+        "confidence": 75.2,
+        "reason": "En az 2 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 75.2,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Gol 2.5 Ust",
+          "pick": "U2.5",
+          "confidence": 61.1,
+          "reason": "Ort. 4.4 gol bekleniyor"
+        },
+        {
+          "market": "Korner 7.5 Alt",
+          "pick": "A7.5",
+          "confidence": 57.1,
+          "reason": "Ort. 7.2 korner bekleniyor"
+        }
+      ]
+    }
+  },
+  {
+    "id": "121-74-1788273135",
+    "timestamp": "2026-09-01T17:32:15.478893",
+    "home_id": 121,
+    "away_id": 74,
+    "home_name": "Sheffield United",
+    "away_name": "Bolton",
+    "home_elo": 1524,
+    "away_elo": 1498,
+    "result": {
+      "home_win": 30.2,
+      "draw": 39.7,
+      "away_win": 30.2,
+      "winner": "Beraberlik",
+      "winner_prob": 39.7
+    },
+    "goals": {
+      "home_lambda": 1.213,
+      "away_lambda": 0.6,
+      "expected_total": 1.813
+    },
+    "total_goals": {
+      "over15": 44.8,
+      "under15": 55.2,
+      "over25": 20.0,
+      "under25": 64.1,
+      "over35": 8.7,
+      "under35": 91.3
+    },
+    "double_chance": {
+      "1X": 28.1,
+      "12": 51.3,
+      "X2": 44.8
+    },
+    "corners": {
+      "predicted_total": 10.9,
+      "over75": 84.7,
+      "under75": 15.3,
+      "over85": 75.5,
+      "under85": 24.5,
+      "over95": 64.4,
+      "under95": 35.6,
+      "over105": 52.3,
+      "under105": 47.7
+    },
+    "btts_yes": 19.2,
+    "btts_no": 80.8,
+    "top_scores": [
+      {
+        "score": "1-0",
+        "probability": 0.1979
+      },
+      {
+        "score": "0-0",
+        "probability": 0.1632
+      },
+      {
+        "score": "2-0",
+        "probability": 0.12
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1188
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0979
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Korner 7.5 Ust",
+        "pick": "U7.5",
+        "confidence": 84.7,
+        "reason": "Ort. 10.9 korner bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Korner 7.5 Ust",
+          "pick": "U7.5",
+          "confidence": 84.7,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "BTTS Hayir",
+          "pick": "Yok",
+          "confidence": 80.8,
+          "reason": "En az bir takim gol atamaz"
+        },
+        {
+          "market": "Korner 8.5 Ust",
+          "pick": "U8.5",
+          "confidence": 75.5,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 39.7,
+          "reason": "Beraberlik olasligi yuksek (40%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "121-74-1788272258",
+    "timestamp": "2026-09-01T17:17:38.319549",
+    "home_id": 121,
+    "away_id": 74,
+    "home_name": "Sheffield United",
+    "away_name": "Bolton",
+    "home_elo": 1524,
+    "away_elo": 1498,
+    "result": {
+      "home_win": 30.2,
+      "draw": 39.7,
+      "away_win": 30.2,
+      "winner": "Beraberlik",
+      "winner_prob": 39.7
+    },
+    "goals": {
+      "home_lambda": 1.213,
+      "away_lambda": 0.6,
+      "expected_total": 1.813
+    },
+    "total_goals": {
+      "over15": 44.8,
+      "under15": 55.2,
+      "over25": 20.0,
+      "under25": 64.1,
+      "over35": 8.7,
+      "under35": 91.3
+    },
+    "double_chance": {
+      "1X": 28.1,
+      "12": 51.3,
+      "X2": 44.8
+    },
+    "corners": {
+      "predicted_total": 10.9,
+      "over75": 84.7,
+      "under75": 15.3,
+      "over85": 75.5,
+      "under85": 24.5,
+      "over95": 64.4,
+      "under95": 35.6,
+      "over105": 52.3,
+      "under105": 47.7
+    },
+    "btts_yes": 19.2,
+    "btts_no": 80.8,
+    "top_scores": [
+      {
+        "score": "1-0",
+        "probability": 0.1979
+      },
+      {
+        "score": "0-0",
+        "probability": 0.1632
+      },
+      {
+        "score": "2-0",
+        "probability": 0.12
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1188
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0979
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Korner 7.5 Ust",
+        "pick": "U7.5",
+        "confidence": 84.7,
+        "reason": "Ort. 10.9 korner bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Korner 7.5 Ust",
+          "pick": "U7.5",
+          "confidence": 84.7,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "BTTS Hayir",
+          "pick": "Yok",
+          "confidence": 80.8,
+          "reason": "En az bir takim gol atamaz"
+        },
+        {
+          "market": "Korner 8.5 Ust",
+          "pick": "U8.5",
+          "confidence": 75.5,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 39.7,
+          "reason": "Beraberlik olasligi yuksek (40%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "60-3000024-1788271947",
+    "timestamp": "2026-09-01T17:12:27.344967",
+    "home_id": 60,
+    "away_id": 3000024,
+    "home_name": "QPR",
+    "away_name": "Cardiff City FC",
+    "home_elo": 1507,
+    "away_elo": 1287,
+    "result": {
+      "home_win": 36.6,
+      "draw": 26.8,
+      "away_win": 36.6,
+      "winner": "Ev Sahibi",
+      "winner_prob": 36.6
+    },
+    "goals": {
+      "home_lambda": 2.235,
+      "away_lambda": 2.2,
+      "expected_total": 4.435
+    },
+    "total_goals": {
+      "over15": 75.2,
+      "under15": 24.8,
+      "over25": 61.1,
+      "under25": 61.3,
+      "over35": 46.2,
+      "under35": 53.8
+    },
+    "double_chance": {
+      "1X": 3.0,
+      "12": 57.5,
+      "X2": 34.6
+    },
+    "corners": {
+      "predicted_total": 7.2,
+      "over75": 42.9,
+      "under75": 57.1,
+      "over85": 29.6,
+      "under85": 70.4,
+      "over95": 18.9,
+      "under95": 81.1,
+      "over105": 11.2,
+      "under105": 88.8
+    },
+    "btts_yes": 21.0,
+    "btts_no": 79.0,
+    "top_scores": [
+      {
+        "score": "2-2",
+        "probability": 0.0717
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0651
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0641
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0583
+      },
+      {
+        "score": "3-2",
+        "probability": 0.0534
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 1.5 Ust",
+        "pick": "U1.5",
+        "confidence": 75.2,
+        "reason": "En az 2 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 1.5 Ust",
+          "pick": "U1.5",
+          "confidence": 75.2,
+          "reason": "En az 2 gol bekleniyor"
+        },
+        {
+          "market": "Gol 2.5 Ust",
+          "pick": "U2.5",
+          "confidence": 61.1,
+          "reason": "Ort. 4.4 gol bekleniyor"
+        },
+        {
+          "market": "Korner 7.5 Alt",
+          "pick": "A7.5",
+          "confidence": 57.1,
+          "reason": "Ort. 7.2 korner bekleniyor"
+        }
+      ]
+    }
+  },
+  {
+    "id": "121-74-1788270315",
+    "timestamp": "2026-09-01T16:45:15.270077",
+    "home_id": 121,
+    "away_id": 74,
+    "home_name": "Sheffield United",
+    "away_name": "Bolton",
+    "home_elo": 1524,
+    "away_elo": 1498,
+    "result": {
+      "home_win": 30.2,
+      "draw": 39.7,
+      "away_win": 30.2,
+      "winner": "Beraberlik",
+      "winner_prob": 39.7
+    },
+    "goals": {
+      "home_lambda": 1.213,
+      "away_lambda": 0.6,
+      "expected_total": 1.813
+    },
+    "total_goals": {
+      "over15": 23.0,
+      "under15": 77.0,
+      "over25": 3.0,
+      "under25": 97.0,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 28.1,
+      "12": 51.3,
+      "X2": 44.8
+    },
+    "corners": {
+      "predicted_total": 10.9,
+      "over75": 84.7,
+      "under75": 15.3,
+      "over85": 75.5,
+      "under85": 24.5,
+      "over95": 64.4,
+      "under95": 35.6,
+      "over105": 52.3,
+      "under105": 47.7
+    },
+    "btts_yes": 19.2,
+    "btts_no": 13.7,
+    "top_scores": [
+      {
+        "score": "1-0",
+        "probability": 0.1979
+      },
+      {
+        "score": "0-0",
+        "probability": 0.1632
+      },
+      {
+        "score": "2-0",
+        "probability": 0.12
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1188
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0979
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 97.0,
+        "reason": "Ort. 1.8 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 97.0,
+          "reason": "Ort. 1.8 gol bekleniyor"
+        },
+        {
+          "market": "Korner 7.5 Ust",
+          "pick": "U7.5",
+          "confidence": 84.7,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "Korner 8.5 Ust",
+          "pick": "U8.5",
+          "confidence": 75.5,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "Korner 9.5 Ust",
+          "pick": "U9.5",
+          "confidence": 64.4,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 39.7,
+          "reason": "Beraberlik olasligi yuksek (40%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "3000051-3000020-1788270315",
+    "timestamp": "2026-09-01T16:45:15.093837",
+    "home_id": 3000051,
+    "away_id": 3000020,
+    "home_name": "Lincoln City",
+    "away_name": "Blackburn Rovers FC",
+    "home_elo": 1418,
+    "away_elo": 1514,
+    "result": {
+      "home_win": 33.5,
+      "draw": 33.0,
+      "away_win": 33.5,
+      "winner": "Ev Sahibi",
+      "winner_prob": 33.5
+    },
+    "goals": {
+      "home_lambda": 1.471,
+      "away_lambda": 1.024,
+      "expected_total": 2.495
+    },
+    "total_goals": {
+      "over15": 23.0,
+      "under15": 77.0,
+      "over25": 3.0,
+      "under25": 97.0,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 16.3,
+      "12": 97.0,
+      "X2": 47.9
+    },
+    "corners": {
+      "predicted_total": 9.0,
+      "over75": 67.6,
+      "under75": 32.4,
+      "over85": 54.4,
+      "under85": 45.6,
+      "over95": 41.3,
+      "under95": 58.7,
+      "over105": 29.4,
+      "under105": 70.6
+    },
+    "btts_yes": 3.0,
+    "btts_no": 97.0,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1243
+      },
+      {
+        "score": "1-0",
+        "probability": 0.1214
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0914
+      },
+      {
+        "score": "2-0",
+        "probability": 0.0893
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0845
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Cift Sans 12",
+        "pick": "12",
+        "confidence": 97.0,
+        "reason": "Beraberlik disi"
+      },
+      "all_tips": [
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 97.0,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 97.0,
+          "reason": "Ort. 2.5 gol bekleniyor"
+        },
+        {
+          "market": "BTTS Hayir",
+          "pick": "Yok",
+          "confidence": 97.0,
+          "reason": "En az bir takim gol atamaz"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 33.0,
+          "reason": "Beraberlik olasligi yuksek (33%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "7000280-32-1788270314",
+    "timestamp": "2026-09-01T16:45:14.839780",
+    "home_id": 7000280,
+    "away_id": 32,
+    "home_name": "Swansea City",
+    "away_name": "Watford",
+    "home_elo": 1500,
+    "away_elo": 1537,
+    "result": {
+      "home_win": 29.6,
+      "draw": 40.7,
+      "away_win": 29.6,
+      "winner": "Beraberlik",
+      "winner_prob": 40.7
+    },
+    "goals": {
+      "home_lambda": 0.729,
+      "away_lambda": 0.754,
+      "expected_total": 1.483
+    },
+    "total_goals": {
+      "over15": 23.0,
+      "under15": 77.0,
+      "over25": 3.0,
+      "under25": 97.0,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 93.9,
+      "12": 97.0,
+      "X2": 3.7
+    },
+    "corners": {
+      "predicted_total": 9.0,
+      "over75": 67.6,
+      "under75": 32.4,
+      "over85": 54.4,
+      "under85": 45.6,
+      "over95": 41.3,
+      "under95": 58.7,
+      "over105": 29.4,
+      "under105": 70.6
+    },
+    "btts_yes": 3.0,
+    "btts_no": 97.0,
+    "top_scores": [
+      {
+        "score": "0-0",
+        "probability": 0.227
+      },
+      {
+        "score": "0-1",
+        "probability": 0.1711
+      },
+      {
+        "score": "1-0",
+        "probability": 0.1655
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1247
+      },
+      {
+        "score": "0-2",
+        "probability": 0.0645
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Cift Sans 12",
+        "pick": "12",
+        "confidence": 97.0,
+        "reason": "Beraberlik disi"
+      },
+      "all_tips": [
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 97.0,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 97.0,
+          "reason": "Ort. 1.5 gol bekleniyor"
+        },
+        {
+          "market": "BTTS Hayir",
+          "pick": "Yok",
+          "confidence": 97.0,
+          "reason": "En az bir takim gol atamaz"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 93.9,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 40.7,
+          "reason": "Beraberlik olasligi yuksek (41%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "7000295-8000028-1788270314",
+    "timestamp": "2026-09-01T16:45:14.646804",
+    "home_id": 7000295,
+    "away_id": 8000028,
+    "home_name": "West Ham United",
+    "away_name": "Wolverhampton Wanderers",
+    "home_elo": 1500,
+    "away_elo": 1400,
+    "result": {
+      "home_win": 34.2,
+      "draw": 31.6,
+      "away_win": 34.2,
+      "winner": "Ev Sahibi",
+      "winner_prob": 34.2
+    },
+    "goals": {
+      "home_lambda": 1.931,
+      "away_lambda": 0.877,
+      "expected_total": 2.808
+    },
+    "total_goals": {
+      "over15": 23.0,
+      "under15": 77.0,
+      "over25": 3.0,
+      "under25": 97.0,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 74.5,
+      "12": 97.0,
+      "X2": 16.3
+    },
+    "corners": {
+      "predicted_total": 9.0,
+      "over75": 67.6,
+      "under75": 32.4,
+      "over85": 54.4,
+      "under85": 45.6,
+      "over95": 41.3,
+      "under95": 58.7,
+      "over105": 29.4,
+      "under105": 70.6
+    },
+    "btts_yes": 3.0,
+    "btts_no": 97.0,
+    "top_scores": [
+      {
+        "score": "1-0",
+        "probability": 0.1165
+      },
+      {
+        "score": "2-0",
+        "probability": 0.1125
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1022
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0986
+      },
+      {
+        "score": "3-0",
+        "probability": 0.0724
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Cift Sans 12",
+        "pick": "12",
+        "confidence": 97.0,
+        "reason": "Beraberlik disi"
+      },
+      "all_tips": [
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 97.0,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 97.0,
+          "reason": "Ort. 2.8 gol bekleniyor"
+        },
+        {
+          "market": "BTTS Hayir",
+          "pick": "Yok",
+          "confidence": 97.0,
+          "reason": "En az bir takim gol atamaz"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 74.5,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 31.6,
+          "reason": "Beraberlik olasligi yuksek (32%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "58-44-1788270314",
+    "timestamp": "2026-09-01T16:45:14.414121",
+    "home_id": 58,
+    "away_id": 44,
+    "home_name": "Preston",
+    "away_name": "Bristol City",
+    "home_elo": 1496,
+    "away_elo": 1515,
+    "result": {
+      "home_win": 30.9,
+      "draw": 38.1,
+      "away_win": 30.9,
+      "winner": "Beraberlik",
+      "winner_prob": 38.1
+    },
+    "goals": {
+      "home_lambda": 1.2,
+      "away_lambda": 1.14,
+      "expected_total": 2.34
+    },
+    "total_goals": {
+      "over15": 23.0,
+      "under15": 77.0,
+      "over25": 3.0,
+      "under25": 97.0,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 10.5,
+      "12": 46.9,
+      "X2": 54.7
+    },
+    "corners": {
+      "predicted_total": 7.2,
+      "over75": 42.9,
+      "under75": 57.1,
+      "over85": 29.6,
+      "under85": 70.4,
+      "over95": 18.9,
+      "under95": 81.1,
+      "over105": 11.2,
+      "under105": 88.8
+    },
+    "btts_yes": 3.0,
+    "btts_no": 49.7,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1318
+      },
+      {
+        "score": "1-0",
+        "probability": 0.1156
+      },
+      {
+        "score": "0-1",
+        "probability": 0.1098
+      },
+      {
+        "score": "0-0",
+        "probability": 0.0963
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0791
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 97.0,
+        "reason": "Ort. 2.3 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 97.0,
+          "reason": "Ort. 2.3 gol bekleniyor"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 38.1,
+          "reason": "Beraberlik olasligi yuksek (38%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "6001159-3000021-1788270314",
+    "timestamp": "2026-09-01T16:45:14.222541",
+    "home_id": 6001159,
+    "away_id": 3000021,
+    "home_name": "Portsmouth",
+    "away_name": "Derby County FC",
+    "home_elo": 1513,
+    "away_elo": 1362,
+    "result": {
+      "home_win": 35.5,
+      "draw": 28.9,
+      "away_win": 35.5,
+      "winner": "Ev Sahibi",
+      "winner_prob": 35.5
+    },
+    "goals": {
+      "home_lambda": 1.262,
+      "away_lambda": 1.057,
+      "expected_total": 2.319
+    },
+    "total_goals": {
+      "over15": 23.0,
+      "under15": 77.0,
+      "over25": 3.0,
+      "under25": 97.0,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 3.0,
+      "12": 46.5,
+      "X2": 77.1
+    },
+    "corners": {
+      "predicted_total": 10.6,
+      "over75": 83.0,
+      "under75": 17.0,
+      "over85": 73.1,
+      "under85": 26.9,
+      "over95": 61.5,
+      "under95": 38.5,
+      "over105": 49.2,
+      "under105": 50.8
+    },
+    "btts_yes": 7.6,
+    "btts_no": 23.8,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1312
+      },
+      {
+        "score": "1-0",
+        "probability": 0.1241
+      },
+      {
+        "score": "0-1",
+        "probability": 0.104
+      },
+      {
+        "score": "0-0",
+        "probability": 0.0984
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0828
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 97.0,
+        "reason": "Ort. 2.3 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 97.0,
+          "reason": "Ort. 2.3 gol bekleniyor"
+        },
+        {
+          "market": "Korner 7.5 Ust",
+          "pick": "U7.5",
+          "confidence": 83.0,
+          "reason": "Ort. 10.6 korner bekleniyor"
+        },
+        {
+          "market": "Cift Sans X2",
+          "pick": "X2",
+          "confidence": 77.1,
+          "reason": "Deplasman yenilmez"
+        },
+        {
+          "market": "Korner 8.5 Ust",
+          "pick": "U8.5",
+          "confidence": 73.1,
+          "reason": "Ort. 10.6 korner bekleniyor"
+        },
+        {
+          "market": "Korner 9.5 Ust",
+          "pick": "U9.5",
+          "confidence": 61.5,
+          "reason": "Ort. 10.6 korner bekleniyor"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 28.9,
+          "reason": "Beraberlik olasligi yuksek (29%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-25-1788270313",
+    "timestamp": "2026-09-01T16:45:13.994477",
+    "home_id": 68,
+    "away_id": 25,
+    "home_name": "Birmingham",
+    "away_name": "Southampton",
+    "home_elo": 1512,
+    "away_elo": 1552,
+    "result": {
+      "home_win": 31.3,
+      "draw": 37.5,
+      "away_win": 31.3,
+      "winner": "Beraberlik",
+      "winner_prob": 37.5
+    },
+    "goals": {
+      "home_lambda": 0.3,
+      "away_lambda": 1.049,
+      "expected_total": 1.349
+    },
+    "total_goals": {
+      "over15": 34.6,
+      "under15": 65.4,
+      "over25": 14.6,
+      "under25": 85.4,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 24.1,
+      "12": 57.5,
+      "X2": 69.1
+    },
+    "corners": {
+      "predicted_total": 7.2,
+      "over75": 42.9,
+      "under75": 57.1,
+      "over85": 29.6,
+      "under85": 70.4,
+      "over95": 18.9,
+      "under95": 81.1,
+      "over105": 11.2,
+      "under105": 88.8
+    },
+    "btts_yes": 12.5,
+    "btts_no": 8.0,
+    "top_scores": [
+      {
+        "score": "0-1",
+        "probability": 0.2722
+      },
+      {
+        "score": "0-0",
+        "probability": 0.2595
+      },
+      {
+        "score": "0-2",
+        "probability": 0.1428
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0817
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0778
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 85.4,
+        "reason": "Ort. 1.3 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 85.4,
+          "reason": "Ort. 1.3 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans X2",
+          "pick": "X2",
+          "confidence": 69.1,
+          "reason": "Deplasman yenilmez"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 37.5,
+          "reason": "Beraberlik olasligi yuksek (37%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "7000293-7000292-1788270313",
+    "timestamp": "2026-09-01T16:45:13.804797",
+    "home_id": 7000293,
+    "away_id": 7000292,
+    "home_name": "Stoke City",
+    "away_name": "Norwich City",
+    "home_elo": 1500,
+    "away_elo": 1455,
+    "result": {
+      "home_win": 31.5,
+      "draw": 37.0,
+      "away_win": 31.5,
+      "winner": "Beraberlik",
+      "winner_prob": 37.0
+    },
+    "goals": {
+      "home_lambda": 1.349,
+      "away_lambda": 1.379,
+      "expected_total": 2.728
+    },
+    "total_goals": {
+      "over15": 23.0,
+      "under15": 77.0,
+      "over25": 3.0,
+      "under25": 97.0,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 41.2,
+      "12": 97.0,
+      "X2": 3.2
+    },
+    "corners": {
+      "predicted_total": 9.0,
+      "over75": 67.6,
+      "under75": 32.4,
+      "over85": 54.4,
+      "under85": 45.6,
+      "over95": 41.3,
+      "under95": 58.7,
+      "over105": 29.4,
+      "under105": 70.6
+    },
+    "btts_yes": 3.0,
+    "btts_no": 97.0,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1216
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0901
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0882
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0838
+      },
+      {
+        "score": "2-1",
+        "probability": 0.082
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Cift Sans 12",
+        "pick": "12",
+        "confidence": 97.0,
+        "reason": "Beraberlik disi"
+      },
+      "all_tips": [
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 97.0,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 97.0,
+          "reason": "Ort. 2.7 gol bekleniyor"
+        },
+        {
+          "market": "BTTS Hayir",
+          "pick": "Yok",
+          "confidence": 97.0,
+          "reason": "En az bir takim gol atamaz"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 37.0,
+          "reason": "Beraberlik olasligi yuksek (37%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "145-250-1788270313",
+    "timestamp": "2026-09-01T16:45:13.570859",
+    "home_id": 145,
+    "away_id": 250,
+    "home_name": "Millwall",
+    "away_name": "Wrexham",
+    "home_elo": 1598,
+    "away_elo": 1478,
+    "result": {
+      "home_win": 33.5,
+      "draw": 33.0,
+      "away_win": 33.5,
+      "winner": "Ev Sahibi",
+      "winner_prob": 33.5
+    },
+    "goals": {
+      "home_lambda": 1.766,
+      "away_lambda": 0.707,
+      "expected_total": 2.473
+    },
+    "total_goals": {
+      "over15": 23.0,
+      "under15": 77.0,
+      "over25": 3.0,
+      "under25": 97.0,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 3.0,
+      "12": 33.3,
+      "X2": 34.9
+    },
+    "corners": {
+      "predicted_total": 10.8,
+      "over75": 84.6,
+      "under75": 15.4,
+      "over85": 75.4,
+      "under85": 24.6,
+      "over95": 64.2,
+      "under95": 35.8,
+      "over105": 52.1,
+      "under105": 47.9
+    },
+    "btts_yes": 12.9,
+    "btts_no": 36.7,
+    "top_scores": [
+      {
+        "score": "1-0",
+        "probability": 0.1489
+      },
+      {
+        "score": "2-0",
+        "probability": 0.1315
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1053
+      },
+      {
+        "score": "2-1",
+        "probability": 0.093
+      },
+      {
+        "score": "0-0",
+        "probability": 0.0843
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 97.0,
+        "reason": "Ort. 2.5 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 97.0,
+          "reason": "Ort. 2.5 gol bekleniyor"
+        },
+        {
+          "market": "Korner 7.5 Ust",
+          "pick": "U7.5",
+          "confidence": 84.6,
+          "reason": "Ort. 10.8 korner bekleniyor"
+        },
+        {
+          "market": "Korner 8.5 Ust",
+          "pick": "U8.5",
+          "confidence": 75.4,
+          "reason": "Ort. 10.8 korner bekleniyor"
+        },
+        {
+          "market": "Korner 9.5 Ust",
+          "pick": "U9.5",
+          "confidence": 64.2,
+          "reason": "Ort. 10.8 korner bekleniyor"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 33.0,
+          "reason": "Beraberlik olasligi yuksek (33%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "8000008-73-1788270313",
+    "timestamp": "2026-09-01T16:45:13.379764",
+    "home_id": 8000008,
+    "away_id": 73,
+    "home_name": "West Bromwich Albion",
+    "away_name": "Charlton",
+    "home_elo": 1504,
+    "away_elo": 1353,
+    "result": {
+      "home_win": 36.2,
+      "draw": 27.6,
+      "away_win": 36.2,
+      "winner": "Ev Sahibi",
+      "winner_prob": 36.2
+    },
+    "goals": {
+      "home_lambda": 1.7,
+      "away_lambda": 1.089,
+      "expected_total": 2.789
+    },
+    "total_goals": {
+      "over15": 36.4,
+      "under15": 63.6,
+      "over25": 16.4,
+      "under25": 83.6,
+      "over35": 7.9,
+      "under35": 92.1
+    },
+    "double_chance": {
+      "1X": 97.0,
+      "12": 42.4,
+      "X2": 3.0
+    },
+    "corners": {
+      "predicted_total": 9.0,
+      "over75": 67.6,
+      "under75": 32.4,
+      "over85": 54.4,
+      "under85": 45.6,
+      "over95": 41.3,
+      "under95": 58.7,
+      "over105": 29.4,
+      "under105": 70.6
+    },
+    "btts_yes": 3.0,
+    "btts_no": 18.6,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1138
+      },
+      {
+        "score": "1-0",
+        "probability": 0.1045
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0967
+      },
+      {
+        "score": "2-0",
+        "probability": 0.0888
+      },
+      {
+        "score": "0-1",
+        "probability": 0.067
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Cift Sans 1X",
+        "pick": "1X",
+        "confidence": 97.0,
+        "reason": "Ev sahibi yenilmez"
+      },
+      "all_tips": [
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 97.0,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 83.6,
+          "reason": "Ort. 2.8 gol bekleniyor"
+        }
+      ]
+    }
+  },
+  {
+    "id": "60-3000024-1788270313",
+    "timestamp": "2026-09-01T16:45:13.136882",
+    "home_id": 60,
+    "away_id": 3000024,
+    "home_name": "QPR",
+    "away_name": "Cardiff City FC",
+    "home_elo": 1507,
+    "away_elo": 1287,
+    "result": {
+      "home_win": 36.6,
+      "draw": 26.8,
+      "away_win": 36.6,
+      "winner": "Ev Sahibi",
+      "winner_prob": 36.6
+    },
+    "goals": {
+      "home_lambda": 2.235,
+      "away_lambda": 2.2,
+      "expected_total": 4.435
+    },
+    "total_goals": {
+      "over15": 32.5,
+      "under15": 67.5,
+      "over25": 12.5,
+      "under25": 87.5,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 3.0,
+      "12": 57.5,
+      "X2": 35.6
+    },
+    "corners": {
+      "predicted_total": 7.2,
+      "over75": 42.9,
+      "under75": 57.1,
+      "over85": 29.6,
+      "under85": 70.4,
+      "over95": 18.9,
+      "under95": 81.1,
+      "over105": 11.2,
+      "under105": 88.8
+    },
+    "btts_yes": 21.0,
+    "btts_no": 9.6,
+    "top_scores": [
+      {
+        "score": "2-2",
+        "probability": 0.0717
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0651
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0641
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0583
+      },
+      {
+        "score": "3-2",
+        "probability": 0.0534
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 87.5,
+        "reason": "Ort. 4.4 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 87.5,
+          "reason": "Ort. 4.4 gol bekleniyor"
+        }
+      ]
+    }
+  },
+  {
+    "id": "46-56-1788270312",
+    "timestamp": "2026-09-01T16:45:12.958712",
+    "home_id": 46,
+    "away_id": 56,
+    "home_name": "Burnley",
+    "away_name": "Middlesbrough",
+    "home_elo": 1598,
+    "away_elo": 1609,
+    "result": {
+      "home_win": 32.1,
+      "draw": 35.8,
+      "away_win": 32.1,
+      "winner": "Beraberlik",
+      "winner_prob": 35.8
+    },
+    "goals": {
+      "home_lambda": 1.115,
+      "away_lambda": 1.853,
+      "expected_total": 2.968
+    },
+    "total_goals": {
+      "over15": 23.0,
+      "under15": 77.0,
+      "over25": 3.0,
+      "under25": 97.0,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 3.0,
+      "12": 42.2,
+      "X2": 86.9
+    },
+    "corners": {
+      "predicted_total": 7.2,
+      "over75": 42.9,
+      "under75": 57.1,
+      "over85": 29.6,
+      "under85": 70.4,
+      "over95": 18.9,
+      "under95": 81.1,
+      "over105": 11.2,
+      "under105": 88.8
+    },
+    "btts_yes": 7.6,
+    "btts_no": 22.3,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1062
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0984
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0953
+      },
+      {
+        "score": "0-2",
+        "probability": 0.0883
+      },
+      {
+        "score": "1-3",
+        "probability": 0.0608
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 97.0,
+        "reason": "Ort. 3.0 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 97.0,
+          "reason": "Ort. 3.0 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans X2",
+          "pick": "X2",
+          "confidence": 86.9,
+          "reason": "Deplasman yenilmez"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 35.8,
+          "reason": "Beraberlik olasligi yuksek (36%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "1000833-56-1788270312",
+    "timestamp": "2026-09-01T16:45:12.722060",
+    "home_id": 1000833,
+    "away_id": 56,
+    "home_name": "Asteras Tripolis",
+    "away_name": "Middlesbrough",
+    "home_elo": 1527,
+    "away_elo": 1609,
+    "result": {
+      "home_win": 22.2,
+      "draw": 22.2,
+      "away_win": 55.6,
+      "winner": "Deplasman",
+      "winner_prob": 55.6
+    },
+    "goals": {
+      "home_lambda": 0.3,
+      "away_lambda": 1.853,
+      "expected_total": 2.153
+    },
+    "total_goals": {
+      "over15": 23.0,
+      "under15": 77.0,
+      "over25": 3.0,
+      "under25": 97.0,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 3.0,
+      "12": 57.7,
+      "X2": 83.1
+    },
+    "corners": {
+      "predicted_total": 7.2,
+      "over75": 42.9,
+      "under75": 57.1,
+      "over85": 29.6,
+      "under85": 70.4,
+      "over95": 18.9,
+      "under95": 81.1,
+      "over105": 11.2,
+      "under105": 88.8
+    },
+    "btts_yes": 3.0,
+    "btts_no": 40.9,
+    "top_scores": [
+      {
+        "score": "0-1",
+        "probability": 0.2152
+      },
+      {
+        "score": "0-2",
+        "probability": 0.1994
+      },
+      {
+        "score": "0-3",
+        "probability": 0.1232
+      },
+      {
+        "score": "0-0",
+        "probability": 0.1161
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0646
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 97.0,
+        "reason": "Ort. 2.2 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 97.0,
+          "reason": "Ort. 2.2 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans X2",
+          "pick": "X2",
+          "confidence": 83.1,
+          "reason": "Deplasman yenilmez"
+        },
+        {
+          "market": "Deplasman Galibiyet",
+          "pick": "2",
+          "confidence": 55.6,
+          "reason": "Deplasman favori (56%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "1000833-56-1788269825",
+    "timestamp": "2026-09-01T16:37:05.982911",
+    "home_id": 1000833,
+    "away_id": 56,
+    "home_name": "Asteras Tripolis",
+    "away_name": "Middlesbrough",
+    "home_elo": 1527,
+    "away_elo": 1609,
+    "result": {
+      "home_win": 22.2,
+      "draw": 22.2,
+      "away_win": 55.6,
+      "winner": "Deplasman",
+      "winner_prob": 55.6
+    },
+    "goals": {
+      "home_lambda": 0.3,
+      "away_lambda": 1.853,
+      "expected_total": 2.153
+    },
+    "total_goals": {
+      "over15": 23.0,
+      "under15": 77.0,
+      "over25": 3.0,
+      "under25": 97.0,
+      "over35": 3.0,
+      "under35": 97.0
+    },
+    "double_chance": {
+      "1X": 3.0,
+      "12": 57.7,
+      "X2": 83.1
+    },
+    "corners": {
+      "predicted_total": 7.2,
+      "over75": 42.9,
+      "under75": 57.1,
+      "over85": 29.6,
+      "under85": 70.4,
+      "over95": 18.9,
+      "under95": 81.1,
+      "over105": 11.2,
+      "under105": 88.8
+    },
+    "btts_yes": 3.0,
+    "btts_no": 40.9,
+    "top_scores": [
+      {
+        "score": "0-1",
+        "probability": 0.2152
+      },
+      {
+        "score": "0-2",
+        "probability": 0.1994
+      },
+      {
+        "score": "0-3",
+        "probability": 0.1232
+      },
+      {
+        "score": "0-0",
+        "probability": 0.1161
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0646
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 97.0,
+        "reason": "Ort. 2.2 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 97.0,
+          "reason": "Ort. 2.2 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans X2",
+          "pick": "X2",
+          "confidence": 83.1,
+          "reason": "Deplasman yenilmez"
+        },
+        {
+          "market": "Deplasman Galibiyet",
+          "pick": "2",
+          "confidence": 55.6,
+          "reason": "Deplasman favori (56%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "46-56-1788268517",
+    "timestamp": "2026-09-01T16:15:17.352541",
+    "home_id": 46,
+    "away_id": 56,
+    "home_name": "Burnley",
+    "away_name": "Middlesbrough",
+    "home_elo": 1598,
+    "away_elo": 1609,
+    "result": {
+      "home_win": 32.1,
+      "draw": 35.8,
+      "away_win": 32.1,
+      "winner": "Beraberlik",
+      "winner_prob": 35.8
+    },
+    "goals": {
+      "home_lambda": 1.115,
+      "away_lambda": 1.853,
+      "expected_total": 2.968
+    },
+    "total_goals": {
+      "over15": 20.0,
+      "under15": 80.0,
+      "over25": 0.0,
+      "under25": 100.0,
+      "over35": 0.0,
+      "under35": 100.0
+    },
+    "double_chance": {
+      "1X": 0.0,
+      "12": 42.2,
+      "X2": 86.9
+    },
+    "corners": {
+      "predicted_total": 7.2,
+      "over75": 42.9,
+      "under75": 57.1,
+      "over85": 29.6,
+      "under85": 70.4,
+      "over95": 18.9,
+      "under95": 81.1,
+      "over105": 11.2,
+      "under105": 88.8
+    },
+    "btts_yes": 7.6,
+    "btts_no": 22.3,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1062
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0984
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0953
+      },
+      {
+        "score": "0-2",
+        "probability": 0.0883
+      },
+      {
+        "score": "1-3",
+        "probability": 0.0608
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 100.0,
+        "reason": "Ort. 3.0 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 100.0,
+          "reason": "Ort. 3.0 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans X2",
+          "pick": "X2",
+          "confidence": 86.9,
+          "reason": "Deplasman yenilmez"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 35.8,
+          "reason": "Beraberlik olasligi yuksek (36%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "60-3000024-1788268492",
+    "timestamp": "2026-09-01T16:14:52.243276",
+    "home_id": 60,
+    "away_id": 3000024,
+    "home_name": "QPR",
+    "away_name": "Cardiff City FC",
+    "home_elo": 1507,
+    "away_elo": 1287,
+    "result": {
+      "home_win": 36.6,
+      "draw": 26.8,
+      "away_win": 36.6,
+      "winner": "Ev Sahibi",
+      "winner_prob": 36.6
+    },
+    "goals": {
+      "home_lambda": 2.235,
+      "away_lambda": 2.2,
+      "expected_total": 4.435
+    },
+    "total_goals": {
+      "over15": 32.5,
+      "under15": 67.5,
+      "over25": 12.5,
+      "under25": 87.5,
+      "over35": 0.0,
+      "under35": 100.0
+    },
+    "double_chance": {
+      "1X": 0.0,
+      "12": 57.5,
+      "X2": 35.6
+    },
+    "corners": {
+      "predicted_total": 7.2,
+      "over75": 42.9,
+      "under75": 57.1,
+      "over85": 29.6,
+      "under85": 70.4,
+      "over95": 18.9,
+      "under95": 81.1,
+      "over105": 11.2,
+      "under105": 88.8
+    },
+    "btts_yes": 21.0,
+    "btts_no": 9.6,
+    "top_scores": [
+      {
+        "score": "2-2",
+        "probability": 0.0717
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0651
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0641
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0583
+      },
+      {
+        "score": "3-2",
+        "probability": 0.0534
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 87.5,
+        "reason": "Ort. 4.4 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 87.5,
+          "reason": "Ort. 4.4 gol bekleniyor"
+        }
+      ]
+    }
+  },
+  {
+    "id": "8000008-73-1788268467",
+    "timestamp": "2026-09-01T16:14:27.302146",
+    "home_id": 8000008,
+    "away_id": 73,
+    "home_name": "West Bromwich Albion",
+    "away_name": "Charlton",
+    "home_elo": 1504,
+    "away_elo": 1353,
+    "result": {
+      "home_win": 36.2,
+      "draw": 27.6,
+      "away_win": 36.2,
+      "winner": "Ev Sahibi",
+      "winner_prob": 36.2
+    },
+    "goals": {
+      "home_lambda": 1.7,
+      "away_lambda": 1.089,
+      "expected_total": 2.789
+    },
+    "total_goals": {
+      "over15": 36.4,
+      "under15": 63.6,
+      "over25": 16.4,
+      "under25": 83.6,
+      "over35": 7.9,
+      "under35": 92.1
+    },
+    "double_chance": {
+      "1X": 100.0,
+      "12": 42.4,
+      "X2": 0.0
+    },
+    "corners": {
+      "predicted_total": 9.0,
+      "over75": 67.6,
+      "under75": 32.4,
+      "over85": 54.4,
+      "under85": 45.6,
+      "over95": 41.3,
+      "under95": 58.7,
+      "over105": 29.4,
+      "under105": 70.6
+    },
+    "btts_yes": 0.0,
+    "btts_no": 18.6,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1138
+      },
+      {
+        "score": "1-0",
+        "probability": 0.1045
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0967
+      },
+      {
+        "score": "2-0",
+        "probability": 0.0888
+      },
+      {
+        "score": "0-1",
+        "probability": 0.067
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Cift Sans 1X",
+        "pick": "1X",
+        "confidence": 100.0,
+        "reason": "Ev sahibi yenilmez"
+      },
+      "all_tips": [
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 100.0,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 83.6,
+          "reason": "Ort. 2.8 gol bekleniyor"
+        }
+      ]
+    }
+  },
+  {
+    "id": "145-250-1788268443",
+    "timestamp": "2026-09-01T16:14:03.815181",
+    "home_id": 145,
+    "away_id": 250,
+    "home_name": "Millwall",
+    "away_name": "Wrexham",
+    "home_elo": 1598,
+    "away_elo": 1478,
+    "result": {
+      "home_win": 33.5,
+      "draw": 33.0,
+      "away_win": 33.5,
+      "winner": "Ev Sahibi",
+      "winner_prob": 33.5
+    },
+    "goals": {
+      "home_lambda": 1.766,
+      "away_lambda": 0.707,
+      "expected_total": 2.473
+    },
+    "total_goals": {
+      "over15": 20.0,
+      "under15": 80.0,
+      "over25": 0.0,
+      "under25": 100.0,
+      "over35": 0.0,
+      "under35": 100.0
+    },
+    "double_chance": {
+      "1X": 0.0,
+      "12": 33.3,
+      "X2": 34.9
+    },
+    "corners": {
+      "predicted_total": 10.8,
+      "over75": 84.6,
+      "under75": 15.4,
+      "over85": 75.4,
+      "under85": 24.6,
+      "over95": 64.2,
+      "under95": 35.8,
+      "over105": 52.1,
+      "under105": 47.9
+    },
+    "btts_yes": 12.9,
+    "btts_no": 36.7,
+    "top_scores": [
+      {
+        "score": "1-0",
+        "probability": 0.1489
+      },
+      {
+        "score": "2-0",
+        "probability": 0.1315
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1053
+      },
+      {
+        "score": "2-1",
+        "probability": 0.093
+      },
+      {
+        "score": "0-0",
+        "probability": 0.0843
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 100.0,
+        "reason": "Ort. 2.5 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 100.0,
+          "reason": "Ort. 2.5 gol bekleniyor"
+        },
+        {
+          "market": "Korner 7.5 Ust",
+          "pick": "U7.5",
+          "confidence": 84.6,
+          "reason": "Ort. 10.8 korner bekleniyor"
+        },
+        {
+          "market": "Korner 8.5 Ust",
+          "pick": "U8.5",
+          "confidence": 75.4,
+          "reason": "Ort. 10.8 korner bekleniyor"
+        },
+        {
+          "market": "Korner 9.5 Ust",
+          "pick": "U9.5",
+          "confidence": 64.2,
+          "reason": "Ort. 10.8 korner bekleniyor"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 33.0,
+          "reason": "Beraberlik olasligi yuksek (33%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "7000293-7000292-1788268412",
+    "timestamp": "2026-09-01T16:13:32.990515",
+    "home_id": 7000293,
+    "away_id": 7000292,
+    "home_name": "Stoke City",
+    "away_name": "Norwich City",
+    "home_elo": 1500,
+    "away_elo": 1455,
+    "result": {
+      "home_win": 31.5,
+      "draw": 37.0,
+      "away_win": 31.5,
+      "winner": "Beraberlik",
+      "winner_prob": 37.0
+    },
+    "goals": {
+      "home_lambda": 1.349,
+      "away_lambda": 1.379,
+      "expected_total": 2.728
+    },
+    "total_goals": {
+      "over15": 20.0,
+      "under15": 80.0,
+      "over25": 0.0,
+      "under25": 100.0,
+      "over35": 0.0,
+      "under35": 100.0
+    },
+    "double_chance": {
+      "1X": 41.2,
+      "12": 100.0,
+      "X2": 3.2
+    },
+    "corners": {
+      "predicted_total": 9.0,
+      "over75": 67.6,
+      "under75": 32.4,
+      "over85": 54.4,
+      "under85": 45.6,
+      "over95": 41.3,
+      "under95": 58.7,
+      "over105": 29.4,
+      "under105": 70.6
+    },
+    "btts_yes": 0.0,
+    "btts_no": 100.0,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1216
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0901
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0882
+      },
+      {
+        "score": "1-2",
+        "probability": 0.0838
+      },
+      {
+        "score": "2-1",
+        "probability": 0.082
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Cift Sans 12",
+        "pick": "12",
+        "confidence": 100.0,
+        "reason": "Beraberlik disi"
+      },
+      "all_tips": [
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 100.0,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 100.0,
+          "reason": "Ort. 2.7 gol bekleniyor"
+        },
+        {
+          "market": "BTTS Hayir",
+          "pick": "Yok",
+          "confidence": 100.0,
+          "reason": "En az bir takim gol atamaz"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 37.0,
+          "reason": "Beraberlik olasligi yuksek (37%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-25-1788268388",
+    "timestamp": "2026-09-01T16:13:08.311284",
+    "home_id": 68,
+    "away_id": 25,
+    "home_name": "Birmingham",
+    "away_name": "Southampton",
+    "home_elo": 1512,
+    "away_elo": 1552,
+    "result": {
+      "home_win": 31.3,
+      "draw": 37.5,
+      "away_win": 31.3,
+      "winner": "Beraberlik",
+      "winner_prob": 37.5
+    },
+    "goals": {
+      "home_lambda": 0.3,
+      "away_lambda": 1.049,
+      "expected_total": 1.349
+    },
+    "total_goals": {
+      "over15": 34.6,
+      "under15": 65.4,
+      "over25": 14.6,
+      "under25": 85.4,
+      "over35": 0.0,
+      "under35": 100.0
+    },
+    "double_chance": {
+      "1X": 24.1,
+      "12": 57.5,
+      "X2": 69.1
+    },
+    "corners": {
+      "predicted_total": 7.2,
+      "over75": 42.9,
+      "under75": 57.1,
+      "over85": 29.6,
+      "under85": 70.4,
+      "over95": 18.9,
+      "under95": 81.1,
+      "over105": 11.2,
+      "under105": 88.8
+    },
+    "btts_yes": 12.5,
+    "btts_no": 8.0,
+    "top_scores": [
+      {
+        "score": "0-1",
+        "probability": 0.2722
+      },
+      {
+        "score": "0-0",
+        "probability": 0.2595
+      },
+      {
+        "score": "0-2",
+        "probability": 0.1428
+      },
+      {
+        "score": "1-1",
+        "probability": 0.0817
+      },
+      {
+        "score": "1-0",
+        "probability": 0.0778
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 85.4,
+        "reason": "Ort. 1.3 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 85.4,
+          "reason": "Ort. 1.3 gol bekleniyor"
+        },
+        {
+          "market": "Cift Sans X2",
+          "pick": "X2",
+          "confidence": 69.1,
+          "reason": "Deplasman yenilmez"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 37.5,
+          "reason": "Beraberlik olasligi yuksek (37%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "6001159-3000021-1788268362",
+    "timestamp": "2026-09-01T16:12:42.314049",
+    "home_id": 6001159,
+    "away_id": 3000021,
+    "home_name": "Portsmouth",
+    "away_name": "Derby County FC",
+    "home_elo": 1513,
+    "away_elo": 1362,
+    "result": {
+      "home_win": 35.5,
+      "draw": 28.9,
+      "away_win": 35.5,
+      "winner": "Ev Sahibi",
+      "winner_prob": 35.5
+    },
+    "goals": {
+      "home_lambda": 1.262,
+      "away_lambda": 1.057,
+      "expected_total": 2.319
+    },
+    "total_goals": {
+      "over15": 20.0,
+      "under15": 80.0,
+      "over25": 0.0,
+      "under25": 100.0,
+      "over35": 0.0,
+      "under35": 100.0
+    },
+    "double_chance": {
+      "1X": 0.0,
+      "12": 46.5,
+      "X2": 77.1
+    },
+    "corners": {
+      "predicted_total": 10.6,
+      "over75": 83.0,
+      "under75": 17.0,
+      "over85": 73.1,
+      "under85": 26.9,
+      "over95": 61.5,
+      "under95": 38.5,
+      "over105": 49.2,
+      "under105": 50.8
+    },
+    "btts_yes": 7.6,
+    "btts_no": 23.8,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1312
+      },
+      {
+        "score": "1-0",
+        "probability": 0.1241
+      },
+      {
+        "score": "0-1",
+        "probability": 0.104
+      },
+      {
+        "score": "0-0",
+        "probability": 0.0984
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0828
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 100.0,
+        "reason": "Ort. 2.3 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 100.0,
+          "reason": "Ort. 2.3 gol bekleniyor"
+        },
+        {
+          "market": "Korner 7.5 Ust",
+          "pick": "U7.5",
+          "confidence": 83.0,
+          "reason": "Ort. 10.6 korner bekleniyor"
+        },
+        {
+          "market": "Cift Sans X2",
+          "pick": "X2",
+          "confidence": 77.1,
+          "reason": "Deplasman yenilmez"
+        },
+        {
+          "market": "Korner 8.5 Ust",
+          "pick": "U8.5",
+          "confidence": 73.1,
+          "reason": "Ort. 10.6 korner bekleniyor"
+        },
+        {
+          "market": "Korner 9.5 Ust",
+          "pick": "U9.5",
+          "confidence": 61.5,
+          "reason": "Ort. 10.6 korner bekleniyor"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 28.9,
+          "reason": "Beraberlik olasligi yuksek (29%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "58-44-1788266803",
+    "timestamp": "2026-09-01T15:46:43.682501",
+    "home_id": 58,
+    "away_id": 44,
+    "home_name": "Preston",
+    "away_name": "Bristol City",
+    "home_elo": 1496,
+    "away_elo": 1515,
+    "result": {
+      "home_win": 30.9,
+      "draw": 38.1,
+      "away_win": 30.9,
+      "winner": "Beraberlik",
+      "winner_prob": 38.1
+    },
+    "goals": {
+      "home_lambda": 1.2,
+      "away_lambda": 1.14,
+      "expected_total": 2.34
+    },
+    "total_goals": {
+      "over15": 20.0,
+      "under15": 80.0,
+      "over25": 0.0,
+      "under25": 100.0,
+      "over35": 0.0,
+      "under35": 100.0
+    },
+    "double_chance": {
+      "1X": 10.5,
+      "12": 46.9,
+      "X2": 54.7
+    },
+    "corners": {
+      "predicted_total": 7.2,
+      "over75": 42.9,
+      "under75": 57.1,
+      "over85": 29.6,
+      "under85": 70.4,
+      "over95": 18.9,
+      "under95": 81.1,
+      "over105": 11.2,
+      "under105": 88.8
+    },
+    "btts_yes": 0.0,
+    "btts_no": 49.7,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1318
+      },
+      {
+        "score": "1-0",
+        "probability": 0.1156
+      },
+      {
+        "score": "0-1",
+        "probability": 0.1098
+      },
+      {
+        "score": "0-0",
+        "probability": 0.0963
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0791
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 100.0,
+        "reason": "Ort. 2.3 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 100.0,
+          "reason": "Ort. 2.3 gol bekleniyor"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 38.1,
+          "reason": "Beraberlik olasligi yuksek (38%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "7000295-8000028-1788266775",
+    "timestamp": "2026-09-01T15:46:15.762177",
+    "home_id": 7000295,
+    "away_id": 8000028,
+    "home_name": "West Ham United",
+    "away_name": "Wolverhampton Wanderers",
+    "home_elo": 1500,
+    "away_elo": 1400,
+    "result": {
+      "home_win": 34.2,
+      "draw": 31.6,
+      "away_win": 34.2,
+      "winner": "Ev Sahibi",
+      "winner_prob": 34.2
+    },
+    "goals": {
+      "home_lambda": 1.931,
+      "away_lambda": 0.877,
+      "expected_total": 2.808
+    },
+    "total_goals": {
+      "over15": 20.0,
+      "under15": 80.0,
+      "over25": 0.0,
+      "under25": 100.0,
+      "over35": 0.0,
+      "under35": 100.0
+    },
+    "double_chance": {
+      "1X": 74.5,
+      "12": 100.0,
+      "X2": 16.3
+    },
+    "corners": {
+      "predicted_total": 9.0,
+      "over75": 67.6,
+      "under75": 32.4,
+      "over85": 54.4,
+      "under85": 45.6,
+      "over95": 41.3,
+      "under95": 58.7,
+      "over105": 29.4,
+      "under105": 70.6
+    },
+    "btts_yes": 0.0,
+    "btts_no": 100.0,
+    "top_scores": [
+      {
+        "score": "1-0",
+        "probability": 0.1165
+      },
+      {
+        "score": "2-0",
+        "probability": 0.1125
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1022
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0986
+      },
+      {
+        "score": "3-0",
+        "probability": 0.0724
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Cift Sans 12",
+        "pick": "12",
+        "confidence": 100.0,
+        "reason": "Beraberlik disi"
+      },
+      "all_tips": [
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 100.0,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 100.0,
+          "reason": "Ort. 2.8 gol bekleniyor"
+        },
+        {
+          "market": "BTTS Hayir",
+          "pick": "Yok",
+          "confidence": 100.0,
+          "reason": "En az bir takim gol atamaz"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 74.5,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 31.6,
+          "reason": "Beraberlik olasligi yuksek (32%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "7000280-32-1788266716",
+    "timestamp": "2026-09-01T15:45:16.037692",
+    "home_id": 7000280,
+    "away_id": 32,
+    "home_name": "Swansea City",
+    "away_name": "Watford",
+    "home_elo": 1500,
+    "away_elo": 1537,
+    "result": {
+      "home_win": 29.6,
+      "draw": 40.7,
+      "away_win": 29.6,
+      "winner": "Beraberlik",
+      "winner_prob": 40.7
+    },
+    "goals": {
+      "home_lambda": 0.729,
+      "away_lambda": 0.754,
+      "expected_total": 1.483
+    },
+    "total_goals": {
+      "over15": 20.0,
+      "under15": 80.0,
+      "over25": 0.0,
+      "under25": 100.0,
+      "over35": 0.0,
+      "under35": 100.0
+    },
+    "double_chance": {
+      "1X": 93.9,
+      "12": 100.0,
+      "X2": 3.7
+    },
+    "corners": {
+      "predicted_total": 9.0,
+      "over75": 67.6,
+      "under75": 32.4,
+      "over85": 54.4,
+      "under85": 45.6,
+      "over95": 41.3,
+      "under95": 58.7,
+      "over105": 29.4,
+      "under105": 70.6
+    },
+    "btts_yes": 0.0,
+    "btts_no": 100.0,
+    "top_scores": [
+      {
+        "score": "0-0",
+        "probability": 0.227
+      },
+      {
+        "score": "0-1",
+        "probability": 0.1711
+      },
+      {
+        "score": "1-0",
+        "probability": 0.1655
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1247
+      },
+      {
+        "score": "0-2",
+        "probability": 0.0645
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Cift Sans 12",
+        "pick": "12",
+        "confidence": 100.0,
+        "reason": "Beraberlik disi"
+      },
+      "all_tips": [
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 100.0,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 100.0,
+          "reason": "Ort. 1.5 gol bekleniyor"
+        },
+        {
+          "market": "BTTS Hayir",
+          "pick": "Yok",
+          "confidence": 100.0,
+          "reason": "En az bir takim gol atamaz"
+        },
+        {
+          "market": "Cift Sans 1X",
+          "pick": "1X",
+          "confidence": 93.9,
+          "reason": "Ev sahibi yenilmez"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 40.7,
+          "reason": "Beraberlik olasligi yuksek (41%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "3000051-3000020-1788266599",
+    "timestamp": "2026-09-01T15:43:19.952636",
+    "home_id": 3000051,
+    "away_id": 3000020,
+    "home_name": "Lincoln City",
+    "away_name": "Blackburn Rovers FC",
+    "home_elo": 1418,
+    "away_elo": 1514,
+    "result": {
+      "home_win": 33.5,
+      "draw": 33.0,
+      "away_win": 33.5,
+      "winner": "Ev Sahibi",
+      "winner_prob": 33.5
+    },
+    "goals": {
+      "home_lambda": 1.471,
+      "away_lambda": 1.024,
+      "expected_total": 2.495
+    },
+    "total_goals": {
+      "over15": 20.0,
+      "under15": 80.0,
+      "over25": 0.0,
+      "under25": 100.0,
+      "over35": 0.0,
+      "under35": 100.0
+    },
+    "double_chance": {
+      "1X": 16.3,
+      "12": 100.0,
+      "X2": 47.9
+    },
+    "corners": {
+      "predicted_total": 9.0,
+      "over75": 67.6,
+      "under75": 32.4,
+      "over85": 54.4,
+      "under85": 45.6,
+      "over95": 41.3,
+      "under95": 58.7,
+      "over105": 29.4,
+      "under105": 70.6
+    },
+    "btts_yes": 0.0,
+    "btts_no": 100.0,
+    "top_scores": [
+      {
+        "score": "1-1",
+        "probability": 0.1243
+      },
+      {
+        "score": "1-0",
+        "probability": 0.1214
+      },
+      {
+        "score": "2-1",
+        "probability": 0.0914
+      },
+      {
+        "score": "2-0",
+        "probability": 0.0893
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0845
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Cift Sans 12",
+        "pick": "12",
+        "confidence": 100.0,
+        "reason": "Beraberlik disi"
+      },
+      "all_tips": [
+        {
+          "market": "Cift Sans 12",
+          "pick": "12",
+          "confidence": 100.0,
+          "reason": "Beraberlik disi"
+        },
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 100.0,
+          "reason": "Ort. 2.5 gol bekleniyor"
+        },
+        {
+          "market": "BTTS Hayir",
+          "pick": "Yok",
+          "confidence": 100.0,
+          "reason": "En az bir takim gol atamaz"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 33.0,
+          "reason": "Beraberlik olasligi yuksek (33%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "121-74-1788237473",
+    "timestamp": "2026-09-01T07:37:53.229174",
+    "home_id": 121,
+    "away_id": 74,
+    "home_name": "Sheffield United",
+    "away_name": "Bolton",
+    "home_elo": 1524,
+    "away_elo": 1498,
+    "result": {
+      "home_win": 30.2,
+      "draw": 39.7,
+      "away_win": 30.2,
+      "winner": "Beraberlik",
+      "winner_prob": 39.7
+    },
+    "goals": {
+      "home_lambda": 1.213,
+      "away_lambda": 0.6,
+      "expected_total": 1.813
+    },
+    "total_goals": {
+      "over15": 20.0,
+      "under15": 80.0,
+      "over25": 0.0,
+      "under25": 100.0,
+      "over35": 0.0,
+      "under35": 100.0
+    },
+    "double_chance": {
+      "1X": 28.1,
+      "12": 51.3,
+      "X2": 44.8
+    },
+    "corners": {
+      "predicted_total": 10.9,
+      "over75": 84.7,
+      "under75": 15.3,
+      "over85": 75.5,
+      "under85": 24.5,
+      "over95": 64.4,
+      "under95": 35.6,
+      "over105": 52.3,
+      "under105": 47.7
+    },
+    "btts_yes": 19.2,
+    "btts_no": 13.7,
+    "top_scores": [
+      {
+        "score": "1-0",
+        "probability": 0.1979
+      },
+      {
+        "score": "0-0",
+        "probability": 0.1632
+      },
+      {
+        "score": "2-0",
+        "probability": 0.12
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1188
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0979
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 100.0,
+        "reason": "Ort. 1.8 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 100.0,
+          "reason": "Ort. 1.8 gol bekleniyor"
+        },
+        {
+          "market": "Korner 7.5 Ust",
+          "pick": "U7.5",
+          "confidence": 84.7,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "Korner 8.5 Ust",
+          "pick": "U8.5",
+          "confidence": 75.5,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "Korner 9.5 Ust",
+          "pick": "U9.5",
+          "confidence": 64.4,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 39.7,
+          "reason": "Beraberlik olasligi yuksek (40%)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "121-74-1788237163",
+    "timestamp": "2026-09-01T07:32:43.788328",
+    "home_id": 121,
+    "away_id": 74,
+    "home_name": "Sheffield United",
+    "away_name": "Bolton",
+    "home_elo": 1524,
+    "away_elo": 1498,
+    "result": {
+      "home_win": 30.2,
+      "draw": 39.7,
+      "away_win": 30.2,
+      "winner": "Beraberlik",
+      "winner_prob": 39.7
+    },
+    "goals": {
+      "home_lambda": 1.213,
+      "away_lambda": 0.6,
+      "expected_total": 1.813
+    },
+    "total_goals": {
+      "over15": 20.0,
+      "under15": 80.0,
+      "over25": 0.0,
+      "under25": 100.0,
+      "over35": 0.0,
+      "under35": 100.0
+    },
+    "double_chance": {
+      "1X": 28.1,
+      "12": 51.3,
+      "X2": 44.8
+    },
+    "corners": {
+      "predicted_total": 10.9,
+      "over75": 84.7,
+      "under75": 15.3,
+      "over85": 75.5,
+      "under85": 24.5,
+      "over95": 64.4,
+      "under95": 35.6,
+      "over105": 52.3,
+      "under105": 47.7
+    },
+    "btts_yes": 19.2,
+    "btts_no": 13.7,
+    "top_scores": [
+      {
+        "score": "1-0",
+        "probability": 0.1979
+      },
+      {
+        "score": "0-0",
+        "probability": 0.1632
+      },
+      {
+        "score": "2-0",
+        "probability": 0.12
+      },
+      {
+        "score": "1-1",
+        "probability": 0.1188
+      },
+      {
+        "score": "0-1",
+        "probability": 0.0979
+      }
+    ],
+    "recommendations": {
+      "best_bet": {
+        "market": "Gol 2.5 Alt",
+        "pick": "A2.5",
+        "confidence": 100.0,
+        "reason": "Ort. 1.8 gol bekleniyor"
+      },
+      "all_tips": [
+        {
+          "market": "Gol 2.5 Alt",
+          "pick": "A2.5",
+          "confidence": 100.0,
+          "reason": "Ort. 1.8 gol bekleniyor"
+        },
+        {
+          "market": "Korner 7.5 Ust",
+          "pick": "U7.5",
+          "confidence": 84.7,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "Korner 8.5 Ust",
+          "pick": "U8.5",
+          "confidence": 75.5,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "Korner 9.5 Ust",
+          "pick": "U9.5",
+          "confidence": 64.4,
+          "reason": "Ort. 10.9 korner bekleniyor"
+        },
+        {
+          "market": "Beraberlik",
+          "pick": "X",
+          "confidence": 39.7,
+          "reason": "Beraberlik olasligi yuksek (40%)"
+        }
+      ]
+    }
+  }
+]

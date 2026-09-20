@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · FTMS{% endblock %}
+{% block page_title %}Dashboard{% endblock %}
+{% block page_sub %}Sistem geneli istatistikler ve lig özeti{% endblock %}
+
+{% block body %}
+<!-- KPI ROW -->
+<div class="dash-kpi-row" id="kpi-row">
+  <div class="dash-kpi" id="kpi-matches">
+    <div class="dash-kpi-icon green">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+    </div>
+    <div class="dash-kpi-info">
+      <div class="dash-kpi-val" id="k-matches">--</div>
+      <div class="dash-kpi-lbl">Toplam Mac</div>
+    </div>
+    <div class="dash-kpi-spark" id="spark-matches"></div>
+  </div>
+  <div class="dash-kpi">
+    <div class="dash-kpi-icon blue">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+    </div>
+    <div class="dash-kpi-info">
+      <div class="dash-kpi-val" id="k-teams">--</div>
+      <div class="dash-kpi-lbl">Takim</div>
+    </div>
+  </div>
+  <div class="dash-kpi">
+    <div class="dash-kpi-icon purple">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+    </div>
+    <div class="dash-kpi-info">
+      <div class="dash-kpi-val" id="k-leagues">--</div>
+      <div class="dash-kpi-lbl">Lig</div>
+    </div>
+  </div>
+  <div class="dash-kpi">
+    <div class="dash-kpi-icon orange">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+    </div>
+    <div class="dash-kpi-info">
+      <div class="dash-kpi-val" id="k-avg">--</div>
+      <div class="dash-kpi-lbl">Ort. Gol / Mac</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN GRID -->
+<div class="dash-grid">
+  <!-- SOL KOLON - DAGILIM -->
+  <div class="dash-col">
+    <!-- 1X2 DAGILIMI -->
+    <div class="dash-card">
+      <div class="dash-card-head">
+        <div class="dash-card-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          Mac Sonuclari Dagilimi
+        </div>
+        <div class="dash-card-badge" id="d-range">--</div>
+      </div>
+      <div class="dash-dist">
+        <div class="dist-bar">
+          <div class="dist-seg green" id="dist-hw" style="width:0%">
+            <span class="dist-label">Ev</span>
+          </div>
+          <div class="dist-seg yellow" id="dist-dr" style="width:0%">
+            <span class="dist-label">Ber</span>
+          </div>
+          <div class="dist-seg red" id="dist-aw" style="width:0%">
+            <span class="dist-label">Dep</span>
+          </div>
+        </div>
+        <div class="dist-legend">
+          <div class="dist-legend-item"><span class="dot green"></span>Ev Sahibi <b id="d-hw">--</b></div>
+          <div class="dist-legend-item"><span class="dot yellow"></span>Beraberlik <b id="d-dr">--</b></div>
+          <div class="dist-legend-item"><span class="dot red"></span>Deplasman <b id="d-aw">--</b></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GOL ISTATISTIKLERI -->
+    <div class="dash-card">
+      <div class="dash-card-head">
+        <div class="dash-card-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Gol Istatistikleri
+        </div>
+      </div>
+      <div class="dash-goals">
+        <div class="goal-stat">
+          <div class="goal-ring" id="ring-btts">
+            <svg viewBox="0 0 36 36">
+              <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--line)" stroke-width="2.5"/>
+              <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="0, 100" stroke-linecap="round" id="btts-arc"/>
+            </svg>
+            <div class="goal-ring-val" id="d-btts">--</div>
+          </div>
+          <div class="goal-info">
+            <div class="goal-label">BTTS</div>
+            <div class="goal-sub">Iki Takim da Gol Atar</div>
+          </div>
+        </div>
+        <div class="goal-stat">
+          <div class="goal-ring" id="ring-o25">
+            <svg viewBox="0 0 36 36">
+              <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--line)" stroke-width="2.5"/>
+              <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--blue)" stroke-width="2.5" stroke-dasharray="0, 100" stroke-linecap="round" id="o25-arc"/>
+            </svg>
+            <div class="goal-ring-val" id="d-o25">--</div>
+          </div>
+          <div class="goal-info">
+            <div class="goal-label">Ust 2.5</div>
+            <div class="goal-sub">3 veya Daha Fazla Gol</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODEL DURUMU -->
+    <div class="dash-card">
+      <div class="dash-card-head">
+        <div class="dash-card-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Model Durumu
+        </div>
+        <div class="status-badge green" id="model-status">
+          <span class="status-dot green pulse"></span>
+          Hazir
+        </div>
+      </div>
+      <div class="dash-model">
+        <div class="model-row">
+          <span class="model-label">Model</span>
+          <span class="model-val" id="d-model">--</span>
+        </div>
+        <div class="model-row">
+          <span class="model-label">Yuklenme</span>
+          <span class="model-val" id="d-loaded">--</span>
+        </div>
+        <div class="model-row">
+          <span class="model-label">Dogruluk</span>
+          <span class="model-val green" id="d-accuracy">--</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SAG KOLON - LIGLER VE MAÇLAR -->
+  <div class="dash-col">
+    <!-- LIGLER -->
+    <div class="dash-card">
+      <div class="dash-card-head">
+        <div class="dash-card-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          Populer Ligler
+        </div>
+        <a href="/dashboard" class="dash-card-link">Tumu</a>
+      </div>
+      <div class="dash-leagues" id="league-grid">
+        <div class="dash-loading">
+          <div class="loading-dots"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SON MACLAR -->
+    <div class="dash-card">
+      <div class="dash-card-head">
+        <div class="dash-card-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          En Son Macclar
+        </div>
+      </div>
+      <div class="dash-recent" id="recent-list">
+        <div class="dash-loading">
+          <div class="loading-dots"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function fmtPct(v){return v!=null?v.toFixed(1)+'%':'--'}
+
+function buildLeagueCard(l){
+  const avgG=l.avg_goals||0;
+  const btts=l.btts_rate||0;
+  const o25=l.over25_rate||0;
+  return`<div class="lc-card" onclick="location.href='/league/'+encodeURIComponent('${l.name.replace(/'/g,"")}')"">
+    <div class="lc-head">
+      <div class="lc-name">${l.name}</div>
+      <div class="lc-meta">${l.teams} takim · ${l.matches.toLocaleString('tr-TR')} mac</div>
+    </div>
+    <div class="lc-stats">
+      <div class="lc-stat">
+        <div class="lc-stat-val green">${avgG.toFixed(2)}</div>
+        <div class="lc-stat-lbl">Ort. Gol</div>
+      </div>
+      <div class="lc-stat">
+        <div class="lc-stat-val blue">${btts}%</div>
+        <div class="lc-stat-lbl">BTTS</div>
+      </div>
+      <div class="lc-stat">
+        <div class="lc-stat-val purple">${o25}%</div>
+        <div class="lc-stat-lbl">Ust 2.5</div>
+      </div>
+    </div>
+    <div class="lc-bar">
+      <div class="lc-bar-fill" style="width:${Math.min(100,avgG*30)}%"></div>
+    </div>
+  </div>`;
+}
+
+function buildMatchRow(m){
+  const res=m.result;
+  const tagColor=res==='H'?'green':res==='D'?'yellow':'red';
+  const resTxt=res==='H'?'E':res==='D'?'B':'D';
+  const score=m.home_goals+'-'+m.away_goals;
+  return`<div class="mr-row" onclick="location.href='/team/${m.home_id}'">
+    <div class="mr-date">${m.date}</div>
+    <div class="mr-teams">
+      <span class="mr-team">${m.home}</span>
+      <span class="mr-score ${tagColor}">${score}</span>
+      <span class="mr-team away">${m.away}</span>
+    </div>
+    <div class="mr-league">${m.league}</div>
+    <span class="tag ${tagColor}">${resTxt}</span>
+  </div>`;
+}
+
+async function load(){
+  // STATS
+  try{
+    const s=await API.get('/api/stats');
+    
+    // KPI
+    el('k-matches').textContent=(s.total_matches||0).toLocaleString('tr-TR');
+    el('k-teams').textContent=(s.total_teams||0).toLocaleString('tr-TR');
+    el('k-leagues').textContent=s.total_leagues||0;
+    el('k-avg').textContent=s.avg_goals||0;
+    
+    // Dagilim
+    const hw=(s.home_win_rate||0)*100;
+    const dr=(s.draw_rate||0)*100;
+    const aw=100-hw-dr;
+    el('d-hw').textContent=fmtPct(hw);
+    el('d-dr').textContent=fmtPct(dr);
+    el('d-aw').textContent=fmtPct(aw);
+    el('dist-hw').style.width=hw+'%';
+    el('dist-dr').style.width=dr+'%';
+    el('dist-aw').style.width=aw+'%';
+    
+    // Gol stats
+    const btts=(s.btts_rate||0)*100;
+    const o25=(s.over25_rate||0)*100;
+    el('d-btts').textContent=fmtPct(btts);
+    el('d-o25').textContent=fmtPct(o25);
+    el('btts-arc').setAttribute('stroke-dasharray',btts+', 100');
+    el('o25-arc').setAttribute('stroke-dasharray',o25+', 100');
+    
+    // Range & model
+    el('d-range').textContent=s.date_range||'--';
+    el('d-model').textContent=s.model_version||'--';
+    el('d-loaded').textContent=s.loaded_at||'--';
+    
+    // Recent matches
+    el('recent-list').innerHTML=(s.recent_matches||[]).map(buildMatchRow).join('')
+      ||'<div class="empty" style="padding:30px"><h3>Veri yok</h3></div>';
+      
+  }catch(e){
+    toast('Istatistik yuklenemedi: '+e.message,true);
+  }
+
+  // LEAGUES
+  try{
+    const leagues=await API.get('/api/league/summary');
+    const grid=el('league-grid');
+    if(!leagues.length){grid.innerHTML='<div class="empty" style="padding:20px"><h3>Lig bulunamadi</h3></div>';return}
+    grid.innerHTML=leagues.slice(0,8).map(buildLeagueCard).join('');
+  }catch(e){
+    el('league-grid').innerHTML='<div class="empty" style="padding:20px"><h3>Yuklenemedi</h3></div>';
+  }
+
+  // MODEL INFO
+  try{
+    const info=await API.get('/api/model/info');
+    if(info.status==='ok'){
+      el('model-status').innerHTML='<span class="status-dot green pulse"></span> Hazir';
+      el('model-status').className='status-badge green';
+    }else{
+      el('model-status').innerHTML='<span class="status-dot yellow"></span> Yukleniyor';
+      el('model-status').className='status-badge yellow';
+    }
+    // Accuracy from metrics if available
+    if(info.data_info&&info.data_info.accuracy){
+      el('d-accuracy').textContent=(info.data_info.accuracy*100).toFixed(1)+'%';
+    }
+  }catch(e){}
+}
+
+load();
+initChrome('dashboard');
+</script>
+{% endblock %}

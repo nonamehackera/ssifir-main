@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+{% block title %}Takım · Futbol Tahmin Sistemi{% endblock %}
+{% block page_title %}<span id="pg-title">Takım</span>{% endblock %}
+{% block page_sub %}Derin performans analizi{% endblock %}
+
+{% block body %}
+<div id="loading" class="loading-box"><div class="spinner"></div><div>Yükleniyor...</div></div>
+
+<div id="wrap" style="display:none">
+  <!-- ÜST BANNER -->
+  <div class="card" style="margin-bottom:22px;background:linear-gradient(135deg,rgba(45,212,167,.08),var(--card))">
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+      <div class="team-avatar" style="width:64px;height:64px;font-size:26px" id="t-avatar">?</div>
+      <div style="flex:1;min-width:200px">
+        <div style="font-size:24px;font-weight:800" id="t-name">–</div>
+        <div class="muted" id="t-league">–</div>
+      </div>
+      <div style="display:flex;gap:12px">
+        <div class="stat-card" style="padding:14px 18px"><div class="v yellow" id="t-elo">–</div><div class="l">ELO</div></div>
+        <div class="stat-card" style="padding:14px 18px"><div class="v red" id="t-aelo">–</div><div class="l">Atk ELO</div></div>
+        <div class="stat-card" style="padding:14px 18px"><div class="v blue" id="t-deloe">–</div><div class="l">Def ELO</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENEL İSTATİSTİK -->
+  <div class="card" style="margin-bottom:22px">
+    <div class="section-title"><span class="bar"></span> Genel İstatistikler</div>
+    <div class="grid grid-4" id="overall-kpi"></div>
+  </div>
+
+  <div class="two-col" style="margin-bottom:22px">
+    <!-- EV / DEPLASMAN -->
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> Ev Sahibi / Deplasman Ayrımı</div>
+      <table class="table">
+        <thead><tr><th>Metrik</th><th>Ev</th><th>Dep.</th></tr></thead>
+        <tbody id="home-away-body"></tbody>
+      </table>
+    </div>
+    <!-- SERİ / REKOR -->
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> Seriler & Rekorlar</div>
+      <div class="kpi-list" id="streak-body"></div>
+    </div>
+  </div>
+
+  <div class="two-col" style="margin-bottom:22px">
+    <!-- AYLIK -->
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> Aylık Performans</div>
+      <table class="table">
+        <thead><tr><th>Ay</th><th>O</th><th>G</th><th>B</th><th>M</th><th>Gol</th><th>Puan</th></tr></thead>
+        <tbody id="monthly-body"></tbody>
+      </table>
+    </div>
+    <!-- EN ÇOK KARŞILAŞILAN RAKİPLER -->
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> En Çok Oynanan Rakipiler</div>
+      <table class="table">
+        <thead><tr><th>Rakip</th><th>O</th><th>G</th><th>B</th><th>M</th><th>Gol</th></tr></thead>
+        <tbody id="opponents-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SON MAÇLAR -->
+  <div class="card">
+    <div class="section-title"><span class="bar"></span> Son Maçlar (en yeni 30)</div>
+    <table class="table">
+      <thead><tr><th>Tarih</th><th></th><th>Rakip</th><th>Skor</th><th>Sonuç</th><th>xG (E/A)</th></tr></thead>
+      <tbody id="matches-body"></tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const TID = {{ team_id }};
+
+function kpiCard(label, val, color) {
+  return `<div class="stat-card"><div class="v ${color||''}">${val}</div><div class="l">${label}</div></div>`;
+}
+function dot(r) {
+  const m = {W:'G', D:'B', L:'M'};
+  return `<span class="form-dot ${r}">${m[r]||r}</span>`;
+}
+
+async function load() {
+  try {
+    const d = await API.get('/api/team/' + TID + '/detail');
+    el('loading').style.display = 'none';
+    el('wrap').style.display = 'block';
+
+    el('pg-title').textContent = d.name;
+    el('t-name').textContent = d.name;
+    el('t-league').textContent = d.league + (d.league_code ? ' (' + d.league_code + ')' : '');
+    el('t-avatar').textContent = initials(d.name);
+    el('t-elo').textContent = Math.round(d.elo);
+    el('t-aelo').textContent = Math.round(d.attack_elo);
+    el('t-deloe').textContent = Math.round(d.defence_elo);
+
+    const o = d.overall;
+    el('overall-kpi').innerHTML =
+      kpiCard('Maç', o.pl) +
+      kpiCard('Galibiyet', o.w, 'green') +
+      kpiCard('Beraberlik', o.d, 'yellow') +
+      kpiCard('Mağlubiyet', o.l, 'red') +
+      kpiCard('Atılan Gol', o.gf, 'green') +
+      kpiCard('Yenen Gol', o.ga, 'red') +
+      kpiCard('Averaj', (o.gd>0?'+':'') + o.gd, o.gd>=0?'green':'red') +
+      kpiCard('Puan', o.pts, 'blue') +
+      kpiCard('PPG', o.ppg, 'blue') +
+      kpiCard('Gol/Maç', o.gpg, 'green') +
+      kpiCard('Yenilen/Maç', o.gapg, 'red') +
+      kpiCard('Galibiyet %', o.win_rate + '%', 'green') +
+      kpiCard('BTTS %', o.btts_rate + '%') +
+      kpiCard('Üst2.5 %', o.over25_rate + '%') +
+      kpiCard('Clean Sheet %', o.cs_rate + '%', 'blue') +
+      kpiCard('Form', '', '') ;
+
+    // form noktaları
+    const lastForm = document.createElement('div');
+    lastForm.style.cssText = 'display:flex;gap:3px;margin-top:8px';
+    (d.form||'').split('').slice(-5).forEach(r => lastForm.innerHTML += dot(r));
+    el('overall-kpi').lastElementChild.querySelector('.l').appendChild(lastForm);
+
+    const rows = [
+      ['Oynanan', d.home.pl, d.away.pl],
+      ['Galibiyet', d.home.w, d.away.w],
+      ['Beraberlik', d.home.d, d.away.d],
+      ['Mağlubiyet', d.home.l, d.away.l],
+      ['Atılan Gol', d.home.gf, d.away.gf],
+      ['Yenen Gol', d.home.ga, d.away.ga],
+      ['Puan/Maç', d.home.ppg, d.away.ppg],
+      ['Gol/Maç', d.home.gpg, d.away.gpg],
+      ['BTTS %', d.home.btts_rate+'%', d.away.btts_rate+'%'],
+      ['Üst2.5 %', d.home.over25_rate+'%', d.away.over25_rate+'%'],
+    ];
+    el('home-away-body').innerHTML = rows.map(r =>
+      `<tr><td class="muted">${r[0]}</td><td><b>${r[1]}</b></td><td><b>${r[2]}</b></td></tr>`).join('');
+
+    const st = d.streaks, hi = d.highs;
+    const typeTxt = {W:'Galibiyet', D:'Beraberlik', L:'Mağlubiyet'};
+    el('streak-body').innerHTML =
+      kpi('Mevcut Seri', `${st.current} maç (${typeTxt[st.current_type]||'-'})`) +
+      kpi('En Uzun Galibiyet', st.longest_win + ' maç') +
+      kpi('En Uzun Yenilmezlik', st.longest_unbeaten + ' maç') +
+      kpi('En Farklı Galibiyet', hi.biggest_win || '-') +
+      kpi('En Farklı Mağlubiyet', hi.biggest_loss || '-') +
+      kpi('En Çok Atılan', hi.most_goals_scored + ' gol') +
+      kpi('En Çok Yenilen', hi.most_goals_conceded + ' gol');
+
+    el('monthly-body').innerHTML = (d.monthly_list||[]).slice(-12).reverse().map(m => {
+      const [k,v]=m;
+      return `<tr><td>${k}</td><td>${v.pl}</td><td>${v.w}</td><td>${v.d}</td><td>${v.l}</td><td>${v.gf}-${v.ga}</td><td><b class="pts">${v.pts}</b></td></tr>`;
+    }).join('') || '<tr><td colspan="7" class="muted">Veri yok</td></tr>';
+
+    el('opponents-body').innerHTML = (d.top_opponents||[]).map(o => {
+      const res = o.w>o.l ? 'green' : o.l>o.w ? 'red' : '';
+      return `<tr class="${res}"><td>${o.name}</td><td>${o.pl}</td><td>${o.w}</td><td>${o.d}</td><td>${o.l}</td><td>${o.gf}-${o.ga}</td></tr>`;
+    }).join('') || '<tr><td colspan="6" class="muted">Veri yok</td></tr>';
+
+    el('matches-body').innerHTML = (d.matches||[]).slice().reverse().map(m => {
+      const rc = m.result==='W'?'green':m.result==='D'?'yellow':'red';
+      return `<tr>
+        <td class="muted">${m.date}</td>
+        <td>${m.is_home?'🏠':'✈️'}</td>
+        <td>${m.opponent}</td>
+        <td><b>${m.gf}-${m.ga}</b></td>
+        <td><span class="tag ${rc}">${m.result==='W'?'G':m.result==='D'?'B':'M'}</span></td>
+        <td class="muted">${(m.home_xg||0)} / ${(m.away_xg||0)}</td>
+      </tr>`;
+    }).join('') || '<tr><td colspan="6" class="muted">Maç bulunamadı</td></tr>';
+
+  } catch (e) {
+    el('loading').innerHTML = '<div class="empty"><div class="e-ico">⚠️</div>Takım bulunamadı<br>' + e.message + '</div>';
+  }
+}
+function kpi(l, v) { return `<div class="kpi"><span class="k-l">${l}</span><span class="k-v">${v}</span></div>`; }
+
+load();
+initChrome('dashboard');
+</script>
+{% endblock %}

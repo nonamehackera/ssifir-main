@@ -1,0 +1,193 @@
+{% extends "layout.html" %}
+{% block title %}Tahmin · Futbol Tahmin Sistemi{% endblock %}
+{% block page_title %}Maç Tahmini{% endblock %}
+{% block page_sub %}İki takımı seç, AI derin analiz yapsın{% endblock %}
+
+{% block body %}
+<div class="card" style="margin-bottom:24px">
+  <div class="match-selector">
+    <div class="team-slot" id="home-slot" onclick="openSearch('home')">
+      <div class="ph-ico">🏠</div>
+      <div class="ph-txt">Ev Sahibi Seç</div>
+      <button class="remove-btn" onclick="event.stopPropagation(); clearTeam('home')">&times;</button>
+    </div>
+    <div class="vs-badge">VS</div>
+    <div class="team-slot" id="away-slot" onclick="openSearch('away')">
+      <div class="ph-ico">✈️</div>
+      <div class="ph-txt">Deplasman Seç</div>
+      <button class="remove-btn" onclick="event.stopPropagation(); clearTeam('away')">&times;</button>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px">
+    <button class="btn" id="predict-btn" disabled onclick="predict()">⚡ TAHMİN YAP</button>
+  </div>
+</div>
+
+<div id="loading" class="loading-box" style="display:none">
+  <div class="spinner"></div>
+  <div>Hesaplanıyor...</div>
+</div>
+
+<div id="results" style="display:none">
+  <!-- 1X2 -->
+  <div class="prob-grid" style="margin-bottom:18px">
+    <div class="prob-card"><div class="lbl">Ev Sahibi</div><div class="val green" id="r-home">0%</div></div>
+    <div class="prob-card"><div class="lbl">Beraberlik</div><div class="val yellow" id="r-draw">0%</div></div>
+    <div class="prob-card"><div class="lbl">Deplasman</div><div class="val red" id="r-away">0%</div></div>
+  </div>
+
+  <div class="two-col" style="margin-bottom:18px">
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> Gol / Skor Beklentisi</div>
+      <div class="kpi-list">
+        <div class="kpi"><span class="k-l">Ev Sahibi xG (beklenen gol)</span><span class="k-v" id="k-home-xg">–</span></div>
+        <div class="kpi"><span class="k-l">Deplasman xG (beklenen gol)</span><span class="k-v" id="k-away-xg">–</span></div>
+        <div class="kpi"><span class="k-l">Toplam Beklenen Gol</span><span class="k-v green" id="k-total-xg">–</span></div>
+        <div class="kpi"><span class="k-l">Öne Çıkan Skorlar</span><span class="k-v" id="k-scores">–</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> Kazanan & Çifte Şans</div>
+      <div class="kpi-list">
+        <div class="kpi"><span class="k-l">Tahmini Kazanan</span><span class="k-v" id="k-winner">–</span></div>
+        <div class="kpi"><span class="k-l">1X (Ev / Berabere)</span><span class="k-v green" id="k-1x">–</span></div>
+        <div class="kpi"><span class="k-l">12 (Ev / Dep.)</span><span class="k-v" id="k-12">–</span></div>
+        <div class="kpi"><span class="k-l">X2 (Berabere / Dep.)</span><span class="k-v red" id="k-x2">–</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> BTTS (İki Takım da Gol Atar)</div>
+      <div class="market-row">
+        <span class="mk-lbl">Evet</span>
+        <div style="display:flex;align-items:center">
+          <span class="mk-val green" id="m-btts-y">0%</span>
+          <div class="mk-bar"><div class="bar-fill" id="m-btts-y-bar" style="background:var(--green)"></div></div>
+        </div>
+      </div>
+      <div class="market-row">
+        <span class="mk-lbl">Hayır</span>
+        <div style="display:flex;align-items:center">
+          <span class="mk-val red" id="m-btts-n">0%</span>
+          <div class="mk-bar"><div class="bar-fill" id="m-btts-n-bar" style="background:var(--red)"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> Üst / Alt Gol</div>
+      <div class="market-row"><span class="mk-lbl">Üst 1.5</span><span class="mk-val green" id="m-o15">0%</span></div>
+      <div class="market-row"><span class="mk-lbl">Üst 2.5</span><span class="mk-val green" id="m-o25">0%</span></div>
+      <div class="market-row"><span class="mk-lbl">Üst 3.5</span><span class="mk-val" id="m-o35">0%</span></div>
+      <div class="market-row"><span class="mk-lbl">Köşe Üst 8.5</span><span class="mk-val blue" id="m-corner">0%</span></div>
+    </div>
+  </div>
+
+  <div class="two-col" style="margin-top:18px">
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> <span id="f-home-name">Ev Sahibi</span> — Son 5</div>
+      <div id="f-home"></div>
+    </div>
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> <span id="f-away-name">Deplasman</span> — Son 5</div>
+      <div id="f-away"></div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:18px">
+    <a class="btn ghost" id="link-home" href="#">🏠 Ev Sahibi Profili</a>
+    <a class="btn ghost" id="link-away" href="#" style="margin-left:8px">✈️ Deplasman Profili</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let home = null, away = null;
+
+function openSearch(t) { SearchModal.open(t, t === 'home' ? selHome : selAway); }
+function selHome(t) { home = t; renderSlot('home', t); updateBtn(); }
+function selAway(t) { away = t; renderSlot('away', t); updateBtn(); }
+
+function renderSlot(side, t) {
+  const s = el(side + '-slot');
+  s.className = 'team-slot filled';
+  s.innerHTML = `
+    <button class="remove-btn" onclick="event.stopPropagation(); clearTeam('${side}')">&times;</button>
+    <div class="team-avatar">${initials(t.name)}</div>
+    <div class="team-name-display">${t.name}</div>
+    <div class="team-meta">${t.league || ''} · ${t.n_matches || 0} maç</div>
+    <div class="elo-badge">ELO ${Math.round(t.elo)}</div>`;
+}
+function clearTeam(side) {
+  if (side === 'home') home = null; else away = null;
+  const s = el(side + '-slot');
+  s.className = 'team-slot';
+  s.innerHTML = `<div class="ph-ico">${side === 'home' ? '🏠' : '✈️'}</div><div class="ph-txt">${side === 'home' ? 'Ev Sahibi Seç' : 'Deplasman Seç'}</div><button class="remove-btn" onclick="event.stopPropagation(); clearTeam('${side}')">&times;</button>`;
+  updateBtn();
+}
+function updateBtn() { el('predict-btn').disabled = !(home && away); }
+
+function dot(r) {
+  return `<span class="form-dot ${r}">${r === 'W' ? 'G' : r === 'D' ? 'B' : 'M'}</span>`;
+}
+function renderForm(id, form) {
+  const e = el(id); e.innerHTML = '';
+  if (!form) return;
+  for (let i = form.length - 1; i >= 0; i--) e.innerHTML += dot(form[i]);
+}
+
+async function predict() {
+  if (!home || !away) return;
+  el('loading').style.display = 'block';
+  el('results').style.display = 'none';
+  try {
+    const d = await API.post('/api/predict', { home_id: home.id, away_id: away.id });
+    el('loading').style.display = 'none';
+    el('results').style.display = 'block';
+
+    el('r-home').textContent = d.home_win + '%';
+    el('r-draw').textContent = d.draw + '%';
+    el('r-away').textContent = d.away_win + '%';
+
+    el('k-home-xg').textContent = (d.goals.home_lambda || 0).toFixed(2);
+    el('k-away-xg').textContent = (d.goals.away_lambda || 0).toFixed(2);
+    el('k-total-xg').textContent = (d.goals.expected_total || 0).toFixed(2);
+
+    const sc = (d.top_scores || []).slice(0, 4).map(s => `${s.home}-${s.away}`).join('  ');
+    el('k-scores').textContent = sc || '–';
+
+    el('k-winner').textContent = `${d.winner} (${d.winner_prob}%)`;
+    el('k-1x').textContent = (d.double_chance.X2 !== undefined ? d.double_chance['1X'] : '-') + '%';
+    el('k-12').textContent = (d.double_chance['12'] ?? '-') + '%';
+    el('k-x2').textContent = (d.double_chance['X2'] ?? '-') + '%';
+
+    el('m-btts-y').textContent = d.btts_yes + '%';
+    el('m-btts-n').textContent = d.btts_no + '%';
+    setBar('m-btts-y-bar', d.btts_yes);
+    setBar('m-btts-n-bar', d.btts_no);
+
+    el('m-o15').textContent = d.total_goals.over15 + '%';
+    el('m-o25').textContent = d.total_goals.over25 + '%';
+    el('m-o35').textContent = d.total_goals.over35 + '%';
+    el('m-corner').textContent = (d.corners ? d.corners.over85 : '–') + '%';
+
+    el('f-home-name').textContent = d.home.name;
+    el('f-away-name').textContent = d.away.name;
+    renderForm('f-home', d.home.form);
+    renderForm('f-away', d.away.form);
+
+    el('link-home').href = '/team/' + home.id;
+    el('link-away').href = '/team/' + away.id;
+
+    el('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } catch (e) {
+    el('loading').style.display = 'none';
+    toast('Hata: ' + e.message, true);
+  }
+}
+
+initChrome('tahmin');
+</script>
+{% endblock %}

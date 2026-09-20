@@ -1,0 +1,112 @@
+{
+  "3000076-1003076": {
+    "home_id": "3000076",
+    "away_id": "1003076",
+    "home_goals": 2,
+    "away_goals": 2,
+    "result": "D",
+    "btts": 1,
+    "over25": 0,
+    "date": "2026-08-30",
+    "source": "manual"
+  },
+  "726-1000787": {
+    "home_id": "726",
+    "away_id": "1000787",
+    "home_goals": 1,
+    "away_goals": 1,
+    "result": "D",
+    "btts": 0,
+    "over25": 0,
+    "date": "2026-08-30",
+    "source": "manual"
+  },
+  "727-731": {
+    "home_id": "727",
+    "away_id": "731",
+    "home_goals": 1,
+    "away_goals": 1,
+    "result": "D",
+    "btts": 0,
+    "over25": 0,
+    "date": "2026-08-31",
+    "source": "manual"
+  },
+  "729-1001093": {
+    "home_id": "729",
+    "away_id": "1001093",
+    "home_goals": 2,
+    "away_goals": 1,
+    "result": "H",
+    "btts": 1,
+    "over25": 1,
+    "date": "2026-08-29",
+    "source": "manual"
+  },
+  "737-746": {
+    "home_id": "737",
+    "away_id": "746",
+    "home_goals": 0,
+    "away_goals": 1,
+    "result": "A",
+    "btts": 0,
+    "over25": 0,
+    "date": "2026-08-30",
+    "source": "manual"
+  },
+  "1002713-3000286": {
+    "home_id": "1002713",
+    "away_id": "3000286",
+    "home_goals": 0,
+    "away_goals": 2,
+    "result": "A",
+    "btts": 0,
+    "over25": 0,
+    "date": "2026-08-30",
+    "source": "manual"
+  },
+  "1003074-1000803": {
+    "home_id": "1003074",
+    "away_id": "1000803",
+    "home_goals": 3,
+    "away_goals": 0,
+    "result": "H",
+    "btts": 0,
+    "over25": 1,
+    "date": "2026-08-31",
+    "source": "manual"
+  },
+  "723-1003076": {
+    "home_id": "723",
+    "away_id": "1003076",
+    "home_goals": 1,
+    "away_goals": 0,
+    "result": "H",
+    "btts": 0,
+    "over25": 0,
+    "date": "2026-08-30",
+    "source": "manual"
+  },
+  "1001358-1001093": {
+    "home_id": "1001358",
+    "away_id": "1001093",
+    "home_goals": 3,
+    "away_goals": 3,
+    "result": "D",
+    "btts": 1,
+    "over25": 1,
+    "date": "2026-08-30",
+    "source": "manual"
+  },
+  "3000286-729": {
+    "home_id": "3000286",
+    "away_id": "729",
+    "home_goals": 2,
+    "away_goals": 3,
+    "result": "A",
+    "btts": 1,
+    "over25": 1,
+    "date": "2026-09-04",
+    "source": "manual"
+  }
+}

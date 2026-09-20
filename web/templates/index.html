@@ -1,0 +1,339 @@
+{% extends "base.html" %}
+
+{% block title %}Tahmin · FTMS{% endblock %}
+{% block page_title %}Maç Tahmini{% endblock %}
+{% block page_sub %}İki takım seçin, AI derin analiz yapsın{% endblock %}
+
+{% block topbar_actions %}
+<a href="/live" class="btn ghost" style="margin-left:8px"><span class="dot-live"></span> Canlı Maçlar</a>
+{% endblock %}
+
+{% block body %}
+<div class="card" style="margin-bottom:24px;border-radius:14px;padding:0 !important">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px 4px">
+    <div class="section-title" style="margin:0 !important;font-size:13px"><span class="bar"></span> Canlı Maçlar</div>
+    <a href="/live" style="font-size:10px;color:var(--accent);text-decoration:none;font-weight:700">Tümünü Gör →</a>
+  </div>
+  <div class="home-live-wrap" id="home-live-wrap">
+    <div class="home-live-track" id="home-live-track"></div>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:24px">
+  <div class="match-selector">
+    <div class="team-slot" id="home-slot" onclick="openSearch('home')">
+      <div class="ph-ico">H</div>
+      <div class="ph-txt">Ev Sahibi Seç</div>
+      <button class="remove-btn" onclick="event.stopPropagation(); clearTeam('home')">&times;</button>
+    </div>
+    <div class="vs-badge">VS</div>
+    <div class="team-slot" id="away-slot" onclick="openSearch('away')">
+      <div class="ph-ico">A</div>
+      <div class="ph-txt">Deplasman Seç</div>
+      <button class="remove-btn" onclick="event.stopPropagation(); clearTeam('away')">&times;</button>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:22px">
+    <button class="btn" id="predict-btn" disabled onclick="predict()">TAHMİN YAP</button>
+  </div>
+</div>
+
+<div id="loading" class="loading-box" style="display:none">
+  <div class="loading-ring"></div>
+  <div style="margin-top:16px;color:var(--text-2);font-size:13px;font-weight:500">Mac analiz ediliyor</div>
+  <div class="loading-dots" style="margin-top:10px"><span></span><span></span><span></span></div>
+</div>
+
+<div id="results" style="display:none">
+
+  <!-- Team Header -->
+  <div class="prc-match-header">
+    <div class="prc-mh-team">
+      <div class="prc-mh-avatar prc-avatar-home" id="prc-home-avatar"></div>
+      <div class="prc-mh-name" id="prc-home-name">--</div>
+    </div>
+    <div class="prc-mh-vs">VS</div>
+    <div class="prc-mh-team">
+      <div class="prc-mh-avatar prc-avatar-away" id="prc-away-avatar"></div>
+      <div class="prc-mh-name" id="prc-away-name">--</div>
+    </div>
+  </div>
+
+  <!-- Top 3 Cards Row -->
+  <div class="prc-card-grid">
+    <!-- Best Bet Card -->
+    <div class="prc-kv-card prc-bestbet" id="prc-bestbet">
+      <div class="prc-kv-title"><span class="prc-kv-star"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span> EN IYI BAHIS</div>
+      <div class="prc-kv-market" id="prc-bb-market">--</div>
+      <div class="prc-kv-big" id="prc-bb-big">--</div>
+      <div class="prc-kv-reason" id="prc-bb-reason">--</div>
+    </div>
+
+    <!-- Mac Sonucu Card -->
+    <div class="prc-kv-card">
+      <div class="prc-kv-title">MAC SONUCU</div>
+      <div class="prc-1x2-grid">
+        <div class="prc-1x2-item" id="prc-1x2-h">
+          <div class="prc-1x2-label">1</div>
+          <div class="prc-1x2-val" id="prc-home-pct">--</div>
+        </div>
+        <div class="prc-1x2-item prc-1x2-draw" id="prc-1x2-d">
+          <div class="prc-1x2-label">X</div>
+          <div class="prc-1x2-val" id="prc-draw-pct">--</div>
+        </div>
+        <div class="prc-1x2-item" id="prc-1x2-a">
+          <div class="prc-1x2-label">2</div>
+          <div class="prc-1x2-val" id="prc-away-pct">--</div>
+        </div>
+      </div>
+      <div class="prc-1x2-winner" id="prc-winner">--</div>
+    </div>
+
+    <!-- Skor Tahminleri Card -->
+    <div class="prc-kv-card">
+      <div class="prc-kv-title">SKOR TAHMINLERI</div>
+      <div class="prc-score-grid" id="prc-scores"></div>
+      <div class="prc-score-stats">
+        <div class="prc-score-stat">
+          <div class="prc-ss-label">xG</div>
+          <div class="prc-ss-val purple" id="prc-xg-total">--</div>
+        </div>
+        <div class="prc-score-stat">
+          <div class="prc-ss-label">Guven</div>
+          <div class="prc-ss-val" id="prc-conf-badge">--</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Market Cards Row -->
+  <div class="prc-card-grid">
+    <!-- Gol Ust/Alt -->
+    <div class="prc-kv-card">
+      <div class="prc-kv-title">GOL UST/ALT</div>
+      <div id="prc-goals-market"></div>
+      <div class="prc-market-row" style="margin-top:8px">
+        <span class="prc-market-label">BTTS</span>
+        <div class="prc-market-bar-wrap"><div class="prc-market-bar-fill" id="prc-btts-bar" style="width:50%;background:var(--accent)"></div></div>
+        <span class="prc-market-val" id="prc-btts">--</span>
+      </div>
+    </div>
+
+    <!-- Cift Sans -->
+    <div class="prc-kv-card">
+      <div class="prc-kv-title">CIFT SANS</div>
+      <div id="prc-dc-market"></div>
+    </div>
+
+    <!-- Korner -->
+    <div class="prc-kv-card">
+      <div class="prc-kv-title">KORNER</div>
+      <div class="prc-market-row">
+        <span class="prc-market-label">Ort.</span>
+        <span class="prc-market-val purple" id="prc-corner-avg" style="flex:1;text-align:center;font-size:16px">--</span>
+      </div>
+      <div id="prc-corner-market"></div>
+    </div>
+  </div>
+
+  <!-- Diger Oneriler -->
+  <div class="prc-kv-card" style="margin-bottom:20px">
+    <div class="prc-kv-title">DIGER ONERILER</div>
+    <div class="prc-tips-grid" id="prc-tips"></div>
+  </div>
+
+  <!-- Bottom nav -->
+  <div class="prc-bottom-nav">
+    <a class="btn ghost sm" id="link-home" href="#">Ev Sahibi Profili</a>
+    <a class="btn ghost sm" id="link-away" href="#">Dep. Profili</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let home = null, away = null;
+
+function openSearch(t) { SearchModal.open(t, t === 'home' ? selHome : selAway); }
+function selHome(t) { home = t; renderSlot('home', t); updateBtn(); }
+function selAway(t) { away = t; renderSlot('away', t); updateBtn(); }
+
+function renderSlot(side, t) {
+  const s = el(side + '-slot');
+  s.className = 'team-slot filled';
+  s.innerHTML = `
+    <button class="remove-btn" onclick="event.stopPropagation(); clearTeam('${side}')">&times;</button>
+    <div class="team-avatar">${initials(t.name)}</div>
+    <div class="team-name-display">${t.name}</div>
+    <div class="team-meta">${t.league || ''} | ${t.n_matches || 0} maç</div>
+    <div class="elo-badge">ELO ${Math.round(t.elo)}</div>`;
+}
+function clearTeam(side) {
+  if (side === 'home') home = null; else away = null;
+  const s = el(side + '-slot');
+  s.className = 'team-slot';
+  s.innerHTML = `<div class="ph-ico">${side === 'home' ? 'H' : 'A'}</div><div class="ph-txt">${side === 'home' ? 'Ev Sahibi Seç' : 'Deplasman Seç'}</div><button class="remove-btn" onclick="event.stopPropagation(); clearTeam('${side}')">&times;</button>`;
+  updateBtn();
+}
+function updateBtn() { el('predict-btn').disabled = !(home && away); }
+
+function pct(v) { return (v ?? 0).toFixed(1) + '%'; }
+function setW(id, v) { el(id).style.width = Math.max(2, Math.min(100, v)) + '%'; }
+
+async function predict() {
+  if (!home || !away) return;
+  el('loading').style.display = 'flex';
+  el('results').style.display = 'none';
+  try {
+    const d = await API.post('/api/predict', { home_id: home.id, away_id: away.id });
+    el('loading').style.display = 'none';
+    el('results').style.display = 'block';
+
+    const g = d.goals || {};
+    const tg = d.total_goals || {};
+    const dc = d.double_chance || {};
+    const cr = d.corners || {};
+
+    // Team names + avatars
+    const hName = d.home_name || (home ? home.name : 'Ev');
+    const aName = d.away_name || (away ? away.name : 'Dep');
+    el('prc-home-name').textContent = hName;
+    el('prc-away-name').textContent = aName;
+    el('prc-home-avatar').textContent = hName.substring(0, 2).toUpperCase();
+    el('prc-away-avatar').textContent = aName.substring(0, 2).toUpperCase();
+
+    // Best Bet
+    const bb = (d.recommendations && d.recommendations.best_bet) || {};
+    el('prc-bb-market').textContent = bb.market || 'Tahmin Yok';
+    el('prc-bb-big').textContent = bb.pick || '--';
+    el('prc-bb-reason').textContent = bb.reason || '';
+
+    // 1X2
+    el('prc-home-pct').textContent = pct(d.home_win);
+    el('prc-draw-pct').textContent = pct(d.draw);
+    el('prc-away-pct').textContent = pct(d.away_win);
+    el('prc-winner').textContent = `${d.winner} favori · %${d.winner_prob}`;
+    // Highlight winner card
+    const winnerKey = d.winner === hName ? 'prc-1x2-h' : d.winner === aName ? 'prc-1x2-a' : 'prc-1x2-d';
+    ['prc-1x2-h','prc-1x2-d','prc-1x2-a'].forEach(id => el(id).classList.remove('prc-1x2-active'));
+    el(winnerKey).classList.add('prc-1x2-active');
+
+    // Scores
+    const scores = (d.top_scores || []).slice(0, 5);
+    el('prc-scores').innerHTML = scores.map((s, i) =>
+      `<div class="prc-score-chip${i === 0 ? ' prc-sc-top' : ''}">${s.score}<small>${(s.probability * 100).toFixed(0)}%</small></div>`
+    ).join('') || '<span class="muted" style="font-size:13px">--</span>';
+    el('prc-xg-total').textContent = (g.expected_total || 0).toFixed(2);
+    el('prc-conf-badge').textContent = (d.confidence || 0) + '%';
+
+    // Gol Ust/Alt market rows
+    function marketRow(label, overPct, color) {
+      const c = overPct >= 65 ? 'var(--win)' : overPct >= 50 ? 'var(--draw)' : 'var(--loss)';
+      return `<div class="prc-market-row">
+        <span class="prc-market-label">${label}</span>
+        <div class="prc-market-bar-wrap"><div class="prc-market-bar-fill" style="width:${overPct}%;background:${c}"></div></div>
+        <span class="prc-market-val" style="color:${c}">%${overPct.toFixed(0)}</span>
+      </div>`;
+    }
+    el('prc-goals-market').innerHTML =
+      marketRow('Ust 1.5', tg.over15 || 0) +
+      marketRow('Ust 2.5', tg.over25 || 0) +
+      marketRow('Ust 3.5', tg.over35 || 0);
+
+    // BTTS bar
+    const bttsPct = d.btts_yes || 50;
+    el('prc-btts-bar').style.width = bttsPct + '%';
+    el('prc-btts-bar').style.background = bttsPct >= 50 ? 'var(--accent)' : 'var(--loss)';
+    el('prc-btts').textContent = `%${bttsPct.toFixed(0)} Evet`;
+
+    // Cift Sans market rows
+    const d1x = dc['1X'] ?? 50;
+    const dx2 = dc['X2'] ?? 50;
+    const d12 = dc['12'] ?? 50;
+    el('prc-dc-market').innerHTML =
+      marketRow('1X', d1x) +
+      marketRow('X2', dx2) +
+      marketRow('12', d12);
+
+    // Korner
+    const corAvg = cr.avg_corners || (cr.over75 > 50 ? 9 : cr.over75 > 40 ? 8 : 7);
+    el('prc-corner-avg').textContent = corAvg.toFixed(1);
+    el('prc-corner-market').innerHTML =
+      marketRow('Ust 7.5', cr.over75 || 0) +
+      marketRow('Ust 8.5', cr.over85 || 0) +
+      marketRow('Ust 9.5', cr.over95 || 0);
+
+    // Tips grid — sadece %70+ guvenli tahminleri goster
+    const tips = (d.recommendations && d.recommendations.all_tips || []).filter(t => (t.confidence || 0) >= 70);
+    el('prc-tips').innerHTML = tips.slice(0, 9).map((t, i) => {
+      const conf = t.confidence || 0;
+      const cls = conf >= 70 ? 'high' : conf >= 55 ? 'mid' : 'low';
+      const topCls = i < 3 ? ' prc-tip-top' : '';
+      return `<div class="prc-tip-item${topCls}">
+        <div class="prc-tip-info">
+          <div class="prc-tip-market">${t.market || '--'}</div>
+          <div class="prc-tip-reason">${t.reason || ''}</div>
+        </div>
+        <div class="prc-tip-pick">${t.pick || '--'}</div>
+        <div class="prc-tip-conf ${cls}">%${conf}</div>
+      </div>`;
+    }).join('') || '<div class="muted" style="padding:8px">%70 guven altinda tahmin yok — o mac icin tavisye edilmez</div>';
+
+    // Links
+    el('link-home').href = '/team/' + home.id;
+    el('link-away').href = '/team/' + away.id;
+
+    el('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } catch (e) {
+    el('loading').style.display = 'none';
+    toast('Hata: ' + e.message, true);
+  }
+}
+
+initChrome('tahmin');
+
+function renderTickerItem(m) {
+  const hg = (m.home_goals != null) ? m.home_goals : '-';
+  const ag = (m.away_goals != null) ? m.away_goals : '-';
+  const min = m.minute || '';
+  const status = m.status_short || 'LIVE';
+  const isHT = status === 'HT';
+  const badgeText = isHT ? 'İY' : (min ? min + "'" : '');
+  const league = m.league_name || '';
+  const htClass = isHT ? ' is-ht' : '';
+  const htDot = isHT ? '' : '<span class="hl-min-dot"></span>';
+  const shortName = (n, max) => n && n.length > max ? n.substring(0, max) + '.' : (n || '?');
+  return `<div class="hl-item${htClass}">
+    <span class="hl-min">${htDot}${badgeText || '•'}</span>
+    <div class="hl-teams">
+      <div class="hl-team-row"><span class="hl-tname">${shortName(m.home_name, 14)}</span><span class="hl-tscore">${hg}</span></div>
+      <div class="hl-team-row"><span class="hl-tname">${shortName(m.away_name, 14)}</span><span class="hl-tscore">${ag}</span></div>
+    </div>
+    <span class="hl-league-tag">${shortName(league, 12)}</span>
+  </div>`;
+}
+
+async function loadHomeLiveTicker() {
+  const track = el('home-live-track');
+  if (!track) return;
+  try {
+    const d = await API.get('/api/fixtures/my_live?kind=live');
+    if (!d.items || d.items.length === 0) {
+      track.innerHTML = '<div style="padding:10px 14px;color:var(--muted);font-size:12px">Tahminlerde canlı maç yok.</div>';
+      track.style.animation = 'none';
+      return;
+    }
+    const items = d.items.map(renderTickerItem).join('');
+    track.innerHTML = items + items;
+    track.style.animation = 'none';
+    void track.offsetWidth;
+    const speed = Math.max(30, d.items.length * 2.5);
+    track.style.animation = `ticker-scroll ${speed}s linear infinite`;
+  } catch (e) {
+    track.innerHTML = '<div style="padding:10px 14px;color:var(--muted);font-size:12px">Canlı maçlar yüklenemedi.</div>';
+  }
+}
+loadHomeLiveTicker();
+setInterval(loadHomeLiveTicker, 30000);
+</script>
+{% endblock %}

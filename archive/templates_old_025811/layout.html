@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Futbol Tahmin Sistemi{% endblock %}</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="side-logo">
+    <span class="side-icon">⚽</span>
+    <div>
+      <div class="side-title">FUTBOL</div>
+      <div class="side-sub">Tahmin Sistemi</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <a href="/" class="nav-item" data-page="tahmin"><span class="nav-ico">🎯</span> Tahmin</a>
+    <a href="/dashboard" class="nav-item" data-page="dashboard"><span class="nav-ico">📊</span> Dashboard</a>
+    <a href="/results" class="nav-item" data-page="results"><span class="nav-ico">📋</span> Sonuçlar</a>
+    <a href="/live" class="nav-item" data-page="live"><span class="nav-ico">🔴</span> Canlı</a>
+    <a href="/performance" class="nav-item" data-page="performance"><span class="nav-ico">📈</span> Performans</a>
+  </nav>
+  <div class="side-foot">
+    <div id="side-status" class="side-status">● Bağlanıyor...</div>
+    <div class="side-model" id="side-model">Model: —</div>
+  </div>
+</aside>
+
+<main class="content">
+  <header class="topbar">
+    <div class="topbar-left">
+      <h1>{% block page_title %}Futbol Tahmin Sistemi{% endblock %}</h1>
+      <p class="topbar-sub">{% block page_sub %}AI destekli maç tahminleri{% endblock %}</p>
+    </div>
+    <div class="topbar-right" id="topbar-stats"></div>
+  </header>
+
+  <div class="page-body">
+    {% block body %}{% endblock %}
+  </div>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<!-- TAKIM ARAMA MODALI -->
+<div class="search-modal-bg" id="search-bg">
+  <div class="search-modal">
+    <div class="search-modal-head">
+      <input class="search-input" id="search-input-modal" placeholder="Takım ara (örn: Barcelona, Galatasaray, Celtic)..." autocomplete="off">
+    </div>
+    <div class="search-results" id="search-results-modal"></div>
+    <div style="padding:12px;text-align:right">
+      <button class="btn ghost sm" id="search-close">Kapat</button>
+    </div>
+  </div>
+</div>
+
+<script src="/static/common.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

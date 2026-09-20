@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+{% block title %}Performans · FTMS{% endblock %}
+{% block page_title %}Performans{% endblock %}
+{% block page_sub %}Model dogruluk ve kalibrasyon metrikleri{% endblock %}
+
+{% block body %}
+<div id="loading" class="loading-box">
+  <div class="loading-ring"></div>
+  <div style="margin-top:16px;color:var(--text-2);font-size:13px;font-weight:500">Metrikler yukleniyor</div>
+  <div class="loading-dots" style="margin-top:10px"><span></span><span></span><span></span></div>
+</div>
+
+<div id="wrap" style="display:none">
+  <!-- KPI ROW -->
+  <div class="perf-kpi-row" id="m-kpi"></div>
+
+  <!-- MAIN GRID -->
+  <div class="perf-grid">
+    <!-- SOL - MODEL METRIKLERI -->
+    <div class="perf-col">
+      <!-- ANA METRIKLER -->
+      <div class="perf-card">
+        <div class="perf-card-head">
+          <div class="perf-card-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            Ana Metrikler
+          </div>
+          <div class="status-badge green" id="perf-status">
+            <span class="status-dot green pulse"></span>
+            Hazir
+          </div>
+        </div>
+        <div class="perf-metrics" id="metrics-body"></div>
+      </div>
+
+      <!-- KALIBRASYON -->
+      <div class="perf-card">
+        <div class="perf-card-head">
+          <div class="perf-card-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Kalibrasyon Analizi
+          </div>
+        </div>
+        <div class="perf-calibration" id="calibration-body">
+          <div class="calib-chart" id="calib-chart"></div>
+          <div class="calib-info">
+            <p>Model olasiliklari dogru mu kalibre ediyor?</p>
+            <div class="calib-legend">
+              <div class="calib-legend-item"><span class="calib-dot perfect"></span> Mukemmel Kalibrasyon</div>
+              <div class="calib-legend-item"><span class="calib-dot model"></span> Model Kalibrasyonu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAG - ACIKLAMA VE DETAY -->
+    <div class="perf-col">
+      <!-- NE ANLAMA GELIYOR -->
+      <div class="perf-card">
+        <div class="perf-card-head">
+          <div class="perf-card-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+            Metrik Aciklamalari
+          </div>
+        </div>
+        <div class="perf-explainer">
+          <div class="explainer-item">
+            <div class="explainer-icon green">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="explainer-info">
+              <div class="explainer-title">Log Loss</div>
+              <div class="explainer-desc">Dusuk olmasi iyi. 0 = mukemmel, 1.0+ = rastgele tahminin altinda.</div>
+            </div>
+          </div>
+          <div class="explainer-item">
+            <div class="explainer-icon blue">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="explainer-info">
+              <div class="explainer-title">Brier Skoru</div>
+              <div class="explainer-desc">Olasilik kalibrasyonu. 0'a yakin = iyi.</div>
+            </div>
+          </div>
+          <div class="explainer-item">
+            <div class="explainer-icon purple">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+            </div>
+            <div class="explainer-info">
+              <div class="explainer-title">Accuracy</div>
+              <div class="explainer-desc">1X2'de dogru tahmin orani.</div>
+            </div>
+          </div>
+          <div class="explainer-item">
+            <div class="explainer-icon orange">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="explainer-info">
+              <div class="explainer-title">xG Ortalamasi</div>
+              <div class="explainer-desc">Modelin bekledigi gol lambdasi (gercekcilik kontrolu).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- YOL HARITASI -->
+      <div class="perf-card">
+        <div class="perf-card-head">
+          <div class="perf-card-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Walk-Forward Dogrulama
+          </div>
+        </div>
+        <div class="perf-walkforward">
+          <div class="wf-item">
+            <div class="wf-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="wf-info">
+              <div class="wf-title">Kronolojik Test</div>
+              <div class="wf-desc">Gelecek bilgisi sizintisi yok</div>
+            </div>
+          </div>
+          <div class="wf-item">
+            <div class="wf-icon blue">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="wf-info">
+              <div class="wf-title">Gecmis Veri</div>
+              <div class="wf-desc">2015'ten bugune kadar olan veriler</div>
+            </div>
+          </div>
+          <div class="wf-item">
+            <div class="wf-icon purple">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="wf-info">
+              <div class="wf-title">Guvenilir Sonuc</div>
+              <div class="wf-desc">Gercek dunya kosullarinda test</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function kpiCard(label,val,color,icon){
+  return`<div class="perf-kpi">
+    <div class="perf-kpi-icon ${color||''}">${icon||''}</div>
+    <div class="perf-kpi-info">
+      <div class="perf-kpi-val">${val}</div>
+      <div class="perf-kpi-lbl">${label}</div>
+    </div>
+  </div>`;
+}
+
+function metricRow(label,val,color){
+  return`<div class="perf-metric">
+    <div class="perf-metric-label">${label}</div>
+    <div class="perf-metric-val ${color||''}">${val}</div>
+  </div>`;
+}
+
+function buildCalibrationChart(accuracy){
+  // Simple visual calibration indicator
+  const pct=accuracy?accuracy*100:0;
+  let bars='';
+  for(let i=0;i<10;i++){
+    const threshold=(i+1)*10;
+    const active=pct>=threshold;
+    bars+=`<div class="calib-bar ${active?'active':''}" style="height:${100-i*10}%"></div>`;
+  }
+  return`<div class="calib-bars">${bars}</div>
+    <div class="calib-axis">
+      <span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span>
+    </div>`;
+}
+
+async function load(){
+  try{
+    const info=await API.get('/api/model/info');
+    const m=info.metrics||{};
+    
+    // Status
+    if(info.status==='ok'){
+      el('perf-status').innerHTML='<span class="status-dot green pulse"></span> Hazir';
+      el('perf-status').className='status-badge green';
+    }else{
+      el('perf-status').innerHTML='<span class="status-dot yellow"></span> Yukleniyor';
+      el('perf-status').className='status-badge yellow';
+    }
+    
+    // KPIs
+    el('m-kpi').innerHTML=
+      kpiCard('Model Surumu',info.model_version||'--','blue',
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>')+
+      kpiCard('Test Boyutu',(m.test_size||0).toLocaleString('tr-TR'),'',
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>')+
+      kpiCard('Log Loss',m.log_loss!=null?m.log_loss.toFixed(4):'--',
+        (m.log_loss!=null&&m.log_loss<1.1)?'green':'red',
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>')+
+      kpiCard('Brier',m.brier!=null?m.brier.toFixed(4):'--',
+        (m.brier!=null&&m.brier<0.65)?'green':'red',
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>')+
+      kpiCard('Accuracy',m.accuracy!=null?(m.accuracy*100).toFixed(1)+'%':'--',
+        (m.accuracy!=null&&m.accuracy>0.45)?'green':'yellow',
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>')+
+      kpiCard('Ev xG Ort.',m.home_lambda_avg!=null?m.home_lambda_avg.toFixed(3):'--','green',
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>')+
+      kpiCard('Dep xG Ort.',m.away_lambda_avg!=null?m.away_lambda_avg.toFixed(3):'--','red',
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>');
+    
+    // Metrics list
+    el('metrics-body').innerHTML=
+      metricRow('Log Loss',m.log_loss!=null?m.log_loss.toFixed(4):'--',
+        (m.log_loss!=null&&m.log_loss<0.8)?'green':(m.log_loss!=null&&m.log_loss<1.1)?'yellow':'red')+
+      metricRow('Brier Skoru',m.brier!=null?m.brier.toFixed(4):'--',
+        (m.brier!=null&&m.brier<0.2)?'green':(m.brier!=null&&m.brier<0.25)?'yellow':'red')+
+      metricRow('Accuracy',m.accuracy!=null?(m.accuracy*100).toFixed(1)+'%':'--',
+        (m.accuracy!=null&&m.accuracy>0.48)?'green':(m.accuracy!=null&&m.accuracy>0.42)?'yellow':'red')+
+      metricRow('Ev Sahibi xG',m.home_lambda_avg!=null?m.home_lambda_avg.toFixed(3):'--','green')+
+      metricRow('Deplasman xG',m.away_lambda_avg!=null?m.away_lambda_avg.toFixed(3):'--','red')+
+      metricRow('Test Mac Sayisi',(m.test_size||0).toLocaleString('tr-TR'),'');
+    
+    // Calibration chart
+    el('calib-chart').innerHTML=buildCalibrationChart(m.accuracy);
+    
+    el('loading').style.display='none';
+    el('wrap').style.display='block';
+  }catch(e){
+    el('loading').innerHTML=`<div class="empty" style="padding:60px">
+      <div class="e-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+      <h3>Metrik yuklenemedi</h3>
+      <p>${e.message}</p>
+    </div>`;
+  }
+}
+load();
+initChrome('performance');
+</script>
+{% endblock %}

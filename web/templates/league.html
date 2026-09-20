@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block title %}Lig · FTMS{% endblock %}
+{% block page_title %}<span id="pg-title">Lig</span>{% endblock %}
+{% block page_sub %}Puan durumu ve istatistikler{% endblock %}
+
+{% block body %}
+<div id="loading" class="loading-box">
+  <div class="loading-ring"></div>
+  <div style="margin-top:16px;color:var(--text-2);font-size:13px;font-weight:500">Yukleniyor</div>
+  <div class="loading-dots" style="margin-top:10px"><span></span><span></span><span></span></div>
+  <div>Yükleniyor...</div>
+</div>
+
+<div id="wrap" style="display:none">
+  <!-- LİG ÖZET KARTLARI -->
+  <div class="grid grid-4" id="lg-kpi" style="margin-bottom:22px"></div>
+
+  <!-- PUAN DURUMU -->
+  <div class="card" style="margin-bottom:22px">
+    <div class="section-title"><span class="bar"></span> Puan Durumu</div>
+    <div style="overflow-x:auto">
+      <table class="table" id="standings">
+        <thead><tr>
+          <th class="pos">#</th><th>Takım</th><th>O</th><th>G</th><th>B</th><th>M</th>
+          <th>A-G</th><th>AV</th><th>Puan</th><th>PPG</th><th>Form</th>
+        </tr></thead>
+        <tbody id="standings-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SON MAÇLAR -->
+  <div class="card">
+    <div class="section-title"><span class="bar"></span> Ligdeki Son Maçlar</div>
+    <div id="recent-list" class="result-list"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const CODE = "{{ league_code }}";
+
+function kpiCard(label, val, color) {
+  return `<div class="stat-card"><div class="v ${color||''}">${val}</div><div class="l">${label}</div></div>`;
+}
+function dot(r) {
+  const m = {W:'G', D:'B', L:'M'};
+  return `<span class="form-dot ${r}">${m[r]||r}</span>`;
+}
+function buildMatchRow(m) {
+  const res = m.result;
+  const tagColor = res === 'H' ? 'green' : res === 'D' ? 'yellow' : 'red';
+  return `<div class="match-row" onclick="location.href='/team/${m.home_id}'">
+    <div class="mr-date">${m.date}</div>
+    <div class="mr-teams">
+      <div class="mr-team home">${m.home}</div>
+      <div class="mr-score">${m.hg}-${m.ag}</div>
+      <div class="mr-teamaway">${m.away}</div>
+    </div>
+  </div>`;
+}
+
+async function load() {
+  try {
+    const d = await API.get('/api/league/' + encodeURIComponent(CODE));
+    el('loading').style.display = 'none';
+    el('wrap').style.display = 'block';
+    el('pg-title').textContent = d.league_name;
+    document.title = d.league_name + ' · FTMS';
+
+    el('lg-kpi').innerHTML =
+      kpiCard('Maç', d.total_matches.toLocaleString('tr-TR')) +
+      kpiCard('Takım', d.total_teams, 'blue') +
+      kpiCard('Toplam Gol', d.total_goals.toLocaleString('tr-TR'), 'green') +
+      kpiCard('Ort. Gol', d.avg_goals, 'yellow') +
+      kpiCard('Ev Galibiyet %', d.home_win_pct + '%', 'green') +
+      kpiCard('Beraberlik %', d.draw_pct + '%', 'yellow') +
+      kpiCard('Dep. Galibiyet %', d.away_win_pct + '%', 'red') +
+      kpiCard('Ort. xG (E/A)', (d.avg_home_xg||0).toFixed(2) + ' / ' + (d.avg_away_xg||0).toFixed(2), 'blue');
+
+    el('standings-body').innerHTML = (d.standings||[]).map((t, i) => {
+      const rc = i < 4 ? 'green' : i > 16 ? 'red' : '';
+      const form = (t.form||[]).slice(-5).map(dot).join('');
+      return `<tr class="${rc}">
+        <td class="pos">${i+1}</td>
+        <td><a href="/team/${t.id}" style="color:inherit;text-decoration:none;font-weight:600">${t.name}</a></td>
+        <td>${t.pl}</td><td>${t.w}</td><td>${t.d}</td><td>${t.l}</td>
+        <td>${t.gf}-${t.ga}</td><td>${(t.gd>0?'+':'')+t.gd}</td>
+        <td class="pts">${t.pts}</td><td>${t.ppg}</td>
+        <td>${form}</td>
+      </tr>`;
+    }).join('') || '<tr><td colspan="11" class="muted">Takım yok</td></tr>';
+
+    el('recent-list').innerHTML = (d.recent||[]).slice().reverse().map(m => `
+      <div class="match-row" onclick="location.href='/team/${m.home_id}'">
+        <div class="mr-date">${m.date}</div>
+        <div class="mr-teams">
+          <div class="mr-team home">${m.home}</div>
+          <div class="mr-score">${m.hg}-${m.ag}</div>
+          <div class="mr-team away">${m.away}</div>
+        </div>
+        <span class="tag ${m.result==='H'?'green':m.result==='D'?'yellow':'red'}">${m.result==='H'?'E':m.result==='D'?'B':'D'}</span>
+      </div>`).join('') || '<div class="empty">Maç yok</div>';
+
+  } catch (e) {
+    el('loading').innerHTML = '<div class="empty"><div class="e-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>Lig bulunamadı<br>' + e.message + '</div>';
+  }
+}
+load();
+initChrome('dashboard');
+</script>
+{% endblock %}

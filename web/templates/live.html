@@ -1,0 +1,465 @@
+{% extends "base.html" %}
+{% block title %}Canlı · FTMS{% endblock %}
+{% block page_title %}Canlı Maçlar{% endblock %}
+{% block page_sub %}Tahminlerinizdeki maçlar — canlı, bitmiş ve gelecek{% endblock %}
+
+{% block body %}
+<div id="loading" class="loading-box">
+  <div class="loading-ring"></div>
+  <div style="margin-top:16px;color:var(--text-2);font-size:13px;font-weight:500">Yükleniyor</div>
+  <div class="loading-dots" style="margin-top:10px"><span></span><span></span><span></span></div>
+  <div style="margin-top:8px;color:var(--muted);font-size:12px">Maçlar getiriliyor...</div>
+</div>
+
+<div id="wrap" style="display:none">
+
+  <div class="lx-toolbar">
+    <div class="lx-search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="lx-search-input" placeholder="Takım veya lig ara..." autocomplete="off">
+      <button class="lx-search-clear" type="button" onclick="clearSearch()" title="Temizle">×</button>
+    </div>
+    <div class="lx-meta">
+      <span id="fs-meta-text">Yükleniyor...</span>
+      <button class="lx-refresh" type="button" onclick="manualRefresh()" title="Yenile">↻</button>
+    </div>
+  </div>
+
+  <div class="lx-tabs">
+    <button class="lx-tab active" data-filter="all" type="button">Tümü</button>
+    <button class="lx-tab" data-filter="live" type="button">
+      <span class="dot-live"></span><span>Canlı</span>
+    </button>
+    <button class="lx-tab" data-filter="finished" type="button">Bitti</button>
+    <button class="lx-tab" data-filter="scheduled" type="button">Yaklaşan</button>
+  </div>
+
+  <div id="fs-sections"></div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let FIXTURES_DATA = { live: [], finished: [], upcoming: [] };
+let CURRENT_FILTER = 'all';
+let _refreshTimer = null;
+let SEARCH_QUERY = '';
+let _loading = false;
+
+const CACHE_KEY = 'ftms_fixtures_cache_v4';
+const CACHE_TTL = { live: 30, finished: 1800, upcoming: 1800 };
+
+function readCache() {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+    const c = JSON.parse(raw);
+    const now = Date.now() / 1000;
+    for (const k of ['live', 'finished', 'upcoming']) {
+      if (!c[k] || !c[k].fetched_at) return null;
+      if (now - c[k].fetched_at > CACHE_TTL[k]) return null;
+    }
+    return c;
+  } catch (e) { return null; }
+}
+
+function writeCache(data) {
+  try {
+    const c = {};
+    const now = Date.now() / 1000;
+    c.live = { items: data.live, fetched_at: now };
+    c.finished = { items: data.finished, fetched_at: now };
+    c.upcoming = { items: data.upcoming, fetched_at: now };
+    localStorage.setItem(CACHE_KEY, JSON.stringify(c));
+  } catch (e) {}
+}
+
+function applyCache(c) {
+  return {
+    live: c.live?.items || [],
+    finished: c.finished?.items || [],
+    upcoming: c.upcoming?.items || []
+  };
+}
+
+async function loadFixtures(force, showSkeleton) {
+  if (_loading) return;
+  _loading = true;
+
+  if (!force) {
+    const c = readCache();
+    if (c) {
+      FIXTURES_DATA = applyCache(c);
+      const src = 'cache';
+      const ts = new Date().toLocaleTimeString('tr-TR', { hour:'2-digit', minute:'2-digit', second:'2-digit' });
+      const total = FIXTURES_DATA.live.length + FIXTURES_DATA.finished.length + FIXTURES_DATA.upcoming.length;
+      el('fs-meta-text').innerHTML = `<b>${total}</b> maç · <span class="fx-src">${src}</span> · ${ts}`;
+      renderFixtures();
+      _loading = false;
+      setTimeout(() => {
+        const visibleKind = (CURRENT_FILTER === 'finished') ? 'finished'
+                          : (CURRENT_FILTER === 'scheduled') ? 'upcoming'
+                          : 'live';
+        refreshKindSilent(visibleKind);
+      }, 200);
+      return;
+    }
+  }
+
+  if (showSkeleton) el('fs-sections').innerHTML = skeletonHtml();
+
+  try {
+    const params = force ? '&refresh=1' : '';
+    const d1 = await API.get('/api/fixtures?kind=live&limit=200000' + params).catch(()=>({items:[],source:'err'}));
+    FIXTURES_DATA.live = d1.items || [];
+    renderFixtures();
+    const d2 = await API.get('/api/fixtures?kind=finished&limit=200000' + params).catch(()=>({items:[],source:'err'}));
+    FIXTURES_DATA.finished = d2.items || [];
+    renderFixtures();
+    const d3 = await API.get('/api/fixtures?kind=upcoming&limit=200000' + params).catch(()=>({items:[],source:'err'}));
+    FIXTURES_DATA.upcoming = d3.items || [];
+    writeCache(FIXTURES_DATA);
+    const src = d1.source || d2.source || d3.source;
+    const ts = new Date().toLocaleTimeString('tr-TR', { hour:'2-digit', minute:'2-digit', second:'2-digit' });
+    const total = FIXTURES_DATA.live.length + FIXTURES_DATA.finished.length + FIXTURES_DATA.upcoming.length;
+    el('fs-meta-text').innerHTML = `<b>${total}</b> maç · <span class="fx-src">${src}</span> · ${ts}`;
+    renderFixtures();
+  } catch (e) {
+    el('fs-sections').innerHTML = `<div class="empty"><div class="e-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>Maçlar yüklenemedi: ${escapeHtml(e.message)}</div>`;
+  }
+  _loading = false;
+}
+
+function manualRefresh() {
+  const btn = document.querySelector('.lx-refresh');
+  if (btn) btn.classList.add('lx-refresh--spin');
+  try { localStorage.removeItem(CACHE_KEY); } catch(e) {}
+  loadFixtures(true, true).then(() => {
+    setTimeout(() => btn && btn.classList.remove('lx-refresh--spin'), 600);
+  });
+}
+
+function clearSearch() {
+  el('lx-search-input').value = '';
+  SEARCH_QUERY = '';
+  document.querySelector('.lx-search-clear').style.display = 'none';
+  renderFixtures();
+}
+
+function normTR(s) {
+  return String(s == null ? '' : s).toLowerCase()
+    .replace(/ç/g, 'c').replace(/Ç/g, 'c')
+    .replace(/ğ/g, 'g').replace(/Ğ/g, 'g')
+    .replace(/ı/g, 'i').replace(/İ/g, 'i').replace(/I/g, 'i')
+    .replace(/ö/g, 'o').replace(/Ö/g, 'o')
+    .replace(/ş/g, 's').replace(/Ş/g, 's')
+    .replace(/ü/g, 'u').replace(/Ü/g, 'u');
+}
+
+function matchesSearch(m) {
+  if (!SEARCH_QUERY) return true;
+  const q = normTR(SEARCH_QUERY);
+  return normTR(m.home_name).includes(q) ||
+         normTR(m.away_name).includes(q) ||
+         normTR(m.league_name).includes(q) ||
+         normTR(m.league_country).includes(q);
+}
+
+function renderFixtures() {
+  const live = FIXTURES_DATA.live.filter(matchesSearch);
+  const finished = FIXTURES_DATA.finished.filter(matchesSearch);
+  const upcoming = FIXTURES_DATA.upcoming.filter(matchesSearch);
+
+  let html = '';
+
+  if (live.length > 0 && (CURRENT_FILTER === 'all' || CURRENT_FILTER === 'live')) {
+    html += renderCategorySection('CANLI', 'live', groupByLeague(live), live.length);
+  }
+  if (finished.length > 0 && (CURRENT_FILTER === 'all' || CURRENT_FILTER === 'finished')) {
+    html += renderDateSection('BİTMİŞ MAÇLAR', 'finished', groupByDate(finished), finished.length);
+  }
+  if (upcoming.length > 0 && (CURRENT_FILTER === 'all' || CURRENT_FILTER === 'scheduled')) {
+    html += renderDateSection('YAKLAŞAN MAÇLAR', 'upcoming', groupByDate(upcoming), upcoming.length);
+  }
+
+  if (!html) {
+    const q = SEARCH_QUERY ? `"${escapeHtml(SEARCH_QUERY)}" için sonuç yok` : 'Bu kategoride maç yok.';
+    el('fs-sections').innerHTML = `<div class="lx-empty"><div class="lx-empty-ico">⚽</div><div>${q}</div></div>`;
+    return;
+  }
+  el('fs-sections').innerHTML = html;
+}
+
+function groupByLeague(matches) {
+  const map = {};
+  matches.forEach(m => {
+    const k = (m.league_name || 'Bilinmiyor') + '|' + (m.league_country || '') + '|' + (m.league_round || '');
+    if (!map[k]) map[k] = { name: m.league_name || 'Bilinmiyor', country: m.league_country || '', round: m.league_round || '', matches: [] };
+    map[k].matches.push(m);
+  });
+  return map;
+}
+
+function groupByDate(matches) {
+  const map = {};
+  matches.forEach(m => {
+    const d = (m.kickoff || '').substring(0, 10) || '?';
+    if (!map[d]) map[d] = [];
+    map[d].push(m);
+  });
+  const sorted = {};
+  Object.keys(map).sort((a, b) => b.localeCompare(a)).forEach(k => {
+    sorted[k] = groupByLeague(map[k]);
+  });
+  return sorted;
+}
+
+function renderCategorySection(title, kind, byLeague, total) {
+  let html = `<section class="lx-section lx-section--${kind}">
+    <header class="lx-section-head">
+      <h2 class="lx-section-title">${kind === 'live' ? '<span class="dot-live"></span>' : ''}${title}</h2>
+      <span class="lx-section-count">${total} maç</span>
+    </header>
+    <div class="lx-list">`;
+  Object.values(byLeague).forEach(g => {
+    html += renderLeagueBlock(g);
+  });
+  html += '</div></section>';
+  return html;
+}
+
+function renderDateSection(title, kind, byDate, total) {
+  let html = `<section class="lx-section lx-section--${kind}">
+    <header class="lx-section-head">
+      <h2 class="lx-section-title">${title}</h2>
+      <span class="lx-section-count">${total} maç</span>
+    </header>
+    <div class="lx-list">`;
+  Object.entries(byDate).forEach(([date, byLeague]) => {
+    const totalMatches = Object.values(byLeague).reduce((s, g) => s + g.matches.length, 0);
+    html += `<div class="lx-date-block">
+      <div class="lx-date-head"><span>${formatDateTR(date)}</span><span class="lx-date-count">${totalMatches} maç</span></div>
+      <div class="lx-list">`;
+    Object.values(byLeague).forEach(g => {
+      html += renderLeagueBlock(g);
+    });
+    html += `</div></div>`;
+  });
+  html += '</div></section>';
+  return html;
+}
+
+function renderLeagueBlock(g) {
+  return `<div class="lx-league">
+    <header class="lx-league-head">
+      <div class="lx-league-info">
+        <span class="lx-league-name">${escapeHtml(g.name)}</span>
+        ${g.country ? `<span class="lx-league-country">${escapeHtml(g.country)}</span>` : ''}
+      </div>
+      ${g.round ? `<span class="lx-league-round">${escapeHtml(g.round)}</span>` : ''}
+    </header>
+    <div class="lx-matches">${g.matches.map(renderMatch).join('')}</div>
+  </div>`;
+}
+
+// YENİ KOMPAKT 2-SATIR LAYOUT
+function renderMatch(m) {
+  const kind = m.status_kind || m.status || '';
+  const isLive = kind === 'live' || kind === '1H' || kind === '2H' || kind === 'HT' || kind === 'LIVE';
+  const isFinished = kind === 'finished' || kind === 'FT' || kind === 'FINISHED' || kind === 'AET' || kind === 'PEN';
+  const isUpcoming = !isLive && !isFinished;
+
+  const homeName = escapeHtml(m.home_name || '?');
+  const awayName = escapeHtml(m.away_name || '?');
+  const homeIni = getInitials(m.home_name || '?');
+  const awayIni = getInitials(m.away_name || '?');
+
+  const hg = (m.home_goals != null) ? m.home_goals : null;
+  const ag = (m.away_goals != null) ? m.away_goals : null;
+  const kickoff = m.kickoff || '';
+  const koTime = kickoff.slice(11, 16) || '';
+  const koDate = kickoff.slice(0, 10) || '';
+  const koShort = formatShortDate(koDate);
+
+  // Status badge (foot'un sağında)
+  let centerHtml = '';
+  if (isLive) {
+    if (m.status_short === 'HT') {
+      centerHtml = `<span class="lx-m-status lx-m-status--ht">İY</span>`;
+    } else {
+      const min = (m.minute || m.status_short || '?') + "'";
+      centerHtml = `<span class="lx-m-status lx-m-status--live"><span class="dot-live"></span>${min}</span>`;
+    }
+  } else if (isFinished) {
+    centerHtml = `<span class="lx-m-status lx-m-status--fin">MS</span>`;
+  } else {
+    // Upcoming: relative time
+    const rel = formatRelativeTR(koDate);
+    centerHtml = `<span class="lx-m-status lx-m-status--up">${rel}</span>`;
+  }
+
+  // Skor (her zaman göster, upcoming'te --:--)
+  let scoreHome = (hg != null) ? hg : '-';
+  let scoreAway = (ag != null) ? ag : '-';
+  // Win indicator
+  const homeWin = hg != null && ag != null && hg > ag;
+  const awayWin = hg != null && ag != null && ag > hg;
+  const draw = hg != null && ag != null && hg === ag;
+  const homeCls = homeWin ? ' lx-m-score--win' : '';
+  const awayCls = awayWin ? ' lx-m-score--win' : '';
+
+  let cls = 'lx-m';
+  if (isLive) cls += ' lx-m--live';
+  else if (isFinished) cls += ' lx-m--finished';
+  else cls += ' lx-m--upcoming';
+
+  return `<a class="${cls}" href="/match/${encodeURIComponent(m.fixture_id || '')}">
+    <div class="lx-m-body">
+      <div class="lx-m-team-row">
+        <div class="lx-m-logo lx-m-logo--home">${homeIni}</div>
+        <div class="lx-m-team">${homeName}</div>
+        <div class="lx-m-score${homeCls}">${scoreHome}</div>
+      </div>
+      <div class="lx-m-team-row">
+        <div class="lx-m-logo lx-m-logo--away">${awayIni}</div>
+        <div class="lx-m-team">${awayName}</div>
+        <div class="lx-m-score${awayCls}">${scoreAway}</div>
+      </div>
+    </div>
+    <div class="lx-m-foot">
+      <span class="lx-m-foot-time">${escapeHtml(koShort)} ${escapeHtml(koTime)}</span>
+      ${centerHtml}
+    </div>
+  </a>`;
+}
+
+function getInitials(name) {
+  if (!name) return '?';
+  const parts = String(name).trim().split(/\s+/);
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + (parts[1][0] || '')).toUpperCase();
+}
+
+function formatShortDate(iso) {
+  if (!iso) return '';
+  try {
+    const d = new Date(iso + 'T00:00:00');
+    const months = ['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'];
+    return `${d.getDate()} ${months[d.getMonth()]}`;
+  } catch (e) { return ''; }
+}
+
+function formatRelativeTR(iso) {
+  if (!iso) return '';
+  try {
+    const d = new Date(iso + 'T00:00:00');
+    const today = new Date(); today.setHours(0,0,0,0);
+    const diff = Math.round((d - today) / (1000*60*60*24));
+    if (diff === 0) return 'Bugün';
+    if (diff === -1) return 'Dün';
+    if (diff === 1) return 'Yarın';
+    if (diff > 1) return `+${diff} gün`;
+    return `${Math.abs(diff)} gün önce`;
+  } catch (e) { return ''; }
+}
+
+function formatDateTR(iso) {
+  if (!iso || iso === '?') return 'Bilinmiyor';
+  try {
+    const d = new Date(iso + 'T00:00:00');
+    const days = ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
+    const months = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+    const today = new Date(); today.setHours(0,0,0,0);
+    const diff = Math.round((d - today) / (1000*60*60*24));
+    let prefix = '';
+    if (diff === 0) prefix = 'Bugün';
+    else if (diff === -1) prefix = 'Dün';
+    else if (diff === 1) prefix = 'Yarın';
+    else if (diff > 1) prefix = `+${diff} gün`;
+    else prefix = `${Math.abs(diff)} gün önce`;
+    return `${prefix} · ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+  } catch (e) { return iso; }
+}
+
+function skeletonHtml() {
+  let h = '';
+  for (let i = 0; i < 6; i++) {
+    h += `<div class="lx-m lx-skel">
+      <div class="sk-line"></div>
+      <div class="sk-line sk-line--sm"></div>
+      <div class="sk-line"></div>
+    </div>`;
+  }
+  return h;
+}
+
+function escapeHtml(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+el('lx-search-input').addEventListener('input', function() {
+  SEARCH_QUERY = this.value.trim();
+  document.querySelector('.lx-search-clear').style.display = SEARCH_QUERY ? 'inline-flex' : 'none';
+  renderFixtures();
+});
+
+document.querySelectorAll('.lx-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    CURRENT_FILTER = tab.dataset.filter;
+    document.querySelectorAll('.lx-tab').forEach(t => t.classList.toggle('active', t === tab));
+    if (_refreshTimer) { clearInterval(_refreshTimer); _refreshTimer = null; }
+    if (CURRENT_FILTER === 'finished' && FIXTURES_DATA.finished.length === 0) refreshKindSilent('finished');
+    else if (CURRENT_FILTER === 'scheduled' && FIXTURES_DATA.upcoming.length === 0) refreshKindSilent('upcoming');
+    else if ((CURRENT_FILTER === 'live' || CURRENT_FILTER === 'all') && FIXTURES_DATA.live.length === 0) refreshKindSilent('live');
+    if (CURRENT_FILTER === 'live' || CURRENT_FILTER === 'all') {
+      _refreshTimer = setInterval(() => refreshKindSilent('live'), 60000);
+    }
+    renderFixtures();
+  });
+});
+
+(async function init() {
+  try { await API.get('/api/model/info'); } catch(e) {}
+
+  const cached = readCache();
+  if (cached) {
+    el('loading').style.display = 'none';
+    el('wrap').style.display = 'block';
+    FIXTURES_DATA = applyCache(cached);
+    const total = FIXTURES_DATA.live.length + FIXTURES_DATA.finished.length + FIXTURES_DATA.upcoming.length;
+    el('fs-meta-text').innerHTML = `<b>${total}</b> maç · <span class="fx-src">cache</span> · yükleniyor...`;
+    renderFixtures();
+    setTimeout(() => {
+      const visibleKind = (CURRENT_FILTER === 'finished') ? 'finished'
+                        : (CURRENT_FILTER === 'scheduled') ? 'upcoming'
+                        : 'live';
+      refreshKindSilent(visibleKind);
+    }, 200);
+  } else {
+    el('loading').style.display = 'none';
+    el('wrap').style.display = 'block';
+    await loadFixtures(false, true);
+  }
+
+  _refreshTimer = setInterval(() => refreshKindSilent('live'), 60000);
+})();
+
+function refreshKindSilent(kind) {
+  const url = '/api/fixtures?kind=' + kind + '&limit=200000&refresh=1';
+  API.get(url).then(d => {
+    if (!d.items) return;
+    if (kind === 'live') FIXTURES_DATA.live = d.items;
+    else if (kind === 'finished') FIXTURES_DATA.finished = d.items;
+    else if (kind === 'upcoming') FIXTURES_DATA.upcoming = d.items;
+    writeCache(FIXTURES_DATA);
+    const total = FIXTURES_DATA.live.length + FIXTURES_DATA.finished.length + FIXTURES_DATA.upcoming.length;
+    const ts = new Date().toLocaleTimeString('tr-TR', { hour:'2-digit', minute:'2-digit', second:'2-digit' });
+    el('fs-meta-text').innerHTML = `<b>${total}</b> maç · <span class="fx-src">${d.source || ''}</span> · ${ts}`;
+    renderFixtures();
+  }).catch(e => console.warn('silent refresh', kind, 'failed:', e));
+}
+
+initChrome('live');
+</script>
+{% endblock %}

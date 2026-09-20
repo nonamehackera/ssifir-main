@@ -1,0 +1,906 @@
+{
+  "729": {
+    "total_predictions": 1,
+    "recent_predictions": [
+      {
+        "pred_home": 0.5829067648722692,
+        "pred_draw": 0.2465186279401557,
+        "pred_away": 0.17057460718757514,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "732": {
+    "total_predictions": 6,
+    "recent_predictions": [
+      {
+        "pred_home": 0.5829067648722692,
+        "pred_draw": 0.2465186279401557,
+        "pred_away": 0.17057460718757514,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6411703720769497,
+        "pred_draw": 0.1854625043197788,
+        "pred_away": 0.17336712360327153,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6411703720769497,
+        "pred_draw": 0.1854625043197788,
+        "pred_away": 0.17336712360327153,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6411703720769497,
+        "pred_draw": 0.1854625043197788,
+        "pred_away": 0.17336712360327153,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6411703720769497,
+        "pred_draw": 0.1854625043197788,
+        "pred_away": 0.17336712360327153,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6411703720769497,
+        "pred_draw": 0.1854625043197788,
+        "pred_away": 0.17336712360327153,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "422": {
+    "total_predictions": 6,
+    "recent_predictions": [
+      {
+        "pred_home": 0.24129664475655543,
+        "pred_draw": 0.24078418222218162,
+        "pred_away": 0.517919173021263,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.24129664475655543,
+        "pred_draw": 0.24078418222218162,
+        "pred_away": 0.517919173021263,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.24129664475655543,
+        "pred_draw": 0.24078418222218162,
+        "pred_away": 0.517919173021263,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.24129664475655543,
+        "pred_draw": 0.24078418222218162,
+        "pred_away": 0.517919173021263,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.24129664475655543,
+        "pred_draw": 0.24078418222218162,
+        "pred_away": 0.517919173021263,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.24129664475655543,
+        "pred_draw": 0.24078418222218162,
+        "pred_away": 0.517919173021263,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "432": {
+    "total_predictions": 6,
+    "recent_predictions": [
+      {
+        "pred_home": 0.24129664475655543,
+        "pred_draw": 0.24078418222218162,
+        "pred_away": 0.517919173021263,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.24129664475655543,
+        "pred_draw": 0.24078418222218162,
+        "pred_away": 0.517919173021263,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.24129664475655543,
+        "pred_draw": 0.24078418222218162,
+        "pred_away": 0.517919173021263,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.24129664475655543,
+        "pred_draw": 0.24078418222218162,
+        "pred_away": 0.517919173021263,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.24129664475655543,
+        "pred_draw": 0.24078418222218162,
+        "pred_away": 0.517919173021263,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.24129664475655543,
+        "pred_draw": 0.24078418222218162,
+        "pred_away": 0.517919173021263,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "731": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.4595009925119441,
+        "pred_draw": 0.23181088654329807,
+        "pred_away": 0.3086881209447579,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4595009925119441,
+        "pred_draw": 0.23181088654329807,
+        "pred_away": 0.3086881209447579,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4595009925119441,
+        "pred_draw": 0.23181088654329807,
+        "pred_away": 0.3086881209447579,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4595009925119441,
+        "pred_draw": 0.23181088654329807,
+        "pred_away": 0.3086881209447579,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4595009925119441,
+        "pred_draw": 0.23181088654329807,
+        "pred_away": 0.3086881209447579,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "725": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.4595009925119441,
+        "pred_draw": 0.23181088654329807,
+        "pred_away": 0.3086881209447579,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4595009925119441,
+        "pred_draw": 0.23181088654329807,
+        "pred_away": 0.3086881209447579,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4595009925119441,
+        "pred_draw": 0.23181088654329807,
+        "pred_away": 0.3086881209447579,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4595009925119441,
+        "pred_draw": 0.23181088654329807,
+        "pred_away": 0.3086881209447579,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4595009925119441,
+        "pred_draw": 0.23181088654329807,
+        "pred_away": 0.3086881209447579,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "18": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.4608045095811033,
+        "pred_draw": 0.22225861345042336,
+        "pred_away": 0.3169368769684733,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4608045095811033,
+        "pred_draw": 0.22225861345042336,
+        "pred_away": 0.3169368769684733,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4608045095811033,
+        "pred_draw": 0.22225861345042336,
+        "pred_away": 0.3169368769684733,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4608045095811033,
+        "pred_draw": 0.22225861345042336,
+        "pred_away": 0.3169368769684733,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4608045095811033,
+        "pred_draw": 0.22225861345042336,
+        "pred_away": 0.3169368769684733,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "7": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.4608045095811033,
+        "pred_draw": 0.22225861345042336,
+        "pred_away": 0.3169368769684733,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4608045095811033,
+        "pred_draw": 0.22225861345042336,
+        "pred_away": 0.3169368769684733,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4608045095811033,
+        "pred_draw": 0.22225861345042336,
+        "pred_away": 0.3169368769684733,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4608045095811033,
+        "pred_draw": 0.22225861345042336,
+        "pred_away": 0.3169368769684733,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4608045095811033,
+        "pred_draw": 0.22225861345042336,
+        "pred_away": 0.3169368769684733,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "4": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.40113855731621845,
+        "pred_draw": 0.26483507528292055,
+        "pred_away": 0.33402636740086095,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.40113855731621845,
+        "pred_draw": 0.26483507528292055,
+        "pred_away": 0.33402636740086095,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.40113855731621845,
+        "pred_draw": 0.26483507528292055,
+        "pred_away": 0.33402636740086095,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.40113855731621845,
+        "pred_draw": 0.26483507528292055,
+        "pred_away": 0.33402636740086095,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.40113855731621845,
+        "pred_draw": 0.26483507528292055,
+        "pred_away": 0.33402636740086095,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "19": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.40113855731621845,
+        "pred_draw": 0.26483507528292055,
+        "pred_away": 0.33402636740086095,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.40113855731621845,
+        "pred_draw": 0.26483507528292055,
+        "pred_away": 0.33402636740086095,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.40113855731621845,
+        "pred_draw": 0.26483507528292055,
+        "pred_away": 0.33402636740086095,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.40113855731621845,
+        "pred_draw": 0.26483507528292055,
+        "pred_away": 0.33402636740086095,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.40113855731621845,
+        "pred_draw": 0.26483507528292055,
+        "pred_away": 0.33402636740086095,
+        "league": "E0",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "723": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.6411703720769497,
+        "pred_draw": 0.1854625043197788,
+        "pred_away": 0.17336712360327153,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6411703720769497,
+        "pred_draw": 0.1854625043197788,
+        "pred_away": 0.17336712360327153,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6411703720769497,
+        "pred_draw": 0.1854625043197788,
+        "pred_away": 0.17336712360327153,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6411703720769497,
+        "pred_draw": 0.1854625043197788,
+        "pred_away": 0.17336712360327153,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6411703720769497,
+        "pred_draw": 0.1854625043197788,
+        "pred_away": 0.17336712360327153,
+        "league": "T1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "456": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.6158506721859938,
+        "pred_draw": 0.2406600927717111,
+        "pred_away": 0.14348923504229522,
+        "league": "D2",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6158506721859938,
+        "pred_draw": 0.2406600927717111,
+        "pred_away": 0.14348923504229522,
+        "league": "D2",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6158506721859938,
+        "pred_draw": 0.2406600927717111,
+        "pred_away": 0.14348923504229522,
+        "league": "D2",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6158506721859938,
+        "pred_draw": 0.2406600927717111,
+        "pred_away": 0.14348923504229522,
+        "league": "D2",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6158506721859938,
+        "pred_draw": 0.2406600927717111,
+        "pred_away": 0.14348923504229522,
+        "league": "D2",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "480": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.6158506721859938,
+        "pred_draw": 0.2406600927717111,
+        "pred_away": 0.14348923504229522,
+        "league": "D2",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6158506721859938,
+        "pred_draw": 0.2406600927717111,
+        "pred_away": 0.14348923504229522,
+        "league": "D2",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6158506721859938,
+        "pred_draw": 0.2406600927717111,
+        "pred_away": 0.14348923504229522,
+        "league": "D2",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6158506721859938,
+        "pred_draw": 0.2406600927717111,
+        "pred_away": 0.14348923504229522,
+        "league": "D2",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6158506721859938,
+        "pred_draw": 0.2406600927717111,
+        "pred_away": 0.14348923504229522,
+        "league": "D2",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "427": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.4461779897571232,
+        "pred_draw": 0.23847238792070857,
+        "pred_away": 0.31534962232216834,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4461779897571232,
+        "pred_draw": 0.23847238792070857,
+        "pred_away": 0.31534962232216834,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4461779897571232,
+        "pred_draw": 0.23847238792070857,
+        "pred_away": 0.31534962232216834,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4461779897571232,
+        "pred_draw": 0.23847238792070857,
+        "pred_away": 0.31534962232216834,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4461779897571232,
+        "pred_draw": 0.23847238792070857,
+        "pred_away": 0.31534962232216834,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "476": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.4461779897571232,
+        "pred_draw": 0.23847238792070857,
+        "pred_away": 0.31534962232216834,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4461779897571232,
+        "pred_draw": 0.23847238792070857,
+        "pred_away": 0.31534962232216834,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4461779897571232,
+        "pred_draw": 0.23847238792070857,
+        "pred_away": 0.31534962232216834,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4461779897571232,
+        "pred_draw": 0.23847238792070857,
+        "pred_away": 0.31534962232216834,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.4461779897571232,
+        "pred_draw": 0.23847238792070857,
+        "pred_away": 0.31534962232216834,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "426": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.5296792715743073,
+        "pred_draw": 0.23974098995092483,
+        "pred_away": 0.2305797384747679,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.5296792715743073,
+        "pred_draw": 0.23974098995092483,
+        "pred_away": 0.2305797384747679,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.5296792715743073,
+        "pred_draw": 0.23974098995092483,
+        "pred_away": 0.2305797384747679,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.5296792715743073,
+        "pred_draw": 0.23974098995092483,
+        "pred_away": 0.2305797384747679,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.5296792715743073,
+        "pred_draw": 0.23974098995092483,
+        "pred_away": 0.2305797384747679,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "430": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.5296792715743073,
+        "pred_draw": 0.23974098995092483,
+        "pred_away": 0.2305797384747679,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.5296792715743073,
+        "pred_draw": 0.23974098995092483,
+        "pred_away": 0.2305797384747679,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.5296792715743073,
+        "pred_draw": 0.23974098995092483,
+        "pred_away": 0.2305797384747679,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.5296792715743073,
+        "pred_draw": 0.23974098995092483,
+        "pred_away": 0.2305797384747679,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.5296792715743073,
+        "pred_draw": 0.23974098995092483,
+        "pred_away": 0.2305797384747679,
+        "league": "D1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "83": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.6577028631845054,
+        "pred_draw": 0.16445976543700358,
+        "pred_away": 0.17783737137849095,
+        "league": "E1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6577028631845054,
+        "pred_draw": 0.16445976543700358,
+        "pred_away": 0.17783737137849095,
+        "league": "E1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6577028631845054,
+        "pred_draw": 0.16445976543700358,
+        "pred_away": 0.17783737137849095,
+        "league": "E1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6577028631845054,
+        "pred_draw": 0.16445976543700358,
+        "pred_away": 0.17783737137849095,
+        "league": "E1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6577028631845054,
+        "pred_draw": 0.16445976543700358,
+        "pred_away": 0.17783737137849095,
+        "league": "E1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  },
+  "28": {
+    "total_predictions": 5,
+    "recent_predictions": [
+      {
+        "pred_home": 0.6577028631845054,
+        "pred_draw": 0.16445976543700358,
+        "pred_away": 0.17783737137849095,
+        "league": "E1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6577028631845054,
+        "pred_draw": 0.16445976543700358,
+        "pred_away": 0.17783737137849095,
+        "league": "E1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6577028631845054,
+        "pred_draw": 0.16445976543700358,
+        "pred_away": 0.17783737137849095,
+        "league": "E1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6577028631845054,
+        "pred_draw": 0.16445976543700358,
+        "pred_away": 0.17783737137849095,
+        "league": "E1",
+        "actual_result": null,
+        "was_correct": null
+      },
+      {
+        "pred_home": 0.6577028631845054,
+        "pred_draw": 0.16445976543700358,
+        "pred_away": 0.17783737137849095,
+        "league": "E1",
+        "actual_result": null,
+        "was_correct": null
+      }
+    ],
+    "home_bias": 0,
+    "draw_bias": 0,
+    "away_bias": 0
+  }
+}

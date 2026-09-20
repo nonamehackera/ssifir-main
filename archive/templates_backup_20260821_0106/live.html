@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{% block title %}Canlı · Futbol Tahmin Sistemi{% endblock %}
+{% block page_title %}<span class="live-dot"></span> Canlı Tahmin{% endblock %}
+{% block page_sub %}Devam eden maç için anlık kazanma olasılığı{% endblock %}
+
+{% block body %}
+<div id="loading" class="loading-box"><div class="spinner"></div><div>Model kontrol ediliyor...</div></div>
+
+<div id="wrap" style="display:none">
+  <div class="card" style="margin-bottom:22px">
+    <div class="section-title"><span class="bar"></span> Maç Durumu</div>
+    <div class="two-col">
+      <div>
+        <label class="muted" style="font-size:12px">Dakika</label>
+        <input id="minute" type="number" min="0" max="120" value="45" style="width:100%">
+      </div>
+      <div>
+        <label class="muted" style="font-size:12px">Gerçek Skor (Ev - Dep)</label>
+        <div style="display:flex;gap:10px">
+          <input id="sh" type="number" min="0" max="20" value="0" style="flex:1">
+          <span style="align-self:center;font-size:20px">-</span>
+          <input id="sa" type="number" min="0" max="20" value="0" style="flex:1">
+        </div>
+      </div>
+    </div>
+    <div class="two-col" style="margin-top:14px">
+      <div>
+        <label class="muted" style="font-size:12px">Önceden Tahmin — Ev xG (λ)</label>
+        <input id="ph" type="number" step="0.01" min="0" value="1.50" style="width:100%">
+      </div>
+      <div>
+        <label class="muted" style="font-size:12px">Önceden Tahmin — Dep xG (λ)</label>
+        <input id="pa" type="number" step="0.01" min="0" value="1.00" style="width:100%">
+      </div>
+    </div>
+    <div class="two-col" style="margin-top:14px">
+      <div>
+        <label class="muted" style="font-size:12px">Maçtaki xG — Ev (opsiyonel)</label>
+        <input id="xh" type="number" step="0.01" min="0" value="" placeholder="örn 0.8" style="width:100%">
+      </div>
+      <div>
+        <label class="muted" style="font-size:12px">Maçtaki xG — Dep (opsiyonel)</label>
+        <input id="xa" type="number" step="0.01" min="0" value="" placeholder="örn 0.5" style="width:100%">
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:18px">
+      <button class="btn" onclick="calc()">⚡ Anlık Tahmini Hesapla</button>
+    </div>
+  </div>
+
+  <div id="res" style="display:none">
+    <div class="prob-grid" style="margin-bottom:18px">
+      <div class="prob-card"><div class="lbl">Ev Sahibi Kazanır</div><div class="val green" id="r-h">–</div></div>
+      <div class="prob-card"><div class="lbl">Beraberlik</div><div class="val yellow" id="r-d">–</div></div>
+      <div class="prob-card"><div class="lbl">Deplasman Kazanır</div><div class="val red" id="r-a">–</div></div>
+    </div>
+    <div class="card">
+      <div class="kpi-list" id="live-kpi"></div>
+    </div>
+  </div>
+</div>
+
+<div id="nomodel" style="display:none" class="empty">
+  <div class="e-ico">🚫</div>
+  Canlı model yüklenmedi (sadece maç öncesi tahmin aktif).
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function checkModel() {
+  const d = await API.get('/api/model/info');
+  if (d.status === 'ok') {
+    el('loading').style.display = 'none';
+    el('wrap').style.display = 'block';
+  } else {
+    el('loading').style.display = 'none';
+    el('nomodel').style.display = 'block';
+  }
+}
+
+async function calc() {
+  const payload = {
+    minute: +el('minute').value,
+    score_home: +el('sh').value,
+    score_away: +el('sa').value,
+    pre_home_lambda: +el('ph').value,
+    pre_away_lambda: +el('pa').value,
+    xg_home: el('xh').value === '' ? null : +el('xh').value,
+    xg_away: el('xa').value === '' ? null : +el('xa').value,
+  };
+  try {
+    const d = await API.post('/live/predict', payload);
+    el('res').style.display = 'block';
+    el('r-h').textContent = Math.round((d.home_win||0)*100) + '%';
+    el('r-d').textContent = Math.round((d.draw||0)*100) + '%';
+    const aT = el('r-a'); aT.textContent = Math.round((d.away_win||0)*100) + '%';
+    el('live-kpi').innerHTML =
+      kpi('Kalan Süre Tahmini Gol (Ev)', (d.expected_home_goals_remaining||0).toFixed(2)) +
+      kpi('Kalan Süre Tahmini Gol (Dep)', (d.expected_away_goals_remaining||0).toFixed(2)) +
+      kpi('Toplam Gol Beklentisi', (d.expected_total_goals||0).toFixed(2), 'green') +
+      kpi('Beraberlik Korunma İhtimali', Math.round((d.draw_probability||0)*100) + '%', 'yellow');
+    el('res').scrollIntoView({behavior:'smooth', block:'start'});
+  } catch (e) {
+    toast('Hata: ' + e.message, true);
+  }
+}
+function kpi(l,v,color) { return `<div class="kpi"><span class="k-l">${l}</span><span class="k-v ${color||''}">${v}</span></div>`; }
+
+checkModel();
+initChrome('live');
+</script>
+{% endblock %}

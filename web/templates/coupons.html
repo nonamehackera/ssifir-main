@@ -1,0 +1,495 @@
+{% extends "base.html" %}
+
+{% block title %}Kuponlar · FTMS{% endblock %}
+{% block page_title %}Kuponlar{% endblock %}
+{% block page_sub %}Tahminlerinizin gerçek sonuçlarla karşılaştırması{% endblock %}
+
+{% block body %}
+<!-- LOADING STATE -->
+<div id="loading" class="loading-box">
+  <div class="loading-ring"></div>
+  <div style="margin-top:16px;color:var(--text-2);font-size:13px;font-weight:500">Kuponlar yukleniyor</div>
+  <div class="loading-dots" style="margin-top:10px"><span></span><span></span><span></span></div>
+</div>
+
+<!-- EMPTY STATE -->
+<div id="empty" class="empty" style="display:none">
+  <div class="e-ico">
+    <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+  </div>
+  <h3 id="empty-title">Henuz kupon yok</h3>
+  <p id="empty-sub">Tahminleriniz burada kupon olarak listelenecek. Tahmin yaparak baslayabilirsiniz.</p>
+  <div style="display:flex;gap:10px;justify-content:center;margin-top:16px">
+    <button id="empty-retry" class="btn sm" onclick="retryLoad()" style="display:none;background:var(--accent-glow,#00e676);color:#000;text-transform:uppercase;box-shadow:var(--sh-accent)">Tekrar Dene</button>
+    <a href="/" class="btn sm" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Tahmin Yap
+    </a>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main" style="display:none">
+  <div id="auto-status" class="coupon-auto-status">
+    <span class="auto-dot"></span>
+    <span id="auto-text">Otomatik guncelleme aktif</span>
+    <span id="auto-last" style="color:var(--muted)"></span>
+    <div style="margin-left:auto;display:flex;gap:6px">
+      <button id="live-check-btn" onclick="checkLiveCoupons()" style="padding:4px 10px;font-size:11px;background:var(--accent-glow, #00e676);color:#000;border:none;border-radius:6px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;font-weight:600">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Canli Kontrol
+      </button>
+      <button id="sync-scores-btn" onclick="syncScoresWeb()" style="padding:4px 10px;font-size:11px;background:var(--accent-glow, #00e676);color:#000;border:none;border-radius:6px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;font-weight:600">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        Skorları Senkronize Et (Web)
+      </button>
+    </div>
+  </div>
+
+  <div id="stat-row" class="coupon-stats"></div>
+
+  <div class="pred-toolbar">
+    <div class="left">
+      <select id="filter-status">
+        <option value="all">Tum Kuponlar</option>
+        <option value="won">Kazananlar</option>
+        <option value="partial">Kismi Kazananlar</option>
+        <option value="lost">Kaybedenler</option>
+        <option value="pending">Bekleyenler</option>
+      </select>
+      <select id="sort-coupon">
+        <option value="new">En Yeni</option>
+        <option value="score">En Cok Tutan</option>
+        <option value="worst">En Az Tutan</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="coupon-list"></div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div id="detail-modal" class="pred-modal" onclick="if(event.target===this)closeDetailModal()">
+  <div class="pred-modal-box" onclick="event.stopPropagation()">
+    <div id="dm-head" class="pred-modal-head"></div>
+    <div id="dm-body" class="pred-modal-body"></div>
+    <div class="pred-modal-foot">
+      <button onclick="closeDetailModal()">Kapat</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let DATA=[], FILTERED=[], lastTotal=-1;
+const $=id=>document.getElementById(id);
+const P=v=>(v??0).toFixed(1)+'%';
+const R=v=>Math.round((v||0)*10)/10;
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const ini=n=>(n||'?').split(/\s+/).map(w=>w[0]).join('').toUpperCase().slice(0,2);
+const DT=iso=>{if(!iso)return'';const d=new Date(iso);return d.toLocaleDateString('tr-TR',{day:'2-digit',month:'short'})+' '+d.toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'})};
+const timeAgo=iso=>{if(!iso)return'';const diff=Date.now()-new Date(iso).getTime(),m=Math.floor(diff/60000);if(m<1)return'Az once';if(m<60)return m+' dk once';const h=Math.floor(m/60);if(h<24)return h+' saat once';return Math.floor(h/24)+' gun once'};
+const LOAD_TIMEOUT=60000;
+async function apiGetTimeout(url,ms){
+  const ctl=new AbortController();
+  const timer=setTimeout(()=>ctl.abort(),ms);
+  try{
+    const r=await fetch(url,{signal:ctl.signal,headers:{'Accept':'application/json'}});
+    const d=await r.json();
+    clearTimeout(timer);
+    if(!r.ok)throw new Error(d.error||('HTTP '+r.status));
+    return d;
+  }catch(e){
+    clearTimeout(timer);
+    throw e;
+  }
+}
+
+/* SVG ICON DEFINITIONS */
+const ICONS={
+  ticket:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 013-3h14a3 3 0 013 3 3 3 0 010 6 3 3 0 01-3 3H5a3 3 0 01-3-3 3 3 0 010-6z"/><path d="M13 6v2m0 4v2m0 4v2"/></svg>`,
+  check:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>`,
+  x:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>`,
+  half:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 010 20"/></svg>`,
+  chart:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+  calendar:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`,
+  clock:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>`,
+  search:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>`,
+  trophy:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 010-5H6"/><path d="M18 9h1.5a2.5 2.5 0 000-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0012 0V2z"/></svg>`,
+  target:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
+  alert:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>`,
+  inbox:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/></svg>`,
+  shield:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  zap:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+};
+
+let autoTimer=null;
+
+function buildStats(){
+  const total=DATA.length;
+  const withResult=DATA.filter(c=>c.has_result).length;
+  const scheduled=DATA.filter(c=>!c.has_result&&c.match_status==='scheduled').length;
+  const pending=total-withResult-scheduled;
+  const evaluated=DATA.filter(c=>c.evaluation);
+  const wonAll=evaluated.filter(c=>c.evaluation.won_count===c.evaluation.total_markets).length;
+  const partial=evaluated.filter(c=>c.evaluation.won_count>0&&c.evaluation.won_count<c.evaluation.total_markets).length;
+  const lostAll=evaluated.filter(c=>c.evaluation.won_count===0).length;
+  const winRate=evaluated.length?Math.round(wonAll/evaluated.length*100):0;
+  const totalMarkets=evaluated.reduce((s,c)=>s+c.evaluation.total_markets,0);
+  const totalWon=evaluated.reduce((s,c)=>s+c.evaluation.won_count,0);
+  const marketRate=totalMarkets?Math.round(totalWon/totalMarkets*100):0;
+
+  return`<div class="cstat">
+    <div class="cstat-ico" style="background:linear-gradient(135deg,rgba(0,230,118,.12),rgba(0,230,118,.04));color:var(--accent)">${ICONS.ticket}</div>
+    <div class="cstat-info"><div class="cstat-val">${total}</div><div class="cstat-lbl">Toplam Kupon</div></div>
+    <div class="cstat-sub">${withResult} sonuclu · ${scheduled} planlandı · ${pending} bekleyen</div>
+  </div>
+  <div class="cstat">
+    <div class="cstat-ico" style="background:linear-gradient(135deg,rgba(0,230,118,.12),rgba(0,230,118,.04));color:var(--accent)">${ICONS.trophy}</div>
+    <div class="cstat-info"><div class="cstat-val" style="color:var(--accent)">${wonAll}</div><div class="cstat-lbl">Kazanan</div></div>
+    <div class="cstat-sub">%${winRate} tutma orani</div>
+  </div>
+  <div class="cstat">
+    <div class="cstat-ico" style="background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02));color:var(--muted)">${ICONS.half}</div>
+    <div class="cstat-info"><div class="cstat-val" style="color:var(--muted)">${partial}</div><div class="cstat-lbl">Kismi</div></div>
+    <div class="cstat-sub">Bolumsel tutma</div>
+  </div>
+  <div class="cstat">
+    <div class="cstat-ico" style="background:linear-gradient(135deg,rgba(248,113,113,.12),rgba(248,113,113,.04));color:var(--loss)">${ICONS.x}</div>
+    <div class="cstat-info"><div class="cstat-val" style="color:var(--loss)">${lostAll}</div><div class="cstat-lbl">Kaybeden</div></div>
+    <div class="cstat-sub">Tutmayan kupon</div>
+  </div>
+  <div class="cstat">
+    <div class="cstat-ico" style="background:linear-gradient(135deg,rgba(0,230,118,.12),rgba(0,230,118,.04));color:var(--accent)">${ICONS.chart}</div>
+    <div class="cstat-info"><div class="cstat-val" style="color:var(--accent)">%${marketRate}</div><div class="cstat-lbl">Market Orani</div></div>
+    <div class="cstat-sub">${totalWon}/${totalMarkets} market tuttu</div>
+  </div>`;
+}
+
+function couponCard(c,idx){
+  const ev=c.evaluation;
+  const hasResult=c.has_result;
+  const status=c.match_status||'played';
+  let statusCls,statusText,statusColor,statusBg,statusIcon;
+  if(!hasResult){
+    if(status==='scheduled'){
+      statusCls='scheduled';statusText='PLANLANDI';statusColor='var(--muted)';statusBg='rgba(255,255,255,.05)';statusIcon=ICONS.calendar;
+    }else{
+      statusCls='pending';statusText='SONUC BEKLENIYOR';statusColor='var(--muted)';statusBg='rgba(255,255,255,.05)';statusIcon=ICONS.clock;
+    }
+  }else if(ev.won_count===ev.total_markets){
+    statusCls='won';statusText='KAZANDI';statusColor='var(--accent)';statusBg='rgba(0,230,118,.08)';statusIcon=ICONS.trophy;
+  }else if(ev.won_count===0){
+    statusCls='lost';statusText='KAYBETTI';statusColor='var(--loss)';statusBg='rgba(248,113,113,.08)';statusIcon=ICONS.x;
+  }else{
+    statusCls='partial';statusText=ev.score+' TUTTU';statusColor='var(--accent)';statusBg='rgba(0,230,118,.08)';statusIcon=ICONS.target;
+  }
+
+  const winRate=hasResult?Math.round(ev.won_count/ev.total_markets*100):0;
+  const rateColor=winRate>=80?'var(--accent)':winRate>=50?'var(--muted)':'var(--loss)';
+
+  const marketTags=hasResult?ev.markets.map(m=>{
+    const tc=m.won?'var(--accent)':'var(--loss)';
+    const bg=m.won?'rgba(0,230,118,.1)':'rgba(248,113,113,.1)';
+    const ico=m.won?ICONS.check:ICONS.x;
+    return`<span class="cm-tag" style="background:${bg};color:${tc}"><span style="display:inline-flex;width:12px;height:12px;vertical-align:-2px">${ico}</span> ${esc(m.name.split(' ')[0])}</span>`;
+  }).join(''):'';
+
+  // mac tarihi gosterimi
+  let matchDateInfo='';
+  if(c.match_date){
+    const md=new Date(c.match_date);
+    const today=new Date();
+    today.setHours(0,0,0,0);
+    md.setHours(0,0,0,0);
+    const daysDiff=Math.round((md-today)/86400000);
+    let relDate='';
+    if(daysDiff===0) relDate='Bug\u00fcn';
+    else if(daysDiff===1) relDate='Yar\u0131n';
+    else if(daysDiff===-1) relDate='D\u00fcn';
+    else if(daysDiff<0) relDate=`${-daysDiff} g\u00fcn \u00f6nce`;
+    else if(daysDiff<7) relDate=`${daysDiff} g\u00fcn sonra`;
+    else relDate=md.toLocaleDateString('tr-TR',{day:'2-digit',month:'short'});
+    matchDateInfo=`<span class="cp-meta-item"><span style="display:inline-flex;width:13px;height:13px;vertical-align:-2px;opacity:.6">${ICONS.calendar}</span> ${relDate}</span>`;
+  }
+
+  return`<div class="cp-card cp-${statusCls}" onclick="openDetail(${idx})">
+    <div class="cp-left-accent" style="background:${statusColor}"></div>
+    <div class="cp-content">
+      <div class="cp-header">
+        <div class="cp-teams">
+          <div class="cp-team">
+            <div class="cp-avatar home">${ini(c.home_name)}</div>
+            <div class="cp-name">${esc(c.home_name||'?')}</div>
+          </div>
+          <div class="cp-vs-box">
+            <span class="cp-vs">VS</span>
+          </div>
+          <div class="cp-team">
+            <div class="cp-avatar away">${ini(c.away_name)}</div>
+            <div class="cp-name">${esc(c.away_name||'?')}</div>
+          </div>
+        </div>
+        <div class="cp-right">
+          ${hasResult?`<div class="cp-rate" style="color:${rateColor}">${ev.score}</div>`:''}
+          <div class="cp-badge" style="background:${statusBg};border:1px solid ${statusColor}33;color:${statusColor}">
+            <span style="display:inline-flex;width:12px;height:12px;vertical-align:-2px">${statusIcon}</span>
+            ${statusText}
+          </div>
+        </div>
+      </div>
+
+      <div class="cp-meta">
+        <span class="cp-meta-item"><span style="display:inline-flex;width:13px;height:13px;vertical-align:-2px;opacity:.6">${ICONS.calendar}</span> ${DT(c.timestamp)}</span>
+        ${matchDateInfo}
+        ${hasResult?`<span class="cp-meta-item score">Sonuc: <b>${c.actual_score}</b></span>`:''}
+        <span class="cp-meta-item">ELO ${c.home_elo} / ${c.away_elo}</span>
+        ${getLiveBadge(c.id)}
+      </div>
+
+      ${hasResult?`<div class="cp-markets">${marketTags}</div>`:''}
+      ${!hasResult&&status==='scheduled'?`<div class="cp-waiting" style="color:var(--muted)"><span style="display:inline-flex;width:16px;height:16px;vertical-align:-3px;opacity:.7">${ICONS.calendar}</span> Mac henuz oynanmadi (${c.match_date?new Date(c.match_date).toLocaleDateString('tr-TR',{day:'2-digit',month:'short'}):''})</div>`:''}
+      ${!hasResult&&status!=='scheduled'?`<div class="cp-waiting"><span style="display:inline-flex;width:16px;height:16px;vertical-align:-3px;opacity:.5">${ICONS.clock}</span> Sonuc araniyor...</div>`:''}
+    </div>
+  </div>`;
+}
+
+function render(){
+  const filter=$('filter-status').value;
+  const sortBy=$('sort-coupon').value;
+
+  FILTERED=[...DATA];
+  if(filter==='won')FILTERED=FILTERED.filter(c=>c.evaluation&&c.evaluation.won_count===c.evaluation.total_markets);
+  else if(filter==='partial')FILTERED=FILTERED.filter(c=>c.evaluation&&c.evaluation.won_count>0&&c.evaluation.won_count<c.evaluation.total_markets);
+  else if(filter==='lost')FILTERED=FILTERED.filter(c=>c.evaluation&&c.evaluation.won_count===0);
+  else if(filter==='pending')FILTERED=FILTERED.filter(c=>!c.has_result);
+
+  if(sortBy==='score')FILTERED.sort((a,b)=>(b.evaluation?.won_count||0)-(a.evaluation?.won_count||0));
+  else if(sortBy==='worst')FILTERED.sort((a,b)=>(a.evaluation?.won_count||0)-(b.evaluation?.won_count||0));
+  else FILTERED.sort((a,b)=>(b.timestamp||'').localeCompare(a.timestamp||''));
+
+  $('stat-row').innerHTML=buildStats();
+
+  if(!FILTERED.length){
+    $('coupon-list').innerHTML=`<div class="empty" style="padding:40px 20px">
+      <div class="e-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+      <h3>Sonuc yok</h3>
+      <p>Farkli filtre deneyin.</p>
+    </div>`;
+    return;
+  }
+
+  $('coupon-list').innerHTML=FILTERED.map((c,i)=>couponCard(c,DATA.indexOf(c))).join('');
+}
+
+function openDetail(idx){
+  const c=DATA[idx];if(!c)return;
+  const ev=c.evaluation;
+  const hasResult=c.has_result;
+
+  $('dm-head').innerHTML=`<div class="title"><span style="color:var(--accent)">${esc(c.home_name||'?')}</span><span style="color:var(--muted);font-weight:600;font-size:14px"> vs </span><span style="color:var(--accent)">${esc(c.away_name||'?')}</span></div><button class="close" onclick="closeDetailModal()">&times;</button>`;
+
+  let h='';
+  if(hasResult&&ev){
+    const rate=Math.round(ev.won_count/ev.total_markets*100);
+    const rateColor=rate>=80?'var(--accent)':rate>=50?'var(--blue)':'var(--loss)';
+
+    h+=`<div style="text-align:center;margin-bottom:28px">
+      <div style="display:inline-flex;align-items:center;justify-content:center;width:100px;height:100px;border-radius:50%;border:4px solid ${rateColor};background:rgba(0,0,0,.3)">
+        <div>
+          <div style="font-size:28px;font-weight:900;color:${rateColor};line-height:1">${ev.score}</div>
+          <div style="font-size:13px;font-weight:700;color:${rateColor};opacity:.8">%${rate}</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:12px;font-weight:600;color:var(--text-2)">Market tutma orani</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">${esc(c.actual_score||'')} &middot; ${c.actual_date?new Date(c.actual_date).toLocaleDateString('tr-TR'):''}</div>
+    </div>`;
+
+    h+=`<div style="display:grid;gap:10px">`;
+    ev.markets.forEach(m=>{
+      const won=m.won;
+      const accent=won?'var(--accent)':'var(--loss)';
+      const bg=won?'rgba(0,230,118,.06)':'rgba(248,113,113,.06)';
+      const border=won?'rgba(0,230,118,.2)':'rgba(248,113,113,.2)';
+      const icon=won?'&#10003;':'&#10007;';
+      h+=`<div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:${bg};border:1px solid ${border}">
+        <div style="width:32px;height:32px;border-radius:8px;background:${accent}22;color:${accent};display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;flex-shrink:0">${icon}</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:12px;font-weight:800;color:var(--text)">${esc(m.name)}</div>
+          <div style="font-size:10.5px;color:var(--muted);margin-top:2px">${esc(m.actual_detail||'')}</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:11px;color:var(--text-2)">Tahmin: <b style="color:var(--text)">${esc(m.prediction)}</b></div>
+          <div style="font-size:11px;font-weight:700;color:${accent};margin-top:2px">Gercek: ${esc(m.actual)}</div>
+        </div>
+      </div>`;
+    });
+    h+=`</div>`;
+  }else{
+    h+=`<div style="text-align:center;padding:48px 20px">
+      <div style="width:64px;height:64px;margin:0 auto 16px;background:var(--surface-2);border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center">
+        <span style="display:inline-flex;width:28px;height:28px;opacity:.4;color:var(--muted)">${ICONS.clock}</span>
+      </div>
+      <div style="font-size:16px;font-weight:800;color:var(--text);margin-bottom:6px">Mac sonucu henuz mevcut degil</div>
+      <div style="font-size:13px;color:var(--muted)">Oynanmamis mac icin sonuc bekleniyor.</div>
+    </div>`;
+  }
+
+  $('dm-body').innerHTML=h;
+  $('detail-modal').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+
+function closeDetailModal(){$('detail-modal').classList.remove('active');document.body.style.overflow=''}
+
+async function loadData(silent){
+  if(!silent){$('loading').style.display='flex';$('main').style.display='none';$('empty').style.display='none';}
+  let ok=true;
+  try{
+    DATA=await apiGetTimeout('/api/coupons',LOAD_TIMEOUT);
+    if(!Array.isArray(DATA))DATA=[];
+  }catch(e){DATA=[];ok=false;}
+  $('loading').style.display='none';
+  if(!ok){
+    $('empty').style.display='block';$('main').style.display='none';
+    $('empty-title').textContent='Kuponlar yuklenemedi';
+    $('empty-sub').textContent='Sunucu cok yavas veya yanit vermiyor. Birazdan Tekrar Dene butonuna basin.';
+    $('empty-retry').style.display='inline-flex';
+    return;
+  }
+  $('empty-title').textContent='Henuz kupon yok';
+  $('empty-sub').textContent='Tahminleriniz burada kupon olarak listelenecek. Tahmin yaparak baslayabilirsiniz.';
+  $('empty-retry').style.display='none';
+  if(!DATA.length){$('empty').style.display='block';$('main').style.display='none';return}
+  $('main').style.display='block';
+  const newTotal=DATA.filter(c=>c.has_result).length;
+  if(lastTotal>=0&&newTotal>lastTotal){
+    toast(`Yeni sonuc: ${newTotal-lastTotal} mac eklendi!`);
+  }
+  lastTotal=newTotal;
+  render();
+}
+
+function retryLoad(){loadData();}
+
+async function checkStatus(){
+  try{
+    const s=await API.get('/api/coupons/status');
+    if(s){
+      const el=$('auto-last');
+      const fd=s.fd_cache||{};
+      const fdText=fd.leagues?` · FD: ${fd.total_matches} mac, ${(fd.leagues||[]).length} lig`:'';
+      if(el&&s.last_update){
+        el.textContent='Son guncelleme: '+timeAgo(s.last_update)+' ('+s.total_results+' sonuc)'+fdText;
+      }else if(el&&fd.last_update){
+        el.textContent='FD cache: '+timeAgo(fd.last_update)+' ('+fd.total_matches+' mac)'+fdText;
+      }
+    }
+  }catch(e){}
+}
+
+async function syncScoresWeb(){
+  const btn=$('sync-scores-btn');
+  if(btn){btn.disabled=true;btn.innerHTML='🔍 Skorlar aranıyor...';}
+  try{
+    const res = await API.post('/api/coupons/sync_scores',{});
+    if(res && res.success){
+      toast(`Senkronizasyon tamamlandı! ${res.synced_count} / ${res.total_predictions} maç sonucu bulundu.`);
+      await loadData(false);
+      await checkStatus();
+    }
+  }catch(e){
+    toast('Senkronizasyon hatası: '+(e?.message||e),true);
+  }finally{
+    if(btn){btn.disabled=false;btn.innerHTML='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> Skorları Senkronize Et (Web)';}
+  }
+}
+
+let liveCheckResults = {};
+
+async function checkLiveCoupons(){
+  const btn=$('live-check-btn');
+  if(btn){btn.disabled=true;btn.innerHTML='<span style="display:inline-block;animation:spin 1s linear infinite">🔄</span> Kontrol ediliyor...';}
+  try{
+    const res = await API.post('/api/coupons/check_live', {only_pending: true});
+    if(res && res.success){
+      liveCheckResults = {};
+      if(res.results){
+        res.results.forEach(r => {
+          liveCheckResults[r.id] = r;
+        });
+      }
+      const msg = `Canli kontrol: ${res.checked} kupon kontrol edildi, ${res.found} tanesi sonuclandi!`;
+      const savedMsg = res.saved ? ` (${res.saved} yeni sonuc kaydedildi)` : '';
+      toast(msg + savedMsg);
+      await loadData(false);
+      await checkStatus();
+    }
+  }catch(e){
+    toast('Canli kontrol hatasi: '+(e?.message||e),true);
+  }finally{
+    if(btn){btn.disabled=false;btn.innerHTML='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Canli Kontrol';}
+  }
+}
+
+function getLiveBadge(couponId) {
+  const r = liveCheckResults[couponId];
+  if (!r) return '';
+  if (r.status === 'found' && r.evaluation) {
+    const ev = r.evaluation;
+    if (ev.won_count === ev.total_markets) {
+      return '<span class="cp-live-badge cp-live-badge--won">TUTUYOR</span>';
+    } else if (ev.won_count === 0) {
+      return '<span class="cp-live-badge cp-live-badge--lost">TUTMUYOR</span>';
+    } else {
+      return '<span class="cp-live-badge cp-live-badge--partial">' + ev.score + ' TUTUYOR</span>';
+    }
+  }
+  if (r.status && r.status.startsWith('live:')) {
+    const info = r.status.replace('live:', '');
+    return '<span class="cp-live-badge cp-live-badge--live">CANLI ' + esc(info) + '</span>';
+  }
+  if (r.status === 'finished') {
+    return '<span class="cp-live-badge cp-live-badge--finished">BITTI</span>';
+  }
+  if (r.status === 'today') {
+    return '<span class="cp-live-badge cp-live-badge--today">BUGUN</span>';
+  }
+  return '';
+}
+
+async function manualRefresh(){
+  const btn=$('manual-refresh');
+  if(btn)btn.disabled=true;
+  if(btn)btn.innerHTML='<span style="display:inline-block;animation:spin 1s linear infinite">⟳</span> Yenileniyor...';
+  try{
+    await API.post('/api/coupons/refresh',{});
+    await loadData(false);
+    await checkStatus();
+    toast('Sonuclar yenilendi!');
+  }catch(e){
+    toast('Yenileme hatasi: '+(e?.message||e),true);
+  }finally{
+    if(btn)btn.disabled=false;
+    if(btn)btn.innerHTML='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg> Yenile';
+  }
+}
+
+function startAutoRefresh(){
+  autoTimer=setInterval(()=>{loadData(true);checkStatus();},60000);
+  // Canli kontrol: 1 dakika araliklarla
+  setInterval(()=>{checkLiveCoupons();},60000);
+  setTimeout(checkStatus,2000);
+  // Ilk acilista hemen canli kontrol yap
+  setTimeout(checkLiveCoupons,2000);
+}
+
+$('filter-status').addEventListener('change',render);
+$('sort-coupon').addEventListener('change',render);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetailModal()});
+
+loadData();
+startAutoRefresh();
+</script>
+{% endblock %}

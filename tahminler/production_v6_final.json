@@ -1,0 +1,59 @@
+{
+  "model": "v6_final",
+  "ml_ensemble": {
+    "accuracy": 0.5019106869242556,
+    "brier": 0.20070152103008554,
+    "log_loss": 1.00676181312485,
+    "draw_recall": 0.021320182094081944,
+    "roi": 14.259772051805003,
+    "n_bets": 1551
+  },
+  "dixon_coles": {
+    "accuracy": 0.427,
+    "draw_recall": 0.036181678214010776,
+    "roi": -5.796795347194521
+  },
+  "features": 135,
+  "top_features": [
+    [
+      "xg_diff_real",
+      1045
+    ],
+    [
+      "home_team_id",
+      916
+    ],
+    [
+      "lg_away_goal_avg",
+      862
+    ],
+    [
+      "away_team_id",
+      817
+    ],
+    [
+      "avg_home_odds",
+      789
+    ],
+    [
+      "away_defence_elo",
+      765
+    ],
+    [
+      "home_defence_elo",
+      747
+    ],
+    [
+      "away_rest_days",
+      730
+    ],
+    [
+      "lg_home_goal_avg",
+      718
+    ],
+    [
+      "home_rest_days",
+      718
+    ]
+  ]
+}

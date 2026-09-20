@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block title %}Sonuçlar · Futbol Tahmin Sistemi{% endblock %}
+{% block page_title %}Sonuçlar{% endblock %}
+{% block page_sub %}Geçmiş maç arşivi — lig ve takıma göre filtrele{% endblock %}
+
+{% block body %}
+<div class="card" style="margin-bottom:22px">
+  <div class="filter-row">
+    <select id="f-league"><option value="">Tüm Ligler</option></select>
+    <input id="f-team" placeholder="Takım ID (opsiyonel)">
+    <button class="btn sm" onclick="reload()">🔍 Filtrele</button>
+    <span class="muted" id="count" style="margin-left:auto"></span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="result-list" id="list">
+    <div class="loading-box"><div class="spinner"></div></div>
+  </div>
+  <div style="text-align:center;margin-top:18px">
+    <button class="btn ghost sm" id="more" onclick="more()" style="display:none">Daha Fazla Yükle</button>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let page = 0;
+const LIMIT = 100;
+
+function buildRow(m) {
+  const rc = m.result === 'H' ? 'green' : m.result === 'D' ? 'yellow' : 'red';
+  const rt = m.result === 'H' ? 'E' : m.result === 'D' ? 'B' : 'D';
+  const tags = [];
+  tags.push(`<span class="tag ${rc}">${rt}</span>`);
+  if (m.btts) tags.push('<span class="tag green">BTTS</span>');
+  if (m.over25) tags.push('<span class="tag blue">Ü2.5</span>');
+  return `<div class="match-row" onclick="location.href='/team/${m.home_id}'">
+    <div class="mr-date">${m.date}</div>
+    <div class="mr-teams">
+      <div class="mr-team home">${m.home}</div>
+      <div class="mr-score">${m.hg}-${m.ag}</div>
+      <div class="mr-team away">${m.away}</div>
+    </div>
+    <div class="mr-league">${m.league}</div>
+    <div class="mr-tags">${tags.join(' ')}</div>
+  </div>`;
+}
+
+async function populateLeagues() {
+  try {
+    const ls = await API.get('/api/leagues');
+    const sel = el('f-league');
+    ls.forEach(c => (c.leagues||[]).forEach(l => {
+      const o = document.createElement('option');
+      o.value = l.name; o.textContent = l.name + ' (' + l.count + ')';
+      sel.appendChild(o);
+    }));
+  } catch (e) { /* yok say */ }
+}
+
+async function reload(reset) {
+  if (reset) page = 0;
+  const lg = el('f-league').value;
+  const tm = el('f-team').value.trim();
+  const url = '/api/results?limit=' + LIMIT + '&page=' + page +
+    (lg ? '&league=' + encodeURIComponent(lg) : '') +
+    (tm ? '&team=' + encodeURIComponent(tm) : '');
+  try {
+    const d = await API.get(url);
+    const box = el('list');
+    if (page === 0) box.innerHTML = '';
+    box.innerHTML += (d.matches||[]).map(buildRow).join('') ||
+      (page === 0 ? '<div class="empty"><div class="e-ico">📭</div>Sonuç yok</div>' : '');
+    el('count').textContent = (d.matches||[]).length + ' / ' + (d.total||0) + ' maç';
+    el('more').style.display = (d.matches||[]).length === LIMIT ? 'block' : 'none';
+  } catch (e) {
+    toast('Yüklenemedi: ' + e.message, true);
+  }
+}
+function more() { page++; reload(false); }
+
+populateLeagues();
+reload(true);
+initChrome('results');
+</script>
+{% endblock %}

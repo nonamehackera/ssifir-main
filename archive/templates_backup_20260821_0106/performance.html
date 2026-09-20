@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block title %}Performans · Futbol Tahmin Sistemi{% endblock %}
+{% block page_title %}Performans{% endblock %}
+{% block page_sub %}Model doğruluk ve kalibrasyon metrikleri{% endblock %}
+
+{% block body %}
+<div id="loading" class="loading-box"><div class="spinner"></div><div>Metrikler yükleniyor...</div></div>
+
+<div id="wrap" style="display:none">
+  <div class="grid grid-4" id="m-kpi" style="margin-bottom:22px"></div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> Model Bilgisi</div>
+      <div class="kpi-list" id="info-body"></div>
+    </div>
+    <div class="card">
+      <div class="section-title"><span class="bar"></span> Ne Anlama Geliyor?</div>
+      <div style="font-size:13.5px;color:var(--muted);line-height:1.8">
+        <p><b style="color:var(--text)">Log Loss</b>: Düşük olması iyi. 0 = mükemmel, 1.0+ = rastgele tahminin altında.</p>
+        <p><b style="color:var(--text)">Brier Skoru</b>: Olasılık kalibrasyonu. 0'a yakın = iyi.</p>
+        <p><b style="color:var(--text)">Accuracy</b>: 1X2'de doğru tahmin oranı.</p>
+        <p><b style="color:var(--text)">xG Ort.</b>: Modelin beklediği gol lambdası (gerçekçilik kontrolü).</p>
+        <p style="margin-top:10px;color:var(--green)">Bu sistem walk-forward (kronolojik) doğrulama ile test edilmiştir — gelecek bilgisi sızıntısı yoktur.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function kpiCard(label, val, color) {
+  return `<div class="stat-card"><div class="v ${color||''}">${val}</div><div class="l">${label}</div></div>`;
+}
+function kpi(l, v) { return `<div class="kpi"><span class="k-l">${l}</span><span class="k-v">${v}</span></div>`; }
+
+async function load() {
+  try {
+    const info = await API.get('/api/model/info');
+    const m = info.metrics || {};
+
+    el('m-kpi').innerHTML =
+      kpiCard('Model Sürümü', info.model_version || '–', 'blue') +
+      kpiCard('Test Boyutu', (m.test_size||0).toLocaleString('tr-TR')) +
+      kpiCard('Log Loss', m.log_loss ?? '–', (m.log_loss!=null && m.log_loss<1.1)?'green':'red') +
+      kpiCard('Brier', m.brier ?? '–', (m.brier!=null && m.brier<0.65)?'green':'red') +
+      kpiCard('Accuracy', (m.accuracy!=null?(m.accuracy*100).toFixed(1)+'%':'–'), 'yellow') +
+      kpiCard('Ev xG Ort.', m.home_lambda_avg ?? '–', 'green') +
+      kpiCard('Dep xG Ort.', m.away_lambda_avg ?? '–', 'red') +
+      kpiCard('Durum', info.status==='ok'?'Hazır':'—', 'green');
+
+    const loaded = info.loaded_at ? new Date(info.loaded_at).toLocaleString('tr-TR') : '–';
+    el('info-body').innerHTML =
+      kpi('Model Sürümü', info.model_version || '–') +
+      kpi('Yüklenme Zamanı', loaded) +
+      kpi('Test Maç Sayısı', (m.test_size||0).toLocaleString('tr-TR')) +
+      kpi('Log Loss', m.log_loss ?? '–') +
+      kpi('Brier Skoru', m.brier ?? '–') +
+      kpi('Doğruluk (Accuracy)', m.accuracy!=null?(m.accuracy*100).toFixed(1)+'%':'–') +
+      kpi('Ev xG λ Ort.', m.home_lambda_avg ?? '–') +
+      kpi('Dep xG λ Ort.', m.away_lambda_avg ?? '–');
+
+    el('loading').style.display = 'none';
+    el('wrap').style.display = 'block';
+  } catch (e) {
+    el('loading').innerHTML = '<div class="empty"><div class="e-ico">⚠️</div>Metrik yüklenemedi<br>' + e.message + '</div>';
+  }
+}
+load();
+initChrome('performance');
+</script>
+{% endblock %}

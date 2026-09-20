@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+
+{% block title %}Tahminlerim · FTMS{% endblock %}
+{% block page_title %}Tahminlerim{% endblock %}
+{% block page_sub %}Gecmis tahminleriniz ve analizler{% endblock %}
+
+{% block body %}
+<div id="loading" class="loading-box">
+  <div class="loading-ring"></div>
+  <div style="margin-top:16px;color:var(--text-2);font-size:13px;font-weight:500">Tahminler yukleniyor</div>
+  <div class="loading-dots" style="margin-top:10px"><span></span><span></span><span></span></div>
+</div>
+
+<div id="empty" class="empty" style="display:none">
+  <div class="e-ico">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  </div>
+  <h3>Henuz tahmin yok</h3>
+  <p>Yaptiginiz tahminler burada listelenecek.</p>
+  <a href="/" class="btn sm" style="text-decoration:none;margin-top:16px;display:inline-flex;align-items:center;gap:6px">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+    Tahmin Yap
+  </a>
+</div>
+
+<div id="main" style="display:none">
+  <div id="stat-row" class="pred-stats"></div>
+
+  <div class="pred-toolbar">
+    <div class="left">
+      <select id="sort">
+        <option value="new">En Yeni</option>
+        <option value="conf">En Guvenli</option>
+        <option value="goals">En Cok Gol</option>
+      </select>
+      <select id="filter-result">
+        <option value="all">Tum Sonuclar</option>
+        <option value="high">Guclu (50%+)</option>
+        <option value="medium">Orta (35-50%)</option>
+      </select>
+    </div>
+    <div class="right">
+      <button id="auto-predict-btn" class="icon-btn" onclick="runAutoPredictions()" style="background:var(--accent-glow,#00e676);color:#000;margin-right:8px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Otomatik Tahmin
+      </button>
+      <button id="repredict-all-btn" class="icon-btn" onclick="repredictAll()" style="background:rgba(34,197,94,.15);color:var(--accent);border:1px solid rgba(34,197,94,.3);margin-right:8px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+        Tumu Yeniden Tahmin Et
+      </button>
+      <button id="delete-all-btn" class="icon-btn" onclick="deleteAllPredictions()" style="background:rgba(239,68,68,.15);color:var(--loss);border:1px solid rgba(239,68,68,.3);margin-right:8px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+        Tumu Sil
+      </button>
+      <button class="icon-btn" onclick="downloadJSON()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> JSON</button>
+    </div>
+  </div>
+
+  <div id="list"></div>
+</div>
+
+<div id="modal" class="pred-modal" onclick="if(event.target===this)closeModal()">
+  <div class="pred-modal-box" onclick="event.stopPropagation()">
+    <div id="m-head" class="pred-modal-head"></div>
+    <div id="m-body" class="pred-modal-body"></div>
+    <div class="pred-modal-foot">
+      <span id="m-foot-info" style="font-size:12px;color:var(--muted);font-weight:600"></span>
+      <div style="display:flex;gap:8px">
+        <button class="icon-btn" onclick="dlSingle()" style="background:var(--accent-grad);color:#000;border-color:transparent;box-shadow:var(--sh-accent)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> JSON</button>
+        <button onclick="singleDelete()" style="color:#ffffff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.08)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg> Sil</button>
+        <button onclick="singleRePredict()" style="color:var(--accent);border-color:var(--accent-line);background:var(--accent-dim)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg> Yeniden Tahmin Et</button>
+        <button onclick="closeModal()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg> Kapat</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="confirm-overlay" class="confirm-modal" onclick="if(event.target===this)confirmClose()">
+  <div class="confirm-box">
+    <div id="cfm-icon" class="confirm-icon warn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+    <div id="cfm-title" class="confirm-title"></div>
+    <div id="cfm-msg" class="confirm-msg"></div>
+    <div class="confirm-actions">
+      <button class="c-cancel" onclick="confirmClose()">Vazgec</button>
+      <button id="cfm-ok" class="c-danger">Onayla</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let D=[], V=[], curModal=-1, cfmCb=null;
+const $=id=>document.getElementById(id);
+const P=v=>(v??0).toFixed(1)+'%';
+const R=v=>Math.round((v||0)*10)/10;
+const DT=iso=>{if(!iso)return'';const d=new Date(iso);return d.toLocaleDateString('tr-TR',{day:'2-digit',month:'short'})+' '+d.toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'})};
+const timeAgo=iso=>{if(!iso)return'';const diff=Date.now()-new Date(iso).getTime(),m=Math.floor(diff/60000);if(m<1)return'Az once';if(m<60)return m+' dk once';const h=Math.floor(m/60);if(h<24)return h+' saat once';return Math.floor(h/24)+' gun once'};
+const ini=n=>(n||'?').split(/\s+/).map(w=>w[0]).join('').toUpperCase().slice(0,2);
+function best(p){const r=p.result||{};return Math.max(r.home_win||0,r.draw||0,r.away_win||0)}
+function cc(c){return c>=50?'strong':c>=35?'medium':'weak'}
+function cl(c){return c>=50?'GUCLU':c>=35?'ORTA':'DUSUK'}
+function winnerLabel(p){const r=p.result||{};if(r.home_win>=r.draw&&r.home_win>=r.away_win)return{label:'Ev Sahibi',color:'var(--win)'};if(r.draw>=r.home_win&&r.draw>=r.away_win)return{label:'Beraberlik',color:'var(--draw)'};return{label:'Deplasman',color:'var(--loss)'}}
+
+function buildStats(){
+  const n=V.length;if(!n)return'';
+  let aH=0,aD=0,aA=0,xG=0,s=0;
+  V.forEach(p=>{const r=p.result||{},g=p.goals||{};aH+=r.home_win||0;aD+=r.draw||0;aA+=r.away_win||0;xG+=(g.home_lambda||0)+(g.away_lambda||0);if(best(p)>=50)s++});
+  aH/=n;aD/=n;aA/=n;xG/=n;
+  return`<div class="pred-stat"><div class="lbl">Toplam</div><div class="val">${n}</div><div class="sub">${s} guclu</div></div>
+    <div class="pred-stat"><div class="lbl">Ort. Ev Sahibi</div><div class="val" style="color:var(--win)">${R(aH)}%</div><div class="sub">1X2 dagilimi</div></div>
+    <div class="pred-stat"><div class="lbl">Ort. xG</div><div class="val" style="color:var(--purple)">${R(xG)}</div><div class="sub">mac basi gol beklentisi</div></div>
+    <div class="pred-stat"><div class="lbl">Guven Orani</div><div class="val" style="color:var(--accent-2)">${n?R((s/n)*100):0}%</div><div class="sub">50% ustü</div></div>`;
+}
+
+/* === CONFIRM MODAL === */
+function confirmOpen(icon,title,msg,btnText,btnClass,cb){
+  cfmCb=cb;
+  $('cfm-icon').className='confirm-icon '+(icon==='warn'?'warn':'info');
+  $('cfm-icon').innerHTML=icon==='warn'?'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>':'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
+  $('cfm-title').textContent=title;
+  $('cfm-msg').textContent=msg;
+  $('cfm-ok').className=btnClass;
+  $('cfm-ok').textContent=btnText;
+  $('cfm-ok').onclick=()=>{const fn=cfmCb;confirmClose();if(fn)fn()};
+  $('confirm-overlay').classList.add('active');
+}
+function confirmClose(){$('confirm-overlay').classList.remove('active');cfmCb=null}
+
+/* === TEKLI ISLEMLER === */
+function singleDelete(){
+  if(curModal<0)return;const p=D[curModal];if(!p)return;
+  confirmOpen('warn','Tahmini Sil',(p.home_name||'?')+' vs '+(p.away_name||'?')+' tahminini silmek istediginize emin misiniz?','Sil','c-danger',async()=>{try{await API.post('/api/predictions/delete',{id:p.id});toast('Tahmin silindi');closeModal();await loadData()}catch(e){toast('Silme hatasi',true)}});
+}
+function singleRePredict(){
+  if(curModal<0)return;const p=D[curModal];if(!p)return;
+  confirmOpen('info','Yeniden Tahmin Et',(p.home_name||'?')+' vs '+(p.away_name||'?')+' maci icin yeni tahmin uretilecek.','Tahmini Guncelle','c-success',async()=>{
+    toast('Yeniden tahmin ediliyor...');
+    try{const r=await API.post('/api/predict',{home_id:p.home_id,away_id:p.away_id});if(r&&!r.error){toast('Tahmin guncellendi');closeModal();await loadData()}else toast('Tahmin hatasi: '+(r.error||'Bilinmeyen hata'),true)}catch(e){toast('Tahmin hatasi',true)}
+  });
+}
+
+/* === RENDER === */
+function render(){
+  const sortBy=$('sort').value,filter=$('filter-result').value;
+  V=[...D];
+  if(filter==='high')V=V.filter(p=>best(p)>=50);
+  else if(filter==='medium')V=V.filter(p=>best(p)>=35&&best(p)<50);
+  if(sortBy==='conf')V.sort((a,b)=>best(b)-best(a));
+  else if(sortBy==='goals')V.sort((a,b)=>((b.goals?.home_lambda||0)+(b.goals?.away_lambda||0))-((a.goals?.home_lambda||0)+(a.goals?.away_lambda||0)));
+  else V.sort((a,b)=>(b.timestamp||'').localeCompare(a.timestamp||''));
+  $('stat-row').innerHTML=buildStats();
+
+  if(!V.length){$('list').innerHTML=`<div class="empty" style="padding:40px 20px"><div class="e-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div><h3>Sonuc yok</h3><p>Farkli filtre deneyin.</p></div>`;return}
+
+  $('list').innerHTML=V.map(p=>{
+    const idx=D.indexOf(p);
+    const r=p.result||{},g=p.goals||{},tg=p.total_goals||{},cr=p.corners||{},dc=p.double_chance||{};
+    const c=best(p),ccls=cc(c);
+    const scores=(p.top_scores||[]).slice(0,4);
+    const dcEnt=Object.entries(dc).filter(([,v])=>v!=null).sort((a,b)=>b[1]-a[1])[0];
+    const bb=p.recommendations?.best_bet;
+    const tips=(p.recommendations?.all_tips||[]).filter(t=>t.confidence>=70);
+    let tipsHTML='';
+    if(bb){
+      tipsHTML=`<div class="pred-tips-section"><div class="pred-tips-header">Oneriler</div><div class="pred-best-bet"><span class="bb-star"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="bb-label">En Iyi Tahmin</span><span class="bb-market">${bb.market}</span><span class="bb-pick">${bb.pick}</span><span class="bb-conf">${R(bb.confidence)}%</span><span class="bb-reason">${bb.reason||''}</span></div>`;
+      const topTips=tips.filter(t=>t.market!==bb.market).slice(0,3);
+      if(topTips.length){
+        tipsHTML+=`<div class="pred-tips-list">`;
+        topTips.forEach(t=>{const tc=t.confidence>=70?'high':t.confidence>=55?'mid':'low';tipsHTML+=`<div class="pred-tip-row"><span class="pred-tip-market">${t.market}</span><span class="pred-tip-reason">${t.reason||''}</span><span class="pred-tip-pick" style="color:var(--${tc==='high'?'accent':tc==='mid'?'draw':'text-2'})">${t.pick}</span><span class="pred-tip-conf ${tc}">${R(t.confidence)}%</span></div>`});
+        tipsHTML+=`</div>`;
+      }
+      tipsHTML+=`</div>`;
+    }
+
+    return`<div class="pred-card ${ccls==='strong'?'is-strong':''}" onclick="openModal(${idx})">
+      <div class="pred-hero"><div class="pred-hero-team home"><div class="pred-hero-avatar">${ini(p.home_name)}</div><div class="pred-hero-name">${p.home_name||'?'}</div></div><div class="pred-hero-vs">VS</div><div class="pred-hero-team away"><div class="pred-hero-avatar">${ini(p.away_name)}</div><div class="pred-hero-name">${p.away_name||'?'}</div></div><div class="pred-hero-meta"><span class="pred-hero-time">${DT(p.timestamp)}</span><span class="pred-hero-time" style="color:var(--accent-2);font-weight:700">${timeAgo(p.timestamp)}</span></div></div>
+      <div class="pred-card-footer"><div class="pred-footer-left"><span class="pred-chip win"><span class="cdot"></span><span class="chip-label">1</span> <span class="chip-val">${P(r.home_win)}</span></span><span class="pred-chip draw"><span class="cdot"></span><span class="chip-label">X</span> <span class="chip-val">${P(r.draw)}</span></span><span class="pred-chip loss"><span class="cdot"></span><span class="chip-label">2</span> <span class="chip-val">${P(r.away_win)}</span></span><span class="pred-chip purple"><span class="cdot"></span><span class="chip-label">xG</span> <span class="chip-val">${R((g.home_lambda||0)+(g.away_lambda||0))}</span></span><span class="pred-chip blue"><span class="cdot"></span><span class="chip-label">Krn</span> <span class="chip-val">${cr.predicted_total!=null?R(cr.predicted_total):'--'}</span></span><span class="pred-chip draw"><span class="cdot"></span><span class="chip-label">Çif.Şans</span> <span class="chip-val">${dcEnt?dcEnt[0]+' '+P(dcEnt[1]):'--'}</span></span><span class="pred-chip purple"><span class="cdot"></span><span class="chip-label">Gol 2.5</span> <span class="chip-val">${tg.over25!=null?(tg.over25>=50?'Üst':'Alt')+' '+P(tg.over25):'--'}</span></span><span class="pred-chip win"><span class="cdot"></span><span class="chip-label">BTTS</span> <span class="chip-val">${p.btts_yes!=null?(p.btts_yes>=50?'Var':'Yok')+' '+P(p.btts_yes):'--'}</span></span></div><div class="pred-footer-right"><div class="pred-score-chips">${scores.map((s,i)=>`<span class="pred-sc ${i===0?'top':''}">${s.score} <small>${(s.probability*100).toFixed(0)}%</small></span>`).join('')}</div><div class="pred-conf-badge ${ccls}">${R(c)}%<span class="clbl">${cl(c)}</span></div></div></div>
+      ${tipsHTML}</div>`;
+  }).join('');
+}
+
+/* === MODAL === */
+function openModal(idx){curModal=idx;const p=D[idx];if(!p)return;const r=p.result||{},tg=p.total_goals||{},cr=p.corners||{},dc=p.double_chance||{},g=p.goals||{};const scores=(p.top_scores||[]).slice(0,5);const tips=p.recommendations?.all_tips||[];const c=best(p),wl=winnerLabel(p);const bb=p.recommendations?.best_bet;
+  $('m-head').innerHTML=`<div class="title"><span style="color:var(--win)">${p.home_name||'?'}</span><span style="color:var(--muted);font-weight:600;font-size:14px">vs</span><span style="color:var(--loss)">${p.away_name||'?'}</span></div><button class="close" onclick="closeModal()">&times;</button>`;
+  $('m-foot-info').innerText=DT(p.timestamp)+' · ELO '+p.home_elo+'/'+p.away_elo;
+  let h='';
+  h+=`<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px">`;
+  h+=`<div style="background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(34,197,94,.03));border:1px solid rgba(34,197,94,.3);border-radius:14px;padding:16px"><div style="font-size:10px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> En Iyi Bahis</div>`;if(bb){h+=`<div style="font-size:11px;color:var(--text-2);margin-bottom:4px">${bb.market}</div><div style="font-size:24px;font-weight:900;color:var(--accent)">${bb.pick} <span style="font-size:14px;color:var(--accent-2)">${R(bb.confidence)}%</span></div><div style="font-size:11px;color:var(--muted);margin-top:4px">${bb.reason||''}</div>`}h+=`</div>`;
+  h+=`<div style="background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:16px"><div style="font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px">Mac Sonucu</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">`;h+=mMini('1',P(r.home_win),r.home_win>=r.draw&&r.home_win>=r.away_win,'var(--win)');h+=mMini('X',P(r.draw),r.draw>=r.home_win&&r.draw>=r.away_win,'var(--draw)');h+=mMini('2',P(r.away_win),r.away_win>=r.home_win&&r.away_win>=r.draw,'var(--loss)');h+=`</div><div style="font-size:11px;color:var(--text-2);margin-top:8px;text-align:center">${wl.label} Kazanir · ${P(r.winner_prob)}</div></div>`;
+  h+=`<div style="background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:16px"><div style="font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px">Skor Tahminleri</div><div style="display:flex;flex-wrap:wrap;gap:5px">`;scores.forEach((s,i)=>{h+=`<span style="padding:4px 10px;border-radius:8px;font-size:13px;font-weight:800;${i===0?'background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:var(--accent)':'background:var(--surface-3);border:1px solid var(--line);color:var(--text)'}">${s.score} <small style="font-size:10px;opacity:.6">${(s.probability*100).toFixed(0)}%</small></span>`});h+=`</div><div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;text-align:center;padding:6px;background:var(--surface-3);border-radius:8px"><div style="font-size:9px;color:var(--muted)">xG</div><div style="font-size:14px;font-weight:900;color:var(--purple)">${(g.expected_total||0).toFixed(2)}</div></div><div style="flex:1;text-align:center;padding:6px;background:var(--surface-3);border-radius:8px"><div style="font-size:9px;color:var(--muted)">Guven</div><div style="font-size:14px;font-weight:900;color:${cc(c)==='strong'?'var(--win)':'var(--draw)'}">${P(c)}</div></div></div></div>`;
+  h+=`</div>`;
+  h+=`<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px">`;
+  h+=`<div style="background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:14px"><div style="font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px">Gol Ust/Alt</div>`;h+=mBarCompact('1.5 Ust',tg.over15);h+=mBarCompact('2.5 Ust',tg.over25);h+=mBarCompact('3.5 Ust',tg.over35);h+=mBarCompact('BTTS',p.btts_yes,'var(--accent)');h+=`</div>`;
+  h+=`<div style="background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:14px"><div style="font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px">Cift Sans</div>`;h+=mBarCompact('1X',dc['1X'],'var(--win)');h+=mBarCompact('12',dc['12'],'var(--text)');h+=mBarCompact('X2',dc['X2'],'var(--loss)');h+=`</div>`;
+  h+=`<div style="background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:14px"><div style="font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px">Korner</div>`;h+=mBarCompact('Ort.',cr.predicted_total!=null?R(cr.predicted_total)+'':'--','var(--blue)',true);h+=mBarCompact('7.5 Ust',cr.over75,'var(--blue)');h+=mBarCompact('8.5 Ust',cr.over85,'var(--blue)');h+=mBarCompact('9.5 Ust',cr.over95,'var(--blue)');h+=`</div>`;
+  h+=`</div>`;
+  const v15=p.v15_markets||{}; const v15Keys=Object.entries(v15).filter(([,v])=>v!=null);
+  if(v15Keys.length){
+    const v15Labels={iy_draw:'IY Beraberlik',iy_ms_dh:'IY/MS D/H',iy_ms_da:'IY/MS D/A',iy_over05:'IY Ust 0.5',two_y_over05:'2Y Ust 0.5',two_y_over15:'2Y Ust 1.5',two_y_more:'2Y Daha Cok Gol',first_goal_home:'Ilk Gol Ev Atar',hk1_home:'HK1:0 Ev Sahibi',hk1_away:'HK1:0 Depasman',corner_most_home:'En Cok Korner Ev',corner_even:'Korner Cift',corner_over95:'Korner 9.5 Ust'};
+    h+=`<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px">`;
+    v15Keys.forEach(([k,v])=>{
+      const lbl=v15Labels[k]||k; const tc=v>=70?'var(--accent)':v>=55?'var(--draw)':'var(--text-2)';
+      h+=`<div style="padding:8px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;text-align:center"><div style="font-size:9px;color:var(--muted);font-weight:700;text-transform:uppercase">${lbl}</div><div style="font-size:16px;font-weight:900;color:${tc};margin-top:4px">${R(v)}%</div></div>`;
+    });
+    h+=`</div>`;
+  }
+  if(tips.length>1){const filtered=tips.filter(t=>t!==bb).slice(0,6);if(filtered.length){h+=`<div style="background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:0"><div style="font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px">Diger Oneriler</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">`;filtered.forEach(t=>{const tc=t.confidence>=70?'var(--accent)':t.confidence>=55?'var(--draw)':'var(--text-2)';h+=`<div style="padding:8px 10px;background:var(--surface-3);border-radius:8px;display:flex;align-items:center;gap:6px"><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:700;color:var(--text)">${t.market}</div><div style="font-size:10px;color:var(--muted)">${t.reason||''}</div></div><div style="text-align:right"><div style="font-size:12px;font-weight:900;color:${tc}">${t.pick}</div><div style="font-size:11px;font-weight:800;color:${tc}">${t.confidence}%</div></div></div>`});h+=`</div></div>`}}
+  $('m-body').innerHTML=h;$('modal').classList.add('active');document.body.style.overflow='hidden';
+}
+function closeModal(){$('modal').classList.remove('active');curModal=-1;document.body.style.overflow=''}
+
+/* === MODAL HELPERS === */
+function mMini(label,val,active,color){return`<div style="text-align:center;padding:8px 4px;border-radius:10px;background:${active?color+'14':'var(--surface-3)'};border:1px solid ${active?color+'44':'var(--line)'}"><div style="font-size:10px;color:${active?color:'var(--muted)'};font-weight:800">${label}</div><div style="font-size:16px;font-weight:900;color:${active?color:'var(--text)'}">${val}</div></div>`}
+function mBarCompact(l,v,c,isText){c=c||'var(--text)';if(isText)return`<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid var(--line-soft)"><span style="font-size:11px;color:var(--muted);font-weight:700">${l}</span><span style="font-size:13px;font-weight:900;color:${c}">${v}</span></div>`;const n=(v!=null)?R(v)+'%':'--';const w=(v!=null)?Math.max(0,Math.min(100,v)):0;return`<div style="display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px solid var(--line-soft)"><span style="font-size:11px;color:var(--muted);font-weight:700;min-width:52px">${l}</span><div style="flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden"><div style="width:${w}%;height:100%;background:${c};border-radius:2px"></div></div><span style="font-size:12px;font-weight:800;color:${c};min-width:36px;text-align:right">${n}</span></div>`}
+
+/* === JSON === */
+function buildJSON(){return D.map(p=>{const r=p.result||{},tg=p.total_goals||{},cr=p.corners||{},dc=p.double_chance||{},g=p.goals||{};return{id:p.id,timestamp:p.timestamp,match:(p.home_name||'?')+' vs '+(p.away_name||'?'),home_team:p.home_name,away_team:p.away_name,home_elo:p.home_elo,away_elo:p.away_elo,predictions:{"1X2":{home:R(r.home_win),draw:R(r.draw),away:R(r.away_win),winner:r.winner,winner_prob:R(r.winner_prob)},"double_chance":{"1X":R(dc['1X']),"12":R(dc['12']),"X2":R(dc['X2'])},btts:{yes:R(p.btts_yes),no:R(p.btts_no)},goals:{expected:{home_xg:R(g.home_lambda),away_xg:R(g.away_lambda),total_xg:R(g.expected_total)},"over_under":{"1.5":R(tg.over15),"2.5":R(tg.over25),"3.5":R(tg.over35)}},corners:{average:cr.predicted_total||cr.avg,over75:R(cr.over75),over85:R(cr.over85)},"top_scores":(p.top_scores||[]).map(s=>({score:s.score,probability:Math.round((s.probability||0)*10000)/10000}))},recommendations:p.recommendations||null}})}
+async function downloadJSON(){const d=buildJSON();try{const res=await fetch('/api/predictions/save-json',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({predictions:d,filename:'ftms_tahminler_'+new Date().toISOString().slice(0,10)+'.json'})});const j=await res.json();if(j.ok){toast(d.length+' tahmin tahminler/ klasorune kaydedildi: '+j.filename)}else{toast('Kayit hatasi!')}}catch(e){toast('Sunucu hatasi: '+e.message)}}
+async function dlSingle(){if(curModal<0)return;const item=D[curModal];if(!item)return;try{const res=await fetch('/api/predictions/save-json',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({predictions:[item],filename:'ftms_'+(item.home_name||'').replace(/\s+/g,'_')+'_vs_'+(item.away_name||'').replace(/\s+/g,'_')+'.json'})});const j=await res.json();if(j.ok){toast('Tahmin tahminler/ klasorune kaydedildi: '+j.filename)}else{toast('Kayit hatasi!')}}catch(e){toast('Sunucu hatasi: '+e.message)}}
+
+$('sort').addEventListener('change',render);
+$('filter-result').addEventListener('change',render);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){confirmClose();closeModal()}});
+
+async function runAutoPredictions(){
+  const btn=$('auto-predict-btn');
+  if(btn){btn.disabled=true;btn.innerHTML='<span style="display:inline-block;animation:spin 1s linear infinite">🔄</span> Oluşturuluyor...';}
+  try{
+    toast('Otomatik tahminler oluşturuluyor... Bu birkaç dakika sürebilir.');
+    const res=await fetch('/api/predictions/auto-generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({days:3})});
+    const data=await res.json();
+    if(data.success){
+      toast(`✓ ${data.created||0} yeni tahmin oluşturuldu! (${data.matched||0}/${data.total||0} maç eşleşti)`);
+      await loadData();
+    }else{
+      toast('Otomatik tahmin hatası: '+(data.error||'Bilinmeyen hata'),true);
+    }
+  }catch(e){
+    toast('Sunucu hatası: '+e.message,true);
+  }finally{
+    if(btn){btn.disabled=false;btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Otomatik Tahmin';}
+  }
+}
+
+async function repredictAll(){
+  if(!D.length){toast('Yeniden hesaplanacak tahmin yok',true);return}
+  confirmOpen('warn','Tum Tahminleri Yeniden Hesapla',D.length+' tahmin yeniden hesaplanacak. Bu islem biraz surabilir.','Basla','c-success',async()=>{
+    const btn=$('repredict-all-btn');
+    if(btn){btn.disabled=true;btn.innerHTML='<span style="display:inline-block;animation:spin 1s linear infinite">🔄</span> Hesaplanıyor...';}
+    try{
+      toast('Tahminler yeniden hesaplanıyor...');
+      const data=await API.post('/api/predictions/repredict-all',{});
+      toast(`✓ ${data.updated||0} tahmin guncellendi! (${data.errors||0} hata)`);
+      await loadData();
+    }catch(e){
+      toast('Hata: '+e.message,true);
+    }finally{
+      if(btn){btn.disabled=false;btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg> Tumu Yeniden Tahmin Et';}
+    }
+  });
+}
+
+async function deleteAllPredictions(){
+  if(!D.length){toast('Silinecek tahmin yok',true);return}
+  confirmOpen('warn','Tum Tahminleri Sil',D.length+' tahmin kalici olarak silinecek. Bu islem geri alinamaz!','Tumu Sil','c-danger',async()=>{
+    const btn=$('delete-all-btn');
+    if(btn){btn.disabled=true;btn.innerHTML='<span style="display:inline-block;animation:spin 1s linear infinite">🔄</span> Siliniyor...';}
+    try{
+      await API.post('/api/predictions/delete-all',{});
+      toast('✓ Tum tahminler silindi!');
+      await loadData();
+    }catch(e){
+      toast('Hata: '+e.message,true);
+    }finally{
+      if(btn){btn.disabled=false;btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg> Tumu Sil';}
+    }
+  });
+}
+
+async function loadData(){
+  $('loading').style.display='flex';$('main').style.display='none';$('empty').style.display='none';
+  try{D=await API.get('/api/predictions');if(!D)D=[]}catch(e){D=[]}
+  $('loading').style.display='none';
+  if(!D.length){$('empty').style.display='block';return}
+  $('main').style.display='block';render();
+}
+initChrome('predictions');loadData();
+</script>
+{% endblock %}
